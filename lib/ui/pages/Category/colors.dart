@@ -3,8 +3,8 @@ import 'package:frontend_diccionario/ui/pages/widgets.dart';
 import 'package:animation_search_bar/animation_search_bar.dart'
     show AnimationSearchBar;
 
-class AnimalsCategory extends StatelessWidget {
-  const AnimalsCategory({Key? key}) : super(key: key);
+class ColorsCategory extends StatelessWidget {
+  const ColorsCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class AnimalsCategory extends StatelessWidget {
                 backIconColor: Colors.white,
                 searchIconColor: Colors.white,
                 closeIconColor: bgText,
-                centerTitle: 'ANIMALES',
+                centerTitle: 'COLORES',
                 onChanged: (text) => debugPrint(text),
                 searchTextEditingController: controller,
                 horizontalPadding: 5,
@@ -56,15 +56,15 @@ class AnimalsCategory extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CardWidget(titleCard: "Animal"),
-                  CardWidget(titleCard: "Animal"),
+                  CardWidget(titleCard: "Color"),
+                  CardWidget(titleCard: "Color"),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CardWidget(titleCard: "Animal"),
-                  CardWidget(titleCard: "Animal"),
+                  CardWidget(titleCard: "Color"),
+                  CardWidget(titleCard: "Color"),
                 ],
               )
             ],
