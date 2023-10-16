@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const EditWord(),
       routes: {
         '/home': (context) => const Home(),
         "/animals": (context) => const AnimalsCategory(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/pages/widgets.dart';
-import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart' as nav;
+import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart' as nav;
 import 'package:animation_search_bar/animation_search_bar.dart'
 
     show AnimationSearchBar;

@@ -34,12 +34,6 @@ class _NavBarCategoryState extends State<NavBarCategory> {
               : Get.toNamed(navigationRoutes[value]);
           });
       },
-      /*onTap: (index) {
-        final navigationRoutes = ["/home", "/animals", "/colors", "/numbers", "/bodys", "/home"];
-        (navigationRoutes[index] == "/home")
-            ? Get.offAllNamed(navigationRoutes[index])
-            : Get.toNamed(navigationRoutes[index]);
-      },*/
       backgroundColor: theme.color("primary"),
       selectedItemColor: theme.color("secondary"),
       unselectedItemColor: theme.color("primary"),

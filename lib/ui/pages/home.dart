@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
+import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
