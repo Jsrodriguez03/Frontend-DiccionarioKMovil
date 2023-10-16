@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/pages/widgets.dart';
+import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,6 +8,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text('Home')),
-        body: const Center(child: NavBarCategory()));
+        body: const Center(
+          child: Text("Hola Junior"),
+        ),
+        bottomNavigationBar: const NavBarCategory(),
+        
+      );
   }
 }
