@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginIn(),
+      home: const Home(),
       routes: {
         '/home': (context) => const Home(),
         "/animals": (context) => const AnimalsCategory(),
@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
         "/numbers": (context) => const NumberCategory(),
         "/bodys": (context) => const BodyCategory(),
         '/edit-word': (context) => const EditWord(),
-        '/feedback' : (context) => const FeedBack(),
-        '/edit-profile' : (context) => const EditProfile(),
-        '/add-word' : (context) => const AddWord(),
-        '/login-in' : (context) => const LoginIn(),
+        '/feedback': (context) => const FeedBack(),
+        '/edit-profile': (context) => const EditProfile(),
+        '/add-word': (context) => const AddWord(),
+        '/login-in': (context) => const LoginIn(),
       },
     );
   }
