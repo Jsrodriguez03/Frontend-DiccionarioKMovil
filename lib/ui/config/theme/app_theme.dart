@@ -14,9 +14,10 @@ const List<Color> _colorThemes = [
 ];
 
 const Map<String,Color> _colors = {
-  "primary": Color(0xFF30313A),
+  "primary": Color(0xFF1F2029),
   "secondary": Color(0xFFE6C068),
-  "third": Color(0xFF908E8E)   
+  "third": Color(0xFF908E8E),
+  "forth": Color(0xFF30313A)
 };
 
 class AppTheme {
@@ -30,8 +31,13 @@ class AppTheme {
     return ThemeData(useMaterial3: true, colorSchemeSeed: _colorThemes[selectedColor]);
   }
 
-  Color? color(String color){
-    return _colors[color];
+  Color color(String color) {
+    if (_colors.containsKey(color)) {
+      return _colors[color]!;
+    } else {
+      // Si la clave no existe en el mapa, puedes devolver un valor predeterminado
+      return Colors.black; // O el color que desees como valor predeterminado
+    }
   }
 
 }
