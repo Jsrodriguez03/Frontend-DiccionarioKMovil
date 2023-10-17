@@ -3,6 +3,7 @@ import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationB
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:get/get.dart';
 
 class LoginIn extends StatelessWidget {
   const LoginIn({super.key});
@@ -34,8 +35,8 @@ class LoginIn extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(bottom: 150, top: 40),
-                width: screenWidth * 0.9,
+                margin: const EdgeInsets.only(bottom: 150, top: 40, left: 15, right: 15),
+                width: 420,
                 decoration: BoxDecoration(
                   color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
@@ -59,7 +60,7 @@ class LoginIn extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor llene todos\nlos campos requesidos',
+                        'Por favor llene todos\nlos campos requeridos',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
@@ -82,7 +83,9 @@ class LoginIn extends StatelessWidget {
                         ],
                       ),
 
-                    const CustomElevatedButton(buttonText: "Continuar"),
+                    CustomElevatedButton(buttonText: "Continuar", onPressed: (){
+                      Get.toNamed("/home");
+                    },),
                     
                   ],
                 ),
