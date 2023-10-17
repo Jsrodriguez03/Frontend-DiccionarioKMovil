@@ -17,7 +17,7 @@ const Map<String,Color> _colors = {
   "primary": Color(0xFF1F2029),
   "secondary": Color(0xFFE6C068),
   "third": Color(0xFF908E8E),
-  "forth": Color(0xFF30313A)
+  "fourth": Color(0xFF30313A)
 };
 
 class AppTheme {
