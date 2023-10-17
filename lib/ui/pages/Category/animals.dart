@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/pages/widgets.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart' as nav;
 import 'package:animation_search_bar/animation_search_bar.dart'
-
     show AnimationSearchBar;
 
 class AnimalsCategory extends StatelessWidget {
@@ -17,9 +16,9 @@ class AnimalsCategory extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgScaffold,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start, // Alinea el contenido en la parte superior
         children: [
-          //Logo
+          // Logo
           SizedBox(
             height: 70,
             width: 1200,
@@ -52,24 +51,27 @@ class AnimalsCategory extends StatelessWidget {
             ),
           ),
 
-          //Cards
-          const Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CardWidget(titleCard: "Animal"),
-                  CardWidget(titleCard: "Animal"),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CardWidget(titleCard: "Animal"),
-                  CardWidget(titleCard: "Animal"),
-                ],
-              )
-            ],
+          // Cards
+          Expanded(
+            child: ListView(
+              // Usamos ListView para que el contenido sea desplazable
+              children: const [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Animal"),
+                    CardWidget(titleCard: "Animal"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Animal"),
+                    CardWidget(titleCard: "Animal"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

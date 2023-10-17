@@ -16,9 +16,8 @@ class ColorsCategory extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgScaffold,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          //Logo
+          // Logo
           SizedBox(
             height: 70,
             width: 1200,
@@ -51,24 +50,27 @@ class ColorsCategory extends StatelessWidget {
             ),
           ),
 
-          //Cards
-          const Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CardWidget(titleCard: "Color"),
-                  CardWidget(titleCard: "Color"),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CardWidget(titleCard: "Color"),
-                  CardWidget(titleCard: "Color"),
-                ],
-              )
-            ],
+          // Cards
+          Expanded(
+            child: ListView(
+              // Usamos ListView para que el contenido sea desplazable
+              children: const [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
