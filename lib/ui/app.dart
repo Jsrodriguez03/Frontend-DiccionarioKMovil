@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginIn(),
+      home: const Home(),
       routes: {
         '/home': (context) => const Home(),
         "/animals": (context) => const AnimalsCategory(),
@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
         '/edit-profile' : (context) => const EditProfile(),
         '/add-word' : (context) => const AddWord(),
         '/login-in' : (context) => const LoginIn(),
-        '/login-up' : (context) => const LoginUp()
       },
     );
   }
