@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/ui/pages/AddWord/addWord.dart';
 import 'package:frontend_diccionario/ui/pages/Category/animals.dart';
 import 'package:frontend_diccionario/ui/pages/Category/body.dart';
 import 'package:frontend_diccionario/ui/pages/Category/colors.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const EditProfile(),
+      home: const AddWord(),
       routes: {
         '/home': (context) => const Home(),
         "/animals": (context) => const AnimalsCategory(),
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         "/bodys": (context) => const BodyCategory(),
         '/edit-word': (context) => const EditWord(),
         '/feedback' : (context) => const FeedBack(),
-        '/edit-profile' : (context) => const EditProfile()
+        '/edit-profile' : (context) => const EditProfile(),
+        '/add-word' : (context) => const AddWord()
       },
     );
   }
