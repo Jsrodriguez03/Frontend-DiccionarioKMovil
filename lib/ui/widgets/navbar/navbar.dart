@@ -23,6 +23,7 @@ class _NavBarCategoryState extends State<NavBarCategory> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+
       elevation: 0,
       currentIndex: selectedIndex,
       onTap:(value) {
@@ -38,6 +39,9 @@ class _NavBarCategoryState extends State<NavBarCategory> {
       selectedItemColor: theme.color("secondary"),
       unselectedItemColor: theme.color("primary"),
       type: BottomNavigationBarType.fixed,
+
+      
+
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home, color: theme.color("third")),
