@@ -4,17 +4,16 @@ import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 
-class EditWord extends StatelessWidget {
-  const EditWord({super.key});
+class FeedBack extends StatelessWidget {
+  const FeedBack({super.key});
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nueva Categoria", 
-    "Palabra en Español", 
-    "Palabra en Kankuamo", 
-    "Palabra en Ingles"
+    final lista = ["Nombre",
+    "Email",
+    "Comentario"
     ];
 
     return Scaffold(
@@ -36,8 +35,8 @@ class EditWord extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(bottom: 40, top: 20),
                 width: screenWidth * 0.9,
+                margin: const EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
                   color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
@@ -47,7 +46,7 @@ class EditWord extends StatelessWidget {
                     SizedBox(
                       width: screenWidth * 0.8,
                       child: const Text(
-                        'Editar Palabra',
+                        'Dejanos Un \nComentario',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFFE6C068),
@@ -58,26 +57,16 @@ class EditWord extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                        'Por favor ingrese los datos solicitados\npara editar la palabra seleccionada',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
-                    ),
-                    const SizedBox(
                       height: 20,
                     ),
                     for (var item in lista)
                       Column(
                         children: [
+                          item == 'Comentario' ? 
+                          CustomTextFormField(labelText: item, lineas: 3,)
+                          : 
                           CustomTextFormField(labelText: item),
+                          
                           const SizedBox(
                             height: 10,
                           ),
@@ -89,6 +78,9 @@ class EditWord extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 30,
             )
           ],
         ),
