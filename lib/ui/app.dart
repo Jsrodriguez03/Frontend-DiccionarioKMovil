@@ -3,6 +3,7 @@ import 'package:frontend_diccionario/ui/pages/Category/animals.dart';
 import 'package:frontend_diccionario/ui/pages/Category/body.dart';
 import 'package:frontend_diccionario/ui/pages/Category/colors.dart';
 import 'package:frontend_diccionario/ui/pages/Category/numbers.dart';
+import 'package:frontend_diccionario/ui/pages/EditProfile/editProfile.dart';
 import 'package:frontend_diccionario/ui/pages/EditWord/editWord.dart';
 import 'package:frontend_diccionario/ui/pages/Feedback/feedback.dart';
 import 'package:frontend_diccionario/ui/pages/home.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FeedBack(),
+      home: const EditProfile(),
       routes: {
         '/home': (context) => const Home(),
         "/animals": (context) => const AnimalsCategory(),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/bodys": (context) => const BodyCategory(),
         '/edit-word': (context) => const EditWord(),
         '/feedback' : (context) => const FeedBack(),
+        '/edit-profile' : (context) => const EditProfile()
       },
     );
   }
