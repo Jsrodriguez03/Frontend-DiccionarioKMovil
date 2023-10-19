@@ -40,6 +40,9 @@ class _NavBarCategoryState extends State<NavBarCategory> {
       selectedItemColor: theme.color("secondary"),
       unselectedItemColor: theme.color("primary"),
       type: BottomNavigationBarType.fixed,
+      selectedLabelStyle: TextStyle(
+          height: 0), // Elimina el espacio para la etiqueta seleccionada
+      unselectedLabelStyle: TextStyle(height: 0),
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home, color: theme.color("third")),
