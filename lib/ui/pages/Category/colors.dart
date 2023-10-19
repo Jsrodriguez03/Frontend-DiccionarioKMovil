@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/pages/widgets.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart' as nav;
 import 'package:animation_search_bar/animation_search_bar.dart'
     show AnimationSearchBar;
+import 'package:frontend_diccionario/ui/widgets/Card/card_widget.dart';
 
 class ColorsCategory extends StatelessWidget {
   const ColorsCategory({Key? key}) : super(key: key);
@@ -55,6 +55,48 @@ class ColorsCategory extends StatelessWidget {
             child: ListView(
               // Usamos ListView para que el contenido sea desplazable
               children: const [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CardWidget(titleCard: "Color"),
+                    CardWidget(titleCard: "Color"),
+                  ],
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

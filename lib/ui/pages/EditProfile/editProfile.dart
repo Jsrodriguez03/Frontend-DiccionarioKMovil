@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
@@ -11,10 +11,11 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nuevo Nombre",
-    "Nuevo Email",
-    "Nuevo Telefono",
-    "Descripcion"
+    final lista = [
+      "Nuevo Nombre",
+      "Nuevo Email",
+      "Nuevo Telefono",
+      "Descripcion"
     ];
 
     return Scaffold(
@@ -61,15 +62,15 @@ class EditProfile extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor ingrese los datos solicitados\npara editar su perfil',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
+                      'Por favor ingrese los datos solicitados\npara editar su perfil',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -77,19 +78,18 @@ class EditProfile extends StatelessWidget {
                     for (var item in lista)
                       Column(
                         children: [
-                          item == 'Descripcion' ? 
-                          CustomTextFormField(labelText: item, lineas: 3,)
-                          : 
-                          CustomTextFormField(labelText: item),
-                          
+                          item == 'Descripcion'
+                              ? CustomTextFormField(
+                                  labelText: item,
+                                  lineas: 3,
+                                )
+                              : CustomTextFormField(labelText: item),
                           const SizedBox(
                             height: 10,
                           ),
                         ],
                       ),
-
                     const CustomElevatedButton(buttonText: "Guardar Cambios"),
-                    
                   ],
                 ),
               ),

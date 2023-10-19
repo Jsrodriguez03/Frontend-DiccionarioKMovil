@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 
 class LoginIn extends StatelessWidget {
   const LoginIn({super.key});
@@ -11,9 +11,7 @@ class LoginIn extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Correo",
-    "Contraseña"
-    ];
+    final lista = ["Correo", "Contraseña"];
 
     return Scaffold(
       body: Container(
@@ -59,15 +57,15 @@ class LoginIn extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor llene todos\nlos campos requesidos',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
+                      'Por favor llene todos\nlos campos requesidos',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -81,9 +79,7 @@ class LoginIn extends StatelessWidget {
                           ),
                         ],
                       ),
-
                     const CustomElevatedButton(buttonText: "Continuar"),
-                    
                   ],
                 ),
               ),

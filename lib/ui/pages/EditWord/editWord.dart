@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 
 class EditWord extends StatelessWidget {
   const EditWord({super.key});
@@ -11,10 +11,11 @@ class EditWord extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nueva Categoria", 
-    "Palabra en Español", 
-    "Palabra en Kankuamo", 
-    "Palabra en Ingles"
+    final lista = [
+      "Nueva Categoria",
+      "Palabra en Español",
+      "Palabra en Kankuamo",
+      "Palabra en Ingles"
     ];
 
     return Scaffold(
@@ -61,15 +62,15 @@ class EditWord extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor ingrese los datos solicitados\npara editar la palabra seleccionada',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
+                      'Por favor ingrese los datos solicitados\npara editar la palabra seleccionada',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -83,9 +84,7 @@ class EditWord extends StatelessWidget {
                           ),
                         ],
                       ),
-
                     const CustomElevatedButton(buttonText: "Guardar Cambios"),
-                    
                   ],
                 ),
               ),

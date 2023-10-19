@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 
 class AddWord extends StatelessWidget {
   const AddWord({super.key});
@@ -11,19 +12,15 @@ class AddWord extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    
-    final Map<String,List<String>> datos = {
+
+    final Map<String, List<String>> datos = {
       "Categoria": ["Categoria"],
-      "Escritura": ["Nueva Categoria", 
-    "Palabra en Español", 
-    "Palabra en Kankuamo", 
-    "Palabra en Ingles"
-    ],
-      "Audios": ["Nueva Categoria", 
-    "Audio en Español", 
-    "Audio en Kankuamo", 
-    "Audio en Ingles"
-    ],
+      "Escritura": [
+        "Palabra en Español",
+        "Palabra en Kankuamo",
+        "Palabra en Ingles"
+      ],
+      "Audios": ["Audio en Español", "Audio en Kankuamo", "Audio en Ingles"],
       "Imagen": ["Imagen de la palabra"]
     };
 
@@ -32,17 +29,13 @@ class AddWord extends StatelessWidget {
         color: theme.color("primary"),
         child: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             SizedBox(
               height: 70,
               width: screenWidth,
               child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -56,82 +49,66 @@ class AddWord extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: screenWidth * 0.8,
-                      child: const Text(
-                        'Agregar Palabra',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color(0xFFE6C068),
-                          fontSize: 30,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w700,
-                        ),
+                      child: Texto(
+                          title: "Agregar Palabra",
+                          colorText: theme.color("secondary"),
+                          size: 30,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Por favor ingrese los datos solicitados\npara agregar la palabra deseada',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                        'Por favor ingrese los datos solicitados\npara agregar la palabra deseada',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    
-                    for (var entry in datos.entries) 
+                    const SizedBox(height: 20),
+                    for (var entry in datos.entries)
                       //var categoria = entry.key;
                       //var elementos = entry.value;
                       Column(
                         children: [
-                          Text(entry.key,
+                          Text(
+                            entry.key,
                             style: TextStyle(
-                                color: theme.color("secondary"),
-                                fontSize: 15,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w700,
-                                height: 0,
+                              color: theme.color("secondary"),
+                              fontSize: 15,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w700,
+                              height: 0,
                             ),
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
+                          const SizedBox(height: 10),
                           Container(
-                              width: screenWidth * 0.8,
-                              decoration: const ShapeDecoration(
-                                  shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                          width: 3,
-                                          strokeAlign: BorderSide.strokeAlignCenter,
-                                          color: Color(0xFF908E8E),
-                                      ),
-                                  ),
+                            width: screenWidth * 0.8,
+                            decoration: const ShapeDecoration(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  width: 3,
+                                  strokeAlign: BorderSide.strokeAlignCenter,
+                                  color: Color(0xFF908E8E),
+                                ),
                               ),
+                            ),
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          for (var elemento in entry.value) 
+                          const SizedBox(height: 10),
+                          for (var elemento in entry.value)
                             Column(
                               children: [
                                 CustomTextFormField(labelText: elemento),
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                  ],
+                              ],
                             )
-                          
                         ],
-                        ),
-                      
+                      ),
                     const CustomElevatedButton(buttonText: "Guardar Cambios"),
-                    
                   ],
                 ),
               ),
