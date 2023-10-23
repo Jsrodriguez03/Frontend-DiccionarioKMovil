@@ -86,7 +86,7 @@ class HomeState extends State<Home> {
               width: MediaQuery.of(context).size.width,
               child: CarouselSlider(
                 options: CarouselOptions(
-                  height: 410.0,
+                  height: 410,
                   aspectRatio: 16 / 9,
                   viewportFraction: 0.70,
                   enlargeCenterPage: true,
