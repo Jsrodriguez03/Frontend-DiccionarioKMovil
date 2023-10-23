@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomButtom.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/widgets/IconCircleProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/input_box_profile.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -24,7 +22,7 @@ class Profile extends StatelessWidget {
             child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
           ),
 
-          const SizedBox(height: 30),
+          const SizedBox(height: 15),
 
           //IMAGEN DE PERFIL
           SizedBox(
@@ -51,14 +49,17 @@ class Profile extends StatelessWidget {
             ),
           ),
 
-          //DATOS BÁSICOS
-          Texto(
-            title: "DATOS BÁSICOS",
-            colorText: appTheme.color("secondary"),
-            size: 20,
-            fontWeight: FontWeight.w900,
+          Text(
+            "DATOS BÁSICOS",
+            style: TextStyle(
+              fontSize: 20,
+              color: appTheme.color("secondary"),
+              fontWeight: FontWeight.w900,
+            ),
+            textAlign: TextAlign.left, // Alineación a la izquierda
           ),
 
+          //DATOS BÁSICO
           //Inputs Datos Básicos
           SizedBox(
             width: 301.50,
@@ -89,8 +90,8 @@ class Profile extends StatelessWidget {
 
           //Descripción
           SizedBox(
-            width: 294.50,
-            height: 106,
+            width: 274.50,
+            height: 116,
             child: Stack(
               children: [
                 Positioned(
@@ -98,29 +99,28 @@ class Profile extends StatelessWidget {
                   top: 1,
                   child: SizedBox(
                     width: 294.50,
-                    height: 105,
+                    height: 115,
                     child: Stack(
                       children: [
                         const Positioned(
                           left: 0,
                           top: 33,
                           child: SizedBox(
-                            width: 293,
+                            width: 273,
                             child: Text(
-                              'Estudiante de la Universidad Popular del Cesar (UPC), Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
+                              'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontFamily: 'Roboto',
                                 fontWeight: FontWeight.w400,
-                                height: 0,
                               ),
                             ),
                           ),
                         ),
                         Positioned(
-                          left: 275,
+                          left: 255,
                           top: 0,
                           child: SizedBox(
                             width: 19.50,
@@ -135,25 +135,20 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Positioned(
-                  left: 0,
-                  top: 0,
-                  child: Text(
-                    'DESCRIPCIÓN',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xFFE6C068),
-                      fontSize: 20,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w900,
-                      height: 0,
-                    ),
+                const Text(
+                  'DESCRIPCIÓN',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFFE6C068),
+                    fontSize: 20,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ],
             ),
           ),
-
+          const SizedBox(height: 25),
           CustomElevatedButton(
             buttonText: "Cerrar Sesión",
             onPressed: () {},

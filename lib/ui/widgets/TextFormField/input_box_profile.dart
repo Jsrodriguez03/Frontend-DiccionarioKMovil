@@ -63,7 +63,7 @@ class InputBoxProfile extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 270,
+                left: 260,
                 top: 10,
                 child: Icon(
                   Icons.edit_note_outlined,
