@@ -55,8 +55,8 @@ class CardWidget extends StatelessWidget {
                 if (showButtons)
                   const Column(
                     children: [
-                      Button(titulo: "Kankuamo"),
-                      Button(titulo: "Inglés"),
+                      CustomButton(titulo: "Kankuamo"),
+                      CustomButton(titulo: "Inglés"),
                     ],
                   ),
               ],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/widgets/IconCircleProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
+import 'package:frontend_diccionario/ui/widgets/TextFormField/input_box_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 
 class Profile extends StatelessWidget {
@@ -56,7 +59,7 @@ class Profile extends StatelessWidget {
             fontWeight: FontWeight.w900,
           ),
 
-          //Inputs
+          //Inputs Datos Básicos
           SizedBox(
             width: 301.50,
             height: 170,
@@ -65,19 +68,16 @@ class Profile extends StatelessWidget {
                 //NOMBRE
                 ListView(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  children: [
+                  children: const [
                     InputBoxProfile(
-                      appTheme: appTheme,
                       title: "Nombre",
                       value: "Santiago",
                     ),
                     InputBoxProfile(
-                      appTheme: appTheme,
                       title: "Telefono",
                       value: "3001234567",
                     ),
                     InputBoxProfile(
-                      appTheme: appTheme,
                       title: "Email",
                       value: "santiago@gmail.com",
                     ),
@@ -85,89 +85,82 @@ class Profile extends StatelessWidget {
                 )
               ],
             ),
+          ),
+
+          //Descripción
+          SizedBox(
+            width: 294.50,
+            height: 106,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 0,
+                  top: 1,
+                  child: SizedBox(
+                    width: 294.50,
+                    height: 105,
+                    child: Stack(
+                      children: [
+                        const Positioned(
+                          left: 0,
+                          top: 33,
+                          child: SizedBox(
+                            width: 293,
+                            child: Text(
+                              'Estudiante de la Universidad Popular del Cesar (UPC), Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          left: 275,
+                          top: 0,
+                          child: SizedBox(
+                            width: 19.50,
+                            child: Icon(
+                              Icons.edit_note_outlined,
+                              color: appTheme.color("third"),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  left: 0,
+                  top: 0,
+                  child: Text(
+                    'DESCRIPCIÓN',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xFFE6C068),
+                      fontSize: 20,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w900,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          CustomElevatedButton(
+            buttonText: "Cerrar Sesión",
+            onPressed: () {},
           )
         ],
       ),
       bottomNavigationBar: const NavBarCategory(),
-    );
-  }
-}
-
-class InputBoxProfile extends StatelessWidget {
-  final AppTheme appTheme;
-  final String title;
-  final String value;
-
-  const InputBoxProfile({
-    super.key,
-    required this.appTheme,
-    required this.title,
-    required this.value,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: 297,
-          height: 43,
-          child: Stack(
-            children: [
-              Positioned(
-                left: 0,
-                top: 5,
-                child: Icon(
-                  Icons.person_rounded,
-                  color: appTheme.color("third"),
-                  size: 35,
-                ),
-              ),
-              Positioned(
-                left: 27,
-                child: Texto(
-                  title: title,
-                  colorText: const Color(0xFF908E8E),
-                  size: 10,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              Positioned(
-                left: 27,
-                top: 10,
-                child: Texto(
-                  title: value,
-                  colorText: Colors.white,
-                  size: 15,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              Container(
-                width: 297,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      width: 1,
-                      style: BorderStyle.solid,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 270,
-                top: 10,
-                child: Icon(
-                  Icons.edit_note_outlined,
-                  color: appTheme.color("third"),
-                  size: 20,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 5),
-      ],
     );
   }
 }

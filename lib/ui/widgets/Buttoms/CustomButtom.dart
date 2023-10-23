@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Button extends StatelessWidget {
-  const Button({super.key, required this.titulo});
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, required this.titulo});
   final String titulo;
 
   @override
