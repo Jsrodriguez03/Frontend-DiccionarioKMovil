@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/Card/card_widget.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/card_category.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
@@ -19,8 +19,8 @@ class ListCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CardWidget(titleCard: titleElement),
-                CardWidget(titleCard: titleElement),
+                CardCategory(titleCard: titleElement),
+                CardCategory(titleCard: titleElement),
               ],
             ),
           );

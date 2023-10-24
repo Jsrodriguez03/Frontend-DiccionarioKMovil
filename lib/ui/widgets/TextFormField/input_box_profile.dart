@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/edit_icon_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/icon_input.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/input_text.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/separator.dart';
 
 class InputBoxProfile extends StatelessWidget {
   final String title;
   final String value;
+  final IconData icon;
 
   const InputBoxProfile({
     super.key,
     required this.title,
     required this.value,
+    required this.icon,
   });
 
   @override
@@ -22,55 +27,26 @@ class InputBoxProfile extends StatelessWidget {
           height: 43,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 5,
-                child: Icon(
-                  Icons.person_rounded,
-                  color: appTheme.color("third"),
-                  size: 35,
-                ),
+              IconInput(icon: icon),
+
+              //Texto del Titulo
+              InputText(
+                text: title,
+                top: 6,
+                color: appTheme.color("third"),
+                size: 10,
               ),
-              Positioned(
-                left: 27,
-                child: Texto(
-                  title: title,
-                  colorText: const Color(0xFF908E8E),
-                  size: 10,
-                  fontWeight: FontWeight.w400,
-                ),
+
+              //Texto del Valor
+              InputText(
+                text: value,
+                top: 17,
+                color: Colors.white,
+                size: 15,
               ),
-              Positioned(
-                left: 27,
-                top: 10,
-                child: Texto(
-                  title: value,
-                  colorText: Colors.white,
-                  size: 15,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              Container(
-                width: 297,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      width: 1,
-                      style: BorderStyle.solid,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 260,
-                top: 10,
-                child: Icon(
-                  Icons.edit_note_outlined,
-                  color: appTheme.color("third"),
-                  size: 20,
-                ),
-              ),
+
+              const Separator(),
+              const EditIconProfile(),
             ],
           ),
         ),

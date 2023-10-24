@@ -71,18 +71,18 @@ class ProfileAdm extends StatelessWidget {
                 ListView(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   children: const [
-                    InputBoxProfile(
-                      title: "Nombre",
-                      value: "Santiago",
-                    ),
-                    InputBoxProfile(
-                      title: "Telefono",
-                      value: "3001234567",
-                    ),
-                    InputBoxProfile(
-                      title: "Email",
-                      value: "santiago@gmail.com",
-                    ),
+                    // InputBoxProfile(
+                    //   title: "Nombre",
+                    //   value: "Santiago",
+                    // ),
+                    // InputBoxProfile(
+                    //   title: "Telefono",
+                    //   value: "3001234567",
+                    // ),
+                    // InputBoxProfile(
+                    //   title: "Email",
+                    //   value: "santiago@gmail.com",
+                    // ),
                   ],
                 )
               ],

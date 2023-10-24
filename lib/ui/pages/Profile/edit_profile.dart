@@ -19,6 +19,7 @@ class EditProfile extends StatelessWidget {
     ];
 
     return Scaffold(
+      // appBar: AppBar(),
       body: Container(
         color: theme.color("primary"),
         child: Column(

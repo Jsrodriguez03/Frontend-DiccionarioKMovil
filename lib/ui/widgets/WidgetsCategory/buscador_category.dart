@@ -24,7 +24,7 @@ class Buscador extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         child: AnimationSearchBar(
-          isBackButtonVisible: false,
+          backIconColor: Colors.white,
           searchIconColor: Colors.white,
           closeIconColor: appTheme.color("secondary"),
           centerTitle: titleCategory,

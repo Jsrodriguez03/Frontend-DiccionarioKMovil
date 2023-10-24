@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/widgets/IconCircleProfile/icon_circle_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/input_box_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
 
 class Profile extends StatelessWidget {
@@ -16,52 +18,18 @@ class Profile extends StatelessWidget {
       backgroundColor: appTheme.color("primary"),
       body: Column(
         children: [
-          //LOGO
-          SizedBox(
-            height: 70,
-            width: 1200,
-            child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-          ),
-
+          const Logo(),
           const SizedBox(height: 15),
+          ImagenPerfil(appTheme: appTheme),
 
-          //IMAGEN DE PERFIL
-          SizedBox(
-            width: 139,
-            height: 149,
-            child: Stack(
-              children: [
-                IconCircleProfile(
-                  directionIconCircle: 0,
-                  dimensionIconCircle: 139,
-                  colorIconCircle: appTheme.color("fourth"),
-                  colorIcon: appTheme.color("third"),
-                  iconCircle: Icons.person_rounded,
-                  sizeIconCircle: 130,
-                ),
-                IconCircleProfile(
-                  directionIconCircle: 94,
-                  dimensionIconCircle: 42,
-                  colorIconCircle: appTheme.color("secondary"),
-                  colorIcon: Colors.black,
-                  iconCircle: Icons.camera_alt,
-                )
-              ],
-            ),
-          ),
-
-          Text(
-            "DATOS BÁSICOS",
-            style: TextStyle(
-              fontSize: 20,
-              color: appTheme.color("secondary"),
-              fontWeight: FontWeight.w900,
-            ),
-            textAlign: TextAlign.left, // Alineación a la izquierda
+          Texto(
+            title: "DATOS BÁSICOS",
+            colorText: appTheme.color("secondary"),
+            size: 20,
+            fontWeight: FontWeight.w900,
           ),
 
           //DATOS BÁSICO
-          //Inputs Datos Básicos
           SizedBox(
             width: 301.50,
             height: 170,
@@ -74,14 +42,17 @@ class Profile extends StatelessWidget {
                     InputBoxProfile(
                       title: "Nombre",
                       value: "Santiago",
+                      icon: Icons.person_rounded,
                     ),
                     InputBoxProfile(
                       title: "Telefono",
                       value: "3001234567",
+                      icon: Icons.phone,
                     ),
                     InputBoxProfile(
                       title: "Email",
                       value: "santiago@gmail.com",
+                      icon: Icons.alternate_email,
                     ),
                   ],
                 )
@@ -136,20 +107,15 @@ class Profile extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text(
-                  'DESCRIPCIÓN',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE6C068),
-                    fontSize: 20,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
+                Texto(
+                    title: 'DESCRIPCIÓN',
+                    colorText: appTheme.color("secondary"),
+                    size: 20,
+                    fontWeight: FontWeight.w900)
               ],
             ),
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 18),
           CustomElevatedButton(
             buttonText: "Cerrar Sesión",
             onPressed: () {
@@ -159,6 +125,42 @@ class Profile extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: const NavBarCategory(),
+    );
+  }
+}
+
+class ImagenPerfil extends StatelessWidget {
+  const ImagenPerfil({
+    super.key,
+    required this.appTheme,
+  });
+
+  final AppTheme appTheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 129,
+      height: 139,
+      child: Stack(
+        children: [
+          IconCircleProfile(
+            directionIconCircle: 0,
+            dimensionIconCircle: 119,
+            colorIconCircle: appTheme.color("fourth"),
+            colorIcon: appTheme.color("third"),
+            iconCircle: Icons.person_rounded,
+            sizeIconCircle: 120,
+          ),
+          IconCircleProfile(
+            directionIconCircle: 84,
+            dimensionIconCircle: 32,
+            colorIconCircle: appTheme.color("secondary"),
+            colorIcon: Colors.black,
+            iconCircle: Icons.camera_alt,
+          )
+        ],
+      ),
     );
   }
 }

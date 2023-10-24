@@ -4,8 +4,8 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/button_card.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
 
-class CardWidget extends StatelessWidget {
-  const CardWidget({
+class CardCategory extends StatelessWidget {
+  const CardCategory({
     super.key,
     required this.titleCard,
     this.showButtons = true,
@@ -48,7 +48,6 @@ class CardWidget extends StatelessWidget {
                   colorText: appTheme.color("secondary"),
                   size: 23,
                   fontWeight: FontWeight.w500,
-                  textAlingTitle: TextAlign.left,
                 ),
               ),
 

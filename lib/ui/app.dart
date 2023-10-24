@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/pages/Welcome/welcome.dart';
 import 'package:frontend_diccionario/ui/pages/Word/addWord.dart';
-import 'package:frontend_diccionario/ui/pages/Category/animals.dart';
-import 'package:frontend_diccionario/ui/pages/Category/body.dart';
-import 'package:frontend_diccionario/ui/pages/Category/colors.dart';
-import 'package:frontend_diccionario/ui/pages/Category/numbers.dart';
-import 'package:frontend_diccionario/ui/pages/Profile/editProfile.dart';
+import 'package:frontend_diccionario/ui/pages/Category/animals_category.dart';
+import 'package:frontend_diccionario/ui/pages/Category/body_category.dart';
+import 'package:frontend_diccionario/ui/pages/Category/colors_category.dart';
+import 'package:frontend_diccionario/ui/pages/Category/numbers_category.dart';
+import 'package:frontend_diccionario/ui/pages/Profile/edit_profile.dart';
 import 'package:frontend_diccionario/ui/pages/Word/editWord.dart';
 import 'package:frontend_diccionario/ui/pages/Feedback/feedback.dart';
 import 'package:frontend_diccionario/ui/pages/Login-in/loginIn.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AnimalsCategory(),
+      home: const Profile(),
       routes: {
         //VISTAS JUNIOR
         '/welcome': (context) => const Welcome(),
