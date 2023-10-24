@@ -24,7 +24,7 @@ class _NavBarCategoryState extends State<NavBarCategory> {
         setState(() {
           selectedIndex = value;
           final navigationRoutes = [
-            "/home",
+            "/homeCategory",
             "/animals",
             "/colors",
             "/numbers",

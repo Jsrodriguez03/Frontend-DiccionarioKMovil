@@ -4,14 +4,14 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:get/get.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeCategory extends StatefulWidget {
+  const HomeCategory({Key? key}) : super(key: key);
 
   @override
-  HomeState createState() => HomeState();
+  HomeCategoryState createState() => HomeCategoryState();
 }
 
-class HomeState extends State<Home> {
+class HomeCategoryState extends State<HomeCategory> {
   final _carouselController = CarouselController();
   int _current = 0;
 

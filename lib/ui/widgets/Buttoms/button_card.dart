@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:get/get.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.titulo});
+class ButtonCard extends StatelessWidget {
+  const ButtonCard({super.key, required this.titulo});
   final String titulo;
 
   @override
   Widget build(BuildContext context) {
+    AppTheme appTheme = AppTheme();
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 7),
       child: SizedBox(
-        width: Get.width * 0.4,
+        width: Get.width * 0.37,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF1F2029),
+            backgroundColor: appTheme.color("primary"),
             foregroundColor: Colors.white,
-            textStyle: const TextStyle(fontSize: 15.5),
+            textStyle: const TextStyle(fontSize: 14),
           ),
           onPressed: () {},
           child: Text(titulo),

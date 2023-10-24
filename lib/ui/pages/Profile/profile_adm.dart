@@ -4,10 +4,9 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.da
 import 'package:frontend_diccionario/ui/widgets/IconCircleProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/input_box_profile.dart';
-import 'package:get/get.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfileAdm extends StatelessWidget {
+  const ProfileAdm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class Profile extends StatelessWidget {
             child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
           ),
 
-          const SizedBox(height: 15),
+          const SizedBox(height: 25),
 
           //IMAGEN DE PERFIL
           SizedBox(
@@ -50,6 +49,7 @@ class Profile extends StatelessWidget {
             ),
           ),
 
+          const SizedBox(height: 10),
           Text(
             "DATOS BÁSICOS",
             style: TextStyle(
@@ -89,72 +89,24 @@ class Profile extends StatelessWidget {
             ),
           ),
 
-          //Descripción
-          SizedBox(
-            width: 274.50,
-            height: 116,
-            child: Stack(
-              children: [
-                Positioned(
-                  left: 0,
-                  top: 1,
-                  child: SizedBox(
-                    width: 294.50,
-                    height: 115,
-                    child: Stack(
-                      children: [
-                        const Positioned(
-                          left: 0,
-                          top: 33,
-                          child: SizedBox(
-                            width: 273,
-                            child: Text(
-                              'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 255,
-                          top: 0,
-                          child: SizedBox(
-                            width: 19.50,
-                            child: Icon(
-                              Icons.edit_note_outlined,
-                              color: appTheme.color("third"),
-                              size: 20,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const Text(
-                  'DESCRIPCIÓN',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE6C068),
-                    fontSize: 20,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ],
+          Text(
+            "ADMINISTRACIÓN",
+            style: TextStyle(
+              fontSize: 20,
+              color: appTheme.color("secondary"),
+              fontWeight: FontWeight.w900,
             ),
+            textAlign: TextAlign.left, // Alineación a la izquierda
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 10),
           CustomElevatedButton(
-            buttonText: "Cerrar Sesión",
-            onPressed: () {
-              Get.toNamed("/welcome");
-            },
+            buttonText: "Gestionar Usuarios",
+            onPressed: () {},
+          ),
+          const SizedBox(height: 10),
+          CustomElevatedButton(
+            buttonText: "Gestionar Palabras",
+            onPressed: () {},
           )
         ],
       ),
