@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';

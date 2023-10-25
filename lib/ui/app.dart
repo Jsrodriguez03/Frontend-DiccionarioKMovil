@@ -9,7 +9,9 @@ import 'package:frontend_diccionario/ui/pages/Profile/edit_profile.dart';
 import 'package:frontend_diccionario/ui/pages/Word/editWord.dart';
 import 'package:frontend_diccionario/ui/pages/Feedback/feedback.dart';
 import 'package:frontend_diccionario/ui/pages/Login-in/loginIn.dart';
-import 'package:frontend_diccionario/ui/pages/home.dart';
+import 'package:frontend_diccionario/ui/pages/Category/home_category.dart';
+import 'package:frontend_diccionario/ui/pages/Profile/profile.dart';
+import 'package:frontend_diccionario/ui/pages/Profile/profile_adm.dart';
 import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
@@ -40,10 +42,10 @@ class MyApp extends StatelessWidget {
 
         //VISTAS NAYID
         '/edit-word': (context) => const EditWord(),
-        '/feedback' : (context) => const FeedBack(),
-        '/edit-profile' : (context) => const EditProfile(),
-        '/add-word' : (context) => const AddWord(),
-        '/login-in' : (context) => const LoginIn(),
+        '/feedback': (context) => const FeedBack(),
+        '/edit-profile': (context) => const EditProfile(),
+        '/add-word': (context) => const AddWord(),
+        '/login-in': (context) => const LoginIn(),
       },
     );
   }
