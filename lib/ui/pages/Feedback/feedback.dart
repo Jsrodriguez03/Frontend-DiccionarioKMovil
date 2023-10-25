@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/ElevationButtom/CustomElevationButtom.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
 
 class FeedBack extends StatelessWidget {
   const FeedBack({super.key});
@@ -11,10 +11,7 @@ class FeedBack extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nombre",
-    "Email",
-    "Comentario"
-    ];
+    final lista = ["Nombre", "Email", "Comentario"];
 
     return Scaffold(
       body: Container(
@@ -62,18 +59,19 @@ class FeedBack extends StatelessWidget {
                     for (var item in lista)
                       Column(
                         children: [
-                          item == 'Comentario' ? 
-                          CustomTextFormField(labelText: item, lineas: 3,)
-                          : 
-                          CustomTextFormField(labelText: item),
-                          
+                          item == 'Comentario'
+                              ? CustomTextFormField(
+                                  labelText: item,
+                                  lineas: 3,
+                                )
+                              : CustomTextFormField(labelText: item),
                           const SizedBox(
                             height: 10,
                           ),
                         ],
                       ),
 
-                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: (){},),
+                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
                     
                   ],
                 ),

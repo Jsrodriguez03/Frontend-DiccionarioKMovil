@@ -4,17 +4,17 @@ import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 
-class EditProfile extends StatelessWidget {
-  const EditProfile({super.key});
+class EditWord extends StatelessWidget {
+  const EditWord({super.key});
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nuevo Nombre",
-    "Nuevo Email",
-    "Nuevo Telefono",
-    "Descripcion"
+    final lista = ["Nueva Categoria", 
+    "Palabra en Español", 
+    "Palabra en Kankuamo", 
+    "Palabra en Ingles"
     ];
 
     return Scaffold(
@@ -36,8 +36,8 @@ class EditProfile extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(bottom: 40, top: 20),
                 width: screenWidth * 0.9,
-                margin: const EdgeInsets.only(bottom: 20),
                 decoration: BoxDecoration(
                   color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
@@ -47,7 +47,7 @@ class EditProfile extends StatelessWidget {
                     SizedBox(
                       width: screenWidth * 0.8,
                       child: const Text(
-                        'Editar Perfil',
+                        'Editar Palabra',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFFE6C068),
@@ -61,7 +61,7 @@ class EditProfile extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor ingrese los datos solicitados\npara editar su perfil',
+                        'Por favor ingrese los datos solicitados\npara editar la palabra seleccionada',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
@@ -77,25 +77,18 @@ class EditProfile extends StatelessWidget {
                     for (var item in lista)
                       Column(
                         children: [
-                          item == 'Descripcion' ? 
-                          CustomTextFormField(labelText: item, lineas: 3,)
-                          : 
                           CustomTextFormField(labelText: item),
-                          
                           const SizedBox(
                             height: 10,
                           ),
                         ],
                       ),
 
-                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: (){}),
+                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
                     
                   ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 30,
             )
           ],
         ),
