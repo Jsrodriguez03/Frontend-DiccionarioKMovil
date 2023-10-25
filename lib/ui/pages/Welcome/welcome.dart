@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
 
@@ -15,30 +16,30 @@ class Welcome extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          //LOGO
-          SizedBox(
-            height: 70,
-            width: 1200,
-            child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-          ),
-
+          const Logo(),
+          const SizedBox(height: 5),
           TextWelcome(
             appTheme: appTheme,
             size: 25,
             title: "¿Quieres aprender la lengua kankuama?",
             colorText: appTheme.color("secondary"),
           ),
-
+          const SizedBox(height: 15),
           TextWelcome(
             appTheme: appTheme,
             size: 15,
-            title: "Explota nuestro diccionario kankuamo",
+            title: "Explota nuestro diccionario \n kankuamo",
             colorText: appTheme.color("third"),
           ),
-
-          const CardWelcome(),
-
           const SizedBox(height: 20),
+          const CardWelcome(),
+          const SizedBox(height: 20),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Get.toNamed("/login-in");
+          //   },
+          //   child: const Text("Inisiar Sesión"),
+          // ),
           CustomElevatedButton(
             buttonText: "Iniciar Sesión",
             onPressed: () {
@@ -65,10 +66,10 @@ class CardWelcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 257,
-      height: 326,
+      height: 300,
       child: Container(
         width: 257,
-        height: 326,
+        height: 300,
         decoration: BoxDecoration(
           color: const Color(0xFF2B2E38),
           borderRadius: BorderRadius.circular(40),
@@ -83,85 +84,29 @@ class CardWelcome extends StatelessWidget {
         ),
         child: Stack(
           children: [
+            //Texto
             const Positioned(
               left: 28,
-              top: 205,
+              top: 195,
               child: SizedBox(
                 width: 198,
-                child: Text(
-                  'Tenemos todas las palabras que deseas aprender',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w700,
-                  ),
+                child: Texto(
+                  title: 'Tenemos todas las palabras que deseas aprender',
+                  colorText: Colors.white,
+                  size: 20,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
-            Positioned(
-              left: 28,
-              top: 41,
+
+            ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(40),
+              ),
               child: SizedBox(
-                width: 201,
-                height: 149.10,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 134.20,
-                      top: 0,
-                      child: Container(
-                        width: 38.86,
-                        height: 35.08,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF908E8E),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      top: 35.08,
-                      child: SizedBox(
-                        width: 201,
-                        height: 114.01,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 160.65,
-                                height: 114.01,
-                                decoration: const ShapeDecoration(
-                                  color: Color(0xFF908E8E),
-                                  shape: StarBorder.polygon(
-                                    sides: 3,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 67.49,
-                              top: 10.96,
-                              child: Container(
-                                width: 133.51,
-                                height: 99.76,
-                                decoration: const ShapeDecoration(
-                                  color: Color(0xFF908E8E),
-                                  shape: StarBorder.polygon(
-                                    sides: 3,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                height: 180,
+                width: 1000,
+                child: Image.asset("assets/imagen.png", fit: BoxFit.fill),
               ),
             ),
           ],
