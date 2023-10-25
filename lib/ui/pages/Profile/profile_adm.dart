@@ -96,7 +96,7 @@ class ProfileAdm extends StatelessWidget {
               color: appTheme.color("secondary"),
               fontWeight: FontWeight.w900,
             ),
-            textAlign: TextAlign.left, // Alineación a la izquierda
+            textAlign: TextAlign.left,
           ),
           const SizedBox(height: 10),
           CustomElevatedButton(
