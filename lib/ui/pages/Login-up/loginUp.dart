@@ -4,17 +4,18 @@ import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 
-class EditWord extends StatelessWidget {
-  const EditWord({super.key});
+class LoginUp extends StatelessWidget {
+  const LoginUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nueva Categoria", 
-    "Palabra en Español", 
-    "Palabra en Kankuamo", 
-    "Palabra en Ingles"
+    final lista = ["Nombre Completo",
+    "Teléfono",
+    "Correo",
+    "Contraseña",
+    "Repetir Contraseña"
     ];
 
     return Scaffold(
@@ -36,8 +37,8 @@ class EditWord extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(bottom: 40, top: 20),
-                width: screenWidth * 0.9,
+                margin: const EdgeInsets.only(bottom: 30, top: 10, left: 15, right: 15),
+                width: 420,
                 decoration: BoxDecoration(
                   color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
@@ -47,7 +48,7 @@ class EditWord extends StatelessWidget {
                     SizedBox(
                       width: screenWidth * 0.8,
                       child: const Text(
-                        'Editar Palabra',
+                        'Registrarse',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFFE6C068),
@@ -61,7 +62,7 @@ class EditWord extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor ingrese los datos solicitados\npara editar la palabra seleccionada',
+                        'Por favor llene todos\nlos campos requeridos',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Colors.white,
@@ -84,7 +85,7 @@ class EditWord extends StatelessWidget {
                         ],
                       ),
 
-                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
+                    CustomElevatedButton(buttonText: "Continuar", onPressed: (){},),
                     
                   ],
                 ),
