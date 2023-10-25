@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/edit_icon_profile.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/icon_input.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/input_text.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/separator.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/icon_input.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/input_text.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/separator.dart';
 
 class InputBoxProfile extends StatelessWidget {
   final String title;

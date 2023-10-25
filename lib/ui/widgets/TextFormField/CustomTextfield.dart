@@ -5,18 +5,18 @@ class CustomTextFormField extends StatelessWidget {
   final String labelText;
   final int lineas;
 
-  const CustomTextFormField({super.key, required this.labelText, this.lineas = 1});
+  const CustomTextFormField(
+      {super.key, required this.labelText, this.lineas = 1});
 
   @override
   Widget build(BuildContext context) {
-
     AppTheme theme = AppTheme();
-    
+
     return TextFormField(
       maxLines: lineas,
       textInputAction: TextInputAction.newline,
       decoration: InputDecoration(
-        labelText: labelText, // Utiliza el labelText proporcionado como parámetro
+        labelText: labelText,
         labelStyle: TextStyle(color: theme.color("third")),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: theme.color("primary")),

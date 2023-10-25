@@ -11,7 +11,7 @@ class Logo extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       child: SizedBox(
         height: 70,
-        width: 1200,
+        width: 200,
         child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
       ),
     );

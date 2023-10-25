@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
-import 'package:frontend_diccionario/ui/widgets/IconCircleProfile/icon_circle_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
-import 'package:frontend_diccionario/ui/widgets/TextFormField/input_box_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/input_box_profile.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
