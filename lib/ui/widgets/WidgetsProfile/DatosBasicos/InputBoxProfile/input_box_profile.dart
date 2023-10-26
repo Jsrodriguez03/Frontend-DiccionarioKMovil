@@ -22,32 +22,35 @@ class InputBoxProfile extends StatelessWidget {
     AppTheme appTheme = AppTheme();
     return Column(
       children: [
-        SizedBox(
-          width: 297,
-          height: 43,
-          child: Stack(
-            children: [
-              IconInput(icon: icon),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 4),
+          child: SizedBox(
+            width: 297,
+            height: 43,
+            child: Stack(
+              children: [
+                IconInput(icon: icon),
 
-              //Texto del Titulo
-              InputText(
-                text: title,
-                top: 6,
-                color: appTheme.color("third"),
-                size: 10,
-              ),
+                //Texto del Titulo
+                InputText(
+                  text: title,
+                  top: 5,
+                  color: appTheme.color("third"),
+                  size: 10,
+                ),
 
-              //Texto del Valor
-              InputText(
-                text: value,
-                top: 17,
-                color: Colors.white,
-                size: 15,
-              ),
+                //Texto del Valor
+                InputText(
+                  text: value,
+                  top: 16,
+                  color: Colors.white,
+                  size: 15,
+                ),
 
-              const Separator(),
-              const EditIconProfile(),
-            ],
+                const Separator(),
+                const EditIconProfile(),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 5),

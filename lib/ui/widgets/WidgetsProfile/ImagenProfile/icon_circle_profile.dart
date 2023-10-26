@@ -9,6 +9,7 @@ class IconCircleProfile extends StatelessWidget {
     required this.dimensionIconCircle,
     required this.colorIconCircle,
     required this.colorIcon,
+    this.onPressed,
   });
 
   final double directionIconCircle;
@@ -17,6 +18,7 @@ class IconCircleProfile extends StatelessWidget {
   final IconData iconCircle;
   final double? sizeIconCircle;
   final Color colorIcon;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +32,9 @@ class IconCircleProfile extends StatelessWidget {
           color: colorIconCircle,
           shape: const CircleBorder(),
         ),
-        child: Center(
-          child: Icon(
+        child: IconButton(
+          onPressed: onPressed,
+          icon: Icon(
             iconCircle,
             size: sizeIconCircle,
             color: colorIcon,
