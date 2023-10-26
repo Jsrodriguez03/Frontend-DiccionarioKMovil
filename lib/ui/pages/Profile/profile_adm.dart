@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/input_box_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
@@ -15,80 +19,18 @@ class ProfileAdm extends StatelessWidget {
       backgroundColor: appTheme.color("primary"),
       body: Column(
         children: [
-          //LOGO
-          SizedBox(
-            height: 70,
-            width: 1200,
-            child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
+          const Logo(),
+          const SizedBox(height: 15),
+          const ImagenPerfil(),
+          Texto(
+            title: "DATOS BÁSICOS",
+            colorText: appTheme.color("secondary"),
+            size: 20,
+            fontWeight: FontWeight.w900,
           ),
+          const DatosBasicos(),
 
-          const SizedBox(height: 25),
-
-          //IMAGEN DE PERFIL
-          SizedBox(
-            width: 139,
-            height: 149,
-            child: Stack(
-              children: [
-                IconCircleProfile(
-                  directionIconCircle: 0,
-                  dimensionIconCircle: 139,
-                  colorIconCircle: appTheme.color("fourth"),
-                  colorIcon: appTheme.color("third"),
-                  iconCircle: Icons.person_rounded,
-                  sizeIconCircle: 130,
-                ),
-                IconCircleProfile(
-                  directionIconCircle: 94,
-                  dimensionIconCircle: 42,
-                  colorIconCircle: appTheme.color("secondary"),
-                  colorIcon: Colors.black,
-                  iconCircle: Icons.camera_alt,
-                )
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 10),
-          Text(
-            "DATOS BÁSICOS",
-            style: TextStyle(
-              fontSize: 20,
-              color: appTheme.color("secondary"),
-              fontWeight: FontWeight.w900,
-            ),
-            textAlign: TextAlign.left, // Alineación a la izquierda
-          ),
-
-          //DATOS BÁSICO
-          //Inputs Datos Básicos
-          SizedBox(
-            width: 301.50,
-            height: 170,
-            child: Stack(
-              children: [
-                //NOMBRE
-                ListView(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  children: const [
-                    // InputBoxProfile(
-                    //   title: "Nombre",
-                    //   value: "Santiago",
-                    // ),
-                    // InputBoxProfile(
-                    //   title: "Telefono",
-                    //   value: "3001234567",
-                    // ),
-                    // InputBoxProfile(
-                    //   title: "Email",
-                    //   value: "santiago@gmail.com",
-                    // ),
-                  ],
-                )
-              ],
-            ),
-          ),
-
+          //BOTONES DE ADMINISTRACIÓN
           Text(
             "ADMINISTRACIÓN",
             style: TextStyle(
