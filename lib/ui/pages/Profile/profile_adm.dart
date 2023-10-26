@@ -4,9 +4,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.da
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/icon_circle_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/InputBoxProfile/input_box_profile.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
 
 class ProfileAdm extends StatelessWidget {

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
-import 'package:get/get.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
@@ -23,23 +22,7 @@ class EditProfile extends StatelessWidget {
       backgroundColor: theme.color("primary"),
       body: Column(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: IconButton(
-                  onPressed: () {
-                    Get.toNamed('/profile');
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              const Center(child: Logo()),
-            ],
-          ),
+          const LogoFlecha(navigation: "/profile"),
           const SizedBox(height: 20),
           Expanded(
             child: Container(

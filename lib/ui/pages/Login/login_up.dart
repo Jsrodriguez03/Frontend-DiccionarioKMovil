@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
-import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
+import 'package:get/get.dart';
 
 class LoginUp extends StatelessWidget {
   const LoginUp({super.key});
@@ -11,11 +12,12 @@ class LoginUp extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Nombre Completo",
-    "Teléfono",
-    "Correo",
-    "Contraseña",
-    "Repetir Contraseña"
+    final lista = [
+      "Nombre Completo",
+      "Teléfono",
+      "Correo",
+      "Contraseña",
+      "Repetir Contraseña"
     ];
 
     return Scaffold(
@@ -23,21 +25,12 @@ class LoginUp extends StatelessWidget {
         color: theme.color("primary"),
         child: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 70,
-              width: screenWidth,
-              child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+            const LogoFlecha(navigation: "/welcome"),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(bottom: 30, top: 10, left: 15, right: 15),
+                margin: const EdgeInsets.only(
+                    bottom: 30, top: 10, left: 15, right: 15),
                 width: 420,
                 decoration: BoxDecoration(
                   color: theme.color("fourth"),
@@ -62,15 +55,15 @@ class LoginUp extends StatelessWidget {
                       height: 10,
                     ),
                     const Text(
-                        'Por favor llene todos\nlos campos requeridos',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                        ),
+                      'Por favor llene todos\nlos campos requeridos',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -84,9 +77,12 @@ class LoginUp extends StatelessWidget {
                           ),
                         ],
                       ),
-
-                    CustomElevatedButton(buttonText: "Continuar", onPressed: (){},),
-                    
+                    CustomElevatedButton(
+                      buttonText: "Continuar",
+                      onPressed: () {
+                        Get.toNamed("/homeCategory");
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -94,7 +90,6 @@ class LoginUp extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(),
     );
   }
 }
