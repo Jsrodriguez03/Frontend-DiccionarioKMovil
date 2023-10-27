@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/Buttoms/icon_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/widgets/DataTable/data_table.dart';
 
 class ManageUser extends StatelessWidget {
   const ManageUser({super.key});
@@ -13,7 +13,7 @@ class ManageUser extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     const columnas = ["Id", "Nombre","Apellido", ""];
-    const datos = [
+    const filas = [
       ["1", "Luis", "Pinto"],
       ["2", "Nayid", "Castellar"],
       ["3", "Junior", "Rodriguez"],
@@ -54,23 +54,7 @@ class ManageUser extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  DataTable(
-                    columnSpacing: 20,
-                    columns: [
-                      
-                      for(var column in columnas)
-                        DataColumn(label: Text(column, style: TextStyle(color: theme.color("secondary"))))
-                    ],
-                     rows: [
-                      for(var dato in datos)
-                        DataRow(cells: [
-                          for(var info in dato)
-                          DataCell(Text(info, style: TextStyle(color: theme.color("third")))),
-                          
-                          const DataCell(CustomIconButtom())
-                        ])
-                      
-                     ])
+                  const CustomDataTable(columnas: columnas, filas: filas, tipo: 0,)
                 ],
               ),
           ))

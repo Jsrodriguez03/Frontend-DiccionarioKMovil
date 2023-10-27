@@ -4,6 +4,7 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 
 class AddWord extends StatelessWidget {
   const AddWord({super.key});
@@ -30,11 +31,7 @@ class AddWord extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            SizedBox(
-              height: 70,
-              width: screenWidth,
-              child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-            ),
+            const LogoFlecha(navigation: "/manage-word"),
             const SizedBox(height: 20),
             Expanded(
               child: Container(
@@ -108,7 +105,7 @@ class AddWord extends StatelessWidget {
                             )
                         ],
                       ),
-                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
+                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: (){},),
                   ],
                 ),
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/icon_buttom.dart';
+import 'package:frontend_diccionario/ui/widgets/DataTable/data_table.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
@@ -13,7 +15,7 @@ class ManageWord extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     const columnas = ["Id", "Palabra", "Categoria", ""];
-    const datos = [
+    const filas = [
       ["1", "Perro", "Animal"],
       ["2", "Brazo", "Cuerpo"],
       ["3", "Rojo", "Color"],
@@ -37,40 +39,28 @@ class ManageWord extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: ListView(
-                children: [
-                  SizedBox(
-                    width: screenWidth * 0.8,
-                    child: const Text(
-                      'Palabras',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xFFE6C068),
-                        fontSize: 30,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                children: const [
+                  Wrap(
+                    alignment: WrapAlignment.spaceBetween,
+                    children: [
+                      Text(
+                          'Palabras',
+                          style: TextStyle(
+                            color: Color(0xFFE6C068),
+                            fontSize: 30,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      CustomIconButtom(),
+                    ],
                   ),
-                  const SizedBox(
+
+                  
+                  SizedBox(
                     height: 10,
                   ),
-                  DataTable(
-                    columnSpacing: 20,
-                    columns: [
-                      
-                      for(var column in columnas)
-                        DataColumn(label: Text(column, style: TextStyle(color: theme.color("secondary"))))
-                    ],
-                     rows: [
-                      for(var dato in datos)
-                        DataRow(cells: [
-                          for(var info in dato)
-                          DataCell(Text(info, style: TextStyle(color: theme.color("third")))),
-
-                          const DataCell(CustomIconButtom())
-                        ])
-                      
-                     ])
+                  CustomDataTable(columnas: columnas, filas: filas, tipo: 1,)
                 ],
               ),
           ))

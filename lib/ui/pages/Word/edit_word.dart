@@ -3,6 +3,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 
 class EditWord extends StatelessWidget {
   const EditWord({super.key});
@@ -25,14 +26,9 @@ class EditWord extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              height: 70,
-              width: screenWidth,
-              child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+            const LogoFlecha(navigation: "/manage-word"),
+            const SizedBox(height: 20),
+            
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
