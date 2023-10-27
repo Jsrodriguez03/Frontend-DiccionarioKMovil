@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/icon_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
@@ -11,13 +12,13 @@ class ManageUser extends StatelessWidget {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
-    const columnas = ["Id", "Nombre", "Correo", "Telefono", ""];
+    const columnas = ["Id", "Nombre","Apellido", ""];
     const datos = [
-      ["1", "Luis", "Luis10...","39494", ":"],
-      ["2", "Nayid", "Nayid04...", "304958", ":"],
-      ["3", "Junior", "Junior03...", "288485", ":"],
-      ["4", "Juliana", "Juliana24...", "956993", ":"],
-      ["5", "Steven", "Steven12...", "848569", ":"],
+      ["1", "Luis", "Pinto"],
+      ["2", "Nayid", "Castellar"],
+      ["3", "Junior", "Rodriguez"],
+      ["4", "Juliana", "Aaron"],
+      ["5", "Steven", "Molina"],
     ];
 
     return Scaffold(
@@ -54,6 +55,7 @@ class ManageUser extends StatelessWidget {
                     height: 10,
                   ),
                   DataTable(
+                    columnSpacing: 20,
                     columns: [
                       
                       for(var column in columnas)
@@ -63,7 +65,9 @@ class ManageUser extends StatelessWidget {
                       for(var dato in datos)
                         DataRow(cells: [
                           for(var info in dato)
-                          DataCell(Text(info, style: TextStyle(color: theme.color("third"))))
+                          DataCell(Text(info, style: TextStyle(color: theme.color("third")))),
+                          
+                          const DataCell(CustomIconButtom())
                         ])
                       
                      ])

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/icon_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
@@ -13,11 +14,11 @@ class ManageWord extends StatelessWidget {
 
     const columnas = ["Id", "Palabra", "Categoria", ""];
     const datos = [
-      ["1", "Perro", "Animal", ":"],
-      ["2", "Brazo", "Cuerpo", ":"],
-      ["3", "Rojo", "Color", ":"],
-      ["4", "Dos", "Numero", ":"],
-      ["5", "Pierna", "Cuerpo", ":"],
+      ["1", "Perro", "Animal"],
+      ["2", "Brazo", "Cuerpo"],
+      ["3", "Rojo", "Color"],
+      ["4", "Dos", "Numero"],
+      ["5", "Pierna", "Cuerpo"],
     ];
 
     return Scaffold(
@@ -54,6 +55,7 @@ class ManageWord extends StatelessWidget {
                     height: 10,
                   ),
                   DataTable(
+                    columnSpacing: 20,
                     columns: [
                       
                       for(var column in columnas)
@@ -63,7 +65,9 @@ class ManageWord extends StatelessWidget {
                       for(var dato in datos)
                         DataRow(cells: [
                           for(var info in dato)
-                          DataCell(Text(info, style: TextStyle(color: theme.color("third"))))
+                          DataCell(Text(info, style: TextStyle(color: theme.color("third")))),
+
+                          const DataCell(CustomIconButtom())
                         ])
                       
                      ])
