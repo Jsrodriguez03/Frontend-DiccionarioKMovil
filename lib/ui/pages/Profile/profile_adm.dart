@@ -6,6 +6,7 @@ import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
+import 'package:get/get.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
@@ -41,12 +42,16 @@ class ProfileAdm extends StatelessWidget {
           const SizedBox(height: 10),
           CustomElevatedButton(
             buttonText: "Gestionar Usuarios",
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/manage-user");
+            },
           ),
           const SizedBox(height: 10),
           CustomElevatedButton(
             buttonText: "Gestionar Palabras",
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/manage-word");
+            },
           )
         ],
       ),
