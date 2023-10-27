@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,8 @@ class LoginIn extends StatelessWidget {
         color: theme.color("primary"),
         child: Column(
           children: [
-            const LogoFlecha(navigation: "/welcome"),
+            // const LogoFlecha(navigation: "/welcome"),
+            const Logo(),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -77,7 +79,6 @@ class LoginIn extends StatelessWidget {
                         Get.toNamed("/homeCategory");
                       },
                     ),
-                    
                   ],
                 ),
               ),

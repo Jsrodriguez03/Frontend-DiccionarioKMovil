@@ -22,7 +22,7 @@ class Buscador extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
         child: AnimationSearchBar(
           backIconColor: Colors.white,
           searchIconColor: Colors.white,
@@ -30,7 +30,6 @@ class Buscador extends StatelessWidget {
           centerTitle: titleCategory,
           onChanged: (text) => debugPrint(text),
           searchTextEditingController: controller,
-          horizontalPadding: 10,
           centerTitleStyle: TextStyle(
             color: appTheme.color("secondary"),
             fontSize: 35,

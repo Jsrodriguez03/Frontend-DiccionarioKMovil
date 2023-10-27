@@ -15,7 +15,7 @@ class Welcome extends StatelessWidget {
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Logo(),
           const SizedBox(height: 5),
@@ -32,24 +32,11 @@ class Welcome extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           const CardWelcome(),
-          const SizedBox(height: 20),
-          // ElevatedButton(
-          //   onPressed: () {
-          //     Get.toNamed("/login-in");
-          //   },
-          //   child: const Text("Inisiar Sesión"),
-          // ),
+          const SizedBox(height: 25),
           CustomElevatedButton(
             buttonText: "Iniciar Sesión",
             onPressed: () {
               Get.toNamed("/login-in");
-            },
-          ),
-          const SizedBox(height: 10),
-          CustomElevatedButton(
-            buttonText: "Registrarse",
-            onPressed: () {
-              Get.toNamed("/login-up");
             },
           ),
         ],
