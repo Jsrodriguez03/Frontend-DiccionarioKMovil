@@ -17,27 +17,30 @@ class Profile extends StatelessWidget {
     AppTheme appTheme = AppTheme();
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
-      body: Column(
-        children: [
-          const Logo(),
-          const SizedBox(height: 15),
-          const ImagenPerfil(),
-          Texto(
-            title: "DATOS BÁSICOS",
-            colorText: appTheme.color("secondary"),
-            size: 20,
-            fontWeight: FontWeight.w900,
-          ),
-          const DatosBasicos(),
-          const Descripcion(),
-          const SizedBox(height: 28),
-          CustomElevatedButton(
-            buttonText: "Cerrar Sesión",
-            onPressed: () {
-              Get.toNamed("/welcome");
-            },
-          )
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(left: 15),
+        child: Column(
+          children: [
+            const Logo(),
+            const SizedBox(height: 15),
+            const ImagenPerfil(),
+            Texto(
+              title: "DATOS BÁSICOS",
+              colorText: appTheme.color("secondary"),
+              size: 20,
+              fontWeight: FontWeight.w900,
+            ),
+            const DatosBasicos(),
+            const Descripcion(),
+            const SizedBox(height: 28),
+            CustomElevatedButton(
+              buttonText: "Cerrar Sesión",
+              onPressed: () {
+                Get.toNamed("/welcome");
+              },
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: const NavBarCategory(),
     );

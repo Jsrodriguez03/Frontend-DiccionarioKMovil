@@ -13,7 +13,7 @@ class Descripcion extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
     return SizedBox(
-      width: Get.width * 0.88,
+      width: Get.width * 0.80,
       height: 116,
       child: Stack(
         children: [
@@ -38,7 +38,7 @@ class Descripcion extends StatelessWidget {
                     left: 0,
                     top: 32,
                     child: SizedBox(
-                        width: Get.width * 0.88,
+                        width: Get.width * 0.80,
                         child: const Texto(
                           title:
                               'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
