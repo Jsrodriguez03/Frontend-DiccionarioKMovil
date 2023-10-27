@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 import 'package:get/get.dart';
 

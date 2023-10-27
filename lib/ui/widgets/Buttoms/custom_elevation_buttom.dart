@@ -13,8 +13,8 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     AppTheme theme = AppTheme();
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return ElevatedButton(
       onPressed: onPressed,

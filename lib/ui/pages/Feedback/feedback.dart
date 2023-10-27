@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Buttoms/CustomElevationButtom.dart';
+import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 
 class FeedBack extends StatelessWidget {
   const FeedBack({super.key});
