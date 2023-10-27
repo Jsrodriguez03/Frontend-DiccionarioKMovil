@@ -18,14 +18,16 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: TextStyle(color: theme.color("third")),
+        filled: true,
+        fillColor: theme.color("fourth"),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("primary")),
+          borderSide: BorderSide(color: theme.color("fourth")),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("primary")),
+          borderSide: BorderSide(color: theme.color("fourth")),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("primary")),
+          borderSide: BorderSide(color: theme.color("fourth")),
         ),
       ),
       style: const TextStyle(

@@ -33,7 +33,7 @@ class LoginUp extends StatelessWidget {
                     bottom: 30, top: 10, left: 15, right: 15),
                 width: 420,
                 decoration: BoxDecoration(
-                  color: theme.color("fourth"),
+                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(

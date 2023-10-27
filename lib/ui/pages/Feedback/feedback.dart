@@ -35,7 +35,7 @@ class FeedBack extends StatelessWidget {
                 width: screenWidth * 0.9,
                 margin: const EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
-                  color: theme.color("fourth"),
+                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(
@@ -71,7 +71,9 @@ class FeedBack extends StatelessWidget {
                         ],
                       ),
 
-                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
+                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: () {
+                      
+                    },),
                     
                   ],
                 ),

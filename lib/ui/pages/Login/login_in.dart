@@ -24,10 +24,10 @@ class LoginIn extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.only(
-                    bottom: 150, top: 40, left: 15, right: 15),
+                    bottom: 179, top: 70, left: 15, right: 15),
                 width: 420,
                 decoration: BoxDecoration(
-                  color: theme.color("fourth"),
+                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(
@@ -77,6 +77,7 @@ class LoginIn extends StatelessWidget {
                         Get.toNamed("/homeCategory");
                       },
                     ),
+                    
                   ],
                 ),
               ),

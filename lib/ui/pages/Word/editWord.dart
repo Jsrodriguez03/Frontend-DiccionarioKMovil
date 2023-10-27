@@ -39,7 +39,7 @@ class EditWord extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 40, top: 20),
                 width: screenWidth * 0.9,
                 decoration: BoxDecoration(
-                  color: theme.color("fourth"),
+                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(
@@ -84,7 +84,9 @@ class EditWord extends StatelessWidget {
                         ],
                       ),
 
-                    const CustomElevatedButton(buttonText: "Guardar Cambios"),
+                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: () {
+                      
+                    },),
                     
                   ],
                 ),
