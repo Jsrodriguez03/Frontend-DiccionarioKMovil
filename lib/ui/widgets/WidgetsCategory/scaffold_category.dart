@@ -22,7 +22,7 @@ class ScaffoldCategory extends StatelessWidget {
       backgroundColor: appTheme.color("primary"),
       body: Column(
         children: [
-          const Logo(),
+          const Logo(height: 70),
           Buscador(titleCategory: tittleCategoryScaffold),
           ListCard(titleElement: tittleElementScaffold),
         ],
