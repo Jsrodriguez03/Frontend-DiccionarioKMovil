@@ -15,7 +15,7 @@ class LogoFlecha extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 10),
+          padding: const EdgeInsets.only(right: 20),
           child: IconButton(
             onPressed: () {
               Get.toNamed(navigation);

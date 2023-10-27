@@ -21,6 +21,7 @@ class EditProfile extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.color("primary"),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const LogoFlecha(navigation: "/profile"),
           const SizedBox(height: 20),
@@ -67,6 +68,7 @@ class EditProfile extends StatelessWidget {
                   ),
                   for (var item in lista)
                     Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         item == 'Descripcion'
                             ? CustomTextFormField(
@@ -79,14 +81,15 @@ class EditProfile extends StatelessWidget {
                         ),
                       ],
                     ),
-                  CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: () {},),
+                  CustomElevatedButton(
+                    buttonText: "Guardar Cambios",
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ),
           ),
-          const SizedBox(
-            height: 30,
-          )
+          const SizedBox(height: 30)
         ],
       ),
     );
