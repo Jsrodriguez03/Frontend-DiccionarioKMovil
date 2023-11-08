@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,10 @@ class ButtonCard extends StatelessWidget {
             foregroundColor: Colors.white,
             textStyle: const TextStyle(fontSize: 14),
           ),
-          onPressed: () {},
+          onPressed: () {
+            final player = AudioPlayer();
+            player.play(UrlSource('assets/Yellow.wav'));
+          },
           child: Text(titulo),
         ),
       ),
