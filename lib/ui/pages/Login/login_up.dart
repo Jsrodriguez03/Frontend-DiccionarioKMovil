@@ -1,8 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:get/get.dart';
 
 class LoginUp extends StatelessWidget {
@@ -25,15 +26,13 @@ class LoginUp extends StatelessWidget {
         color: theme.color("primary"),
         child: Column(
           children: [
-            const LogoFlecha(navigation: "/welcome"),
+            const Logo(height: 90),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(
-                    bottom: 30, top: 10, left: 15, right: 15),
+                margin: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
                 width: 420,
                 decoration: BoxDecoration(
-                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(
@@ -82,6 +81,28 @@ class LoginUp extends StatelessWidget {
                       onPressed: () {
                         Get.toNamed("/homeCategory");
                       },
+                    ),
+                    const SizedBox(height: 5),
+                    Center(
+                      child: RichText(
+                        text: TextSpan(
+                          text: '¿Ya estás registrado? ',
+                          style: const TextStyle(color: Color(0xFF908E8E)),
+                          children: [
+                            TextSpan(
+                              text: 'Iniciar Sesión',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                decoration: TextDecoration.underline,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  Get.toNamed("/login-in");
+                                },
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
