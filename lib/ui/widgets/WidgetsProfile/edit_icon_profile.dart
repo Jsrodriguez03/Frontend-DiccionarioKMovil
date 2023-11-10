@@ -11,7 +11,7 @@ class EditIconProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
     return Positioned(
-      left: 240,
+      left: 220,
       top: 0,
       child: IconButton(
         onPressed: () {

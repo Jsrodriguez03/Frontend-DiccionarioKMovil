@@ -23,7 +23,7 @@ class EditProfile extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const LogoFlecha(navigation: "/profile"),
+          const LogoFlecha(navigation: "/profile-adm"),
           const SizedBox(height: 20),
           Expanded(
             child: Container(

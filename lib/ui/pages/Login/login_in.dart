@@ -23,14 +23,13 @@ class LoginIn extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(),
+          const Logo(height: 150),
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.only(left: 15, right: 15),
+              margin: const EdgeInsets.symmetric(horizontal: 15),
               width: 420,
               decoration: BoxDecoration(
-                // color: theme.color("fourth"),
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: ListView(

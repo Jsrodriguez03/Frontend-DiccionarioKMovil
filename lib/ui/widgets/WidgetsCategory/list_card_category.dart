@@ -17,7 +17,7 @@ class ListCard extends StatelessWidget {
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.65,
+            childAspectRatio: 0.6,
           ),
           itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
