@@ -38,7 +38,7 @@ class LoginIn extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.symmetric(horizontal: 15),
                 width: 420,
-                constraints: const BoxConstraints(maxHeight: 400),
+                constraints: const BoxConstraints(maxHeight: 410),
                 child: Expanded(
                   child: Column(
                     children: [
@@ -86,13 +86,13 @@ class LoginIn extends StatelessWidget {
                       ),
 
                       //Mensaje de Registrarse
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 10),
                       Center(
                         child: RichText(
                           text: TextSpan(
                             text: '¿No tienes cuenta? ',
                             style: const TextStyle(
-                                color: Color(0xFF908E8E), fontSize: 15),
+                                color: Color(0xFF908E8E), fontSize: 15.5),
                             children: [
                               TextSpan(
                                 text: 'Registrate',
