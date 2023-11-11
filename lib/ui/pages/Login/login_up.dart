@@ -35,7 +35,7 @@ class LoginUp extends StatelessWidget {
         color: theme.color("primary"),
         child: Column(
           children: [
-            const Logo(height: 90),
+            const Logo(heigth: 90),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
@@ -81,7 +81,8 @@ class LoginUp extends StatelessWidget {
                         children: [
                           CustomTextFormField(
                             labelText: item,
-                            controller: controllers[item] ?? TextEditingController(),
+                            controller:
+                                controllers[item] ?? TextEditingController(),
                           ),
                           const SizedBox(
                             height: 10,
@@ -130,4 +131,3 @@ class LoginUp extends StatelessWidget {
     );
   }
 }
-

@@ -17,14 +17,6 @@ class CardWelcome extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xFF2B2E38),
           borderRadius: BorderRadius.circular(40),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x3F000000),
-              blurRadius: 25,
-              offset: Offset(0, 10),
-              spreadRadius: 0,
-            ),
-          ],
         ),
         child: Stack(
           children: [
@@ -50,7 +42,7 @@ class CardWelcome extends StatelessWidget {
               child: SizedBox(
                 height: 180,
                 width: 1000,
-                child: Image.asset("assets/imagen.png", fit: BoxFit.fill),
+                child: Image.asset("assets/AllCategorys.png", fit: BoxFit.fill),
               ),
             ),
           ],

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 class Logo extends StatelessWidget {
   const Logo({
     super.key,
-    this.height = 70,
+    this.heigth = 70,
   });
 
-  final double? height;
+  final double? heigth;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: SizedBox(
-        height: height,
-        width: 200,
+        height: heigth,
+        width: heigth! * 2,
         child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
       ),
     );

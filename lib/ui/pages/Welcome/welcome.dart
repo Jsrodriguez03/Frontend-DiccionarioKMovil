@@ -12,29 +12,34 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
+    double screenHeigth = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(),
-          const SizedBox(height: 5),
+          Logo(heigth: screenHeigth * 0.15),
+          SizedBox(height: screenHeigth * 0.05),
           TextWelcome(
             size: 25,
             title: "¿Quieres aprender la lengua kankuama?",
             colorText: appTheme.color("secondary"),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 5),
           TextWelcome(
-            size: 15,
+            size: 17,
             title: "Explora nuestro diccionario \n kankuamo",
             colorText: appTheme.color("third"),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           const CardWelcome(),
-          const SizedBox(height: 25),
+          SizedBox(height: screenHeigth * 0.07),
           CustomElevatedButton(
             buttonText: "Iniciar Sesión",
+            borderRadius: 50,
+            width: 0.6,
+            heigth: 50,
             onPressed: () {
               Get.toNamed("/login-in");
             },

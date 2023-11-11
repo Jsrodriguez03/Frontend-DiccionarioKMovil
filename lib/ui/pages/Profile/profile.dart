@@ -22,7 +22,7 @@ class Profile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Logo(height: 70),
+            const Logo(heigth: 70),
             const SizedBox(height: 15),
             const ImagenPerfil(),
             Texto(
