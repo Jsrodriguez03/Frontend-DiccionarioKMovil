@@ -50,11 +50,7 @@ class Descripcion extends StatelessWidget {
                   ),
 
                   //Icono de Editar
-                  const Positioned(
-                    left: 240,
-                    top: 0,
-                    child: EditIconProfile(),
-                  ),
+                  const EditIconProfile(),
                 ],
               ),
             ),

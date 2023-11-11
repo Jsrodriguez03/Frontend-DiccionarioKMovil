@@ -11,15 +11,17 @@ class Flecha extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 5),
+      padding: const EdgeInsets.only(top: 25, left: 5),
       child: IconButton(
         onPressed: () {
           Get.toNamed(navigation);
         },
-        icon: const Icon(
+        icon: Icon(
           Icons.arrow_back,
           color: Colors.white,
+          size: screenWidth * 0.075,
         ),
       ),
     );
