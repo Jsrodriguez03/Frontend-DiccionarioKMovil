@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/config/Util/arguments.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';

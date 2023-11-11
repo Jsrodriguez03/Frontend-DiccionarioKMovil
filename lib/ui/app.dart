@@ -10,7 +10,6 @@ import 'package:frontend_diccionario/ui/pages/Category/colors_category.dart';
 import 'package:frontend_diccionario/ui/pages/Category/numbers_category.dart';
 import 'package:frontend_diccionario/ui/pages/Profile/edit_profile.dart';
 import 'package:frontend_diccionario/ui/pages/Word/edit_word.dart';
-import 'package:frontend_diccionario/ui/pages/Feedback/feed_back.dart';
 import 'package:frontend_diccionario/ui/pages/Login/login_in.dart';
 import 'package:frontend_diccionario/ui/pages/Category/home_category.dart';
 import 'package:frontend_diccionario/ui/pages/Profile/profile.dart';
@@ -45,7 +44,6 @@ class MyApp extends StatelessWidget {
 
         //VISTAS NAYID
         '/edit-word': (context) => const EditWord(),
-        '/feedback': (context) => const FeedBack(),
         '/edit-profile': (context) => const EditProfile(),
         '/add-word': (context) => const AddWord(),
         '/login-in': (context) => const LoginIn(),

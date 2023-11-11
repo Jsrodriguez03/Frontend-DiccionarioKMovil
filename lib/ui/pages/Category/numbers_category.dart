@@ -9,6 +9,7 @@ class NumberCategory extends StatelessWidget {
     return const ScaffoldCategory(
       tittleCategoryScaffold: "NÚMEROS",
       tittleElementScaffold: "Número",
+      index: 3,
     );
   }
 }

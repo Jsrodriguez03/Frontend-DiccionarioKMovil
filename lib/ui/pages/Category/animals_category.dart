@@ -9,6 +9,7 @@ class AnimalsCategory extends StatelessWidget {
     return const ScaffoldCategory(
       tittleCategoryScaffold: "ANIMALES",
       tittleElementScaffold: "Animal",
+      index: 1,
     );
   }
 }

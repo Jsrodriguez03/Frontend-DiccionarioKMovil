@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/WidgetsHomeCategory/category_carousel.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/WidgetsHomeCategory/fondo_degradrado_home_category.dart';
+import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 
 class HomeCategory extends StatefulWidget {
   const HomeCategory({super.key});
@@ -59,7 +59,7 @@ class HomeCategoryState extends State<HomeCategory> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(),
+      bottomNavigationBar: const NavBarCategory(selectedIndex: 0),
     );
   }
 }

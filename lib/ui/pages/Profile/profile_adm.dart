@@ -4,8 +4,8 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
-import 'package:frontend_diccionario/ui/widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 import 'package:get/get.dart';
 
 class ProfileAdm extends StatelessWidget {
@@ -59,7 +59,7 @@ class ProfileAdm extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(),
+      bottomNavigationBar: const NavBarCategory(selectedIndex: 5),
     );
   }
 }

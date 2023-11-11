@@ -9,6 +9,7 @@ class ColorsCategory extends StatelessWidget {
     return const ScaffoldCategory(
       tittleCategoryScaffold: "COLORES",
       tittleElementScaffold: "Color",
+      index: 2,
     );
   }
 }

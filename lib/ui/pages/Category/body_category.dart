@@ -9,6 +9,7 @@ class BodyCategory extends StatelessWidget {
     return const ScaffoldCategory(
       tittleCategoryScaffold: "CUERPO",
       tittleElementScaffold: "Cuerpo",
+      index: 4,
     );
   }
 }
