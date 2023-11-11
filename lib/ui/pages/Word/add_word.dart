@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/Widgets/Navbar/navbar.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
@@ -32,11 +31,11 @@ class AddWord extends StatelessWidget {
           children: [
             const SizedBox(height: 10),
             const LogoFlecha(navigation: "/manage-word"),
-            const SizedBox(height: 20),
+            const SizedBox(height: 5),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.only(bottom: 40, top: 20),
+                margin: const EdgeInsets.only(bottom: 0),
                 width: screenWidth * 0.9,
                 decoration: BoxDecoration(
                   //color: theme.color("fourth"),
@@ -113,7 +112,6 @@ class AddWord extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(),
     );
   }
 }

@@ -24,7 +24,7 @@ class EditProfile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const LogoFlecha(navigation: "/profile"),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(10),
