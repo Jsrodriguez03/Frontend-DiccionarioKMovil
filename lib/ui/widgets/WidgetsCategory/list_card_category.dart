@@ -3,28 +3,30 @@ import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/card_category.da
 
 class ListCard extends StatelessWidget {
   const ListCard({
-    super.key,
+    Key? key,
     required this.titleElement,
-  });
+  }) : super(key: key);
 
   final String titleElement;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView(
-        children: List<Widget>.generate(8, (index) {
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CardCategory(titleCard: titleElement),
-                CardCategory(titleCard: titleElement),
-              ],
-            ),
-          );
-        }),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.6,
+          ),
+          itemCount: 8,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+              child: CardCategory(titleCard: titleElement),
+            );
+          },
+        ),
       ),
     );
   }

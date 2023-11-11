@@ -15,7 +15,7 @@ class DatosBasicos extends StatelessWidget {
         children: [
           //NOMBRE
           ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             children: const [
               InputBoxProfile(
                 title: "Nombre",

@@ -18,11 +18,11 @@ class Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
       body: Padding(
-        padding: const EdgeInsets.only(left: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Logo(),
+            const Logo(height: 70),
             const SizedBox(height: 15),
             const ImagenPerfil(),
             Texto(

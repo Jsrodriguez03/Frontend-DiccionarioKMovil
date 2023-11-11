@@ -27,7 +27,7 @@ class Welcome extends StatelessWidget {
           const SizedBox(height: 15),
           TextWelcome(
             size: 15,
-            title: "Explota nuestro diccionario \n kankuamo",
+            title: "Explora nuestro diccionario \n kankuamo",
             colorText: appTheme.color("third"),
           ),
           const SizedBox(height: 20),

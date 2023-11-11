@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Logo extends StatelessWidget {
   const Logo({
     super.key,
-    this.height,
+    this.height = 70,
   });
 
   final double? height;
