@@ -25,7 +25,7 @@ class EditWord extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const LogoFlecha(navigation: "/manage-word"),
+            const LogoFlecha(),
             const SizedBox(height: 10),
             
             Expanded(

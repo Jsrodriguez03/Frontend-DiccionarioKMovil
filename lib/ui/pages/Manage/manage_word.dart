@@ -26,7 +26,7 @@ class ManageWord extends StatelessWidget {
       backgroundColor: theme.color("primary"),
       body: Column(
         children: [
-          const LogoFlecha(navigation: "/profile-adm"),
+          const LogoFlecha(),
           const SizedBox(height: 20),
           Expanded(
             child: Container(

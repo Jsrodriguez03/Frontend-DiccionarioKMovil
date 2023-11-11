@@ -4,11 +4,8 @@ import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 
 class LogoFlecha extends StatelessWidget {
   const LogoFlecha({
-    super.key,
-    required this.navigation,
+    super.key
   });
-
-  final String navigation;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class LogoFlecha extends StatelessWidget {
           padding: const EdgeInsets.only(right: 20),
           child: IconButton(
             onPressed: () {
-              Get.toNamed(navigation);
+              Get.back();
             },
             icon: const Icon(
               Icons.arrow_back,

@@ -30,7 +30,7 @@ class AddWord extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            const LogoFlecha(navigation: "/manage-word"),
+            const LogoFlecha(),
             const SizedBox(height: 5),
             Expanded(
               child: Container(
