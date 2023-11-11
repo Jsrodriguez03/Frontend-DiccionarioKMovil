@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextField.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 
 class EditProfile extends StatelessWidget {
-  const EditProfile({super.key});
+  const EditProfile({Key? key});
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
+
     final lista = [
       "Nuevo Nombre",
       "Nuevo Email",
@@ -18,7 +19,13 @@ class EditProfile extends StatelessWidget {
       "Descripcion"
     ];
 
-    //final Arguments arguments = ModalRoute.of(context).settings.arguments;
+    // Mapa de controladores para gestionar la información de los campos.
+    final controllers = {
+      "Nuevo Nombre": TextEditingController(),
+      "Nuevo Email": TextEditingController(),
+      "Nuevo Telefono": TextEditingController(),
+      "Descripcion": TextEditingController(),
+    };
 
     return Scaffold(
       backgroundColor: theme.color("primary"),
@@ -33,7 +40,6 @@ class EditProfile extends StatelessWidget {
               width: screenWidth * 0.9,
               margin: const EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
-                //color: theme.color("fourth"),
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: ListView(
@@ -51,9 +57,7 @@ class EditProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   const Text(
                     'Por favor ingrese los datos solicitados\npara editar su perfil',
                     textAlign: TextAlign.center,
@@ -65,9 +69,7 @@ class EditProfile extends StatelessWidget {
                       height: 0,
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   for (var item in lista)
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -76,16 +78,23 @@ class EditProfile extends StatelessWidget {
                             ? CustomTextFormField(
                                 labelText: item,
                                 lineas: 3,
+                                controller: controllers[item] ?? TextEditingController(),
                               )
-                            : CustomTextFormField(labelText: item),
-                        const SizedBox(
-                          height: 10,
-                        ),
+                            : CustomTextFormField(
+                                labelText: item,
+                                controller: controllers[item] ?? TextEditingController(),
+                              ),
+                        const SizedBox(height: 10),
                       ],
                     ),
                   CustomElevatedButton(
                     buttonText: "Guardar Cambios",
-                    onPressed: () {},
+                    onPressed: () {
+                      // Usa los controladores para acceder a la información del formulario.
+                      for (var controller in controllers.entries) {
+                        print('${controller.key}: ${controller.value.text}');
+                      }
+                    },
                   ),
                 ],
               ),

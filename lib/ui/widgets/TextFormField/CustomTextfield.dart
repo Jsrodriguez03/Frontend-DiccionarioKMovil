@@ -4,15 +4,21 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 class CustomTextFormField extends StatelessWidget {
   final String labelText;
   final int lineas;
+  final TextEditingController controller;
 
-  const CustomTextFormField(
-      {super.key, required this.labelText, this.lineas = 1});
+  const CustomTextFormField({
+    Key? key,
+    required this.labelText,
+    this.lineas = 1,
+    required this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
 
     return TextFormField(
+      controller: controller,
       maxLines: lineas,
       textInputAction: TextInputAction.newline,
       decoration: InputDecoration(

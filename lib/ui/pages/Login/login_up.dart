@@ -2,12 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
+import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:get/get.dart';
 
 class LoginUp extends StatelessWidget {
-  const LoginUp({super.key});
+  const LoginUp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +20,15 @@ class LoginUp extends StatelessWidget {
       "Contraseña",
       "Repetir Contraseña"
     ];
+
+    // Mapa que contendrá los controladores, inicializados con controladores por defecto.
+    final controllers = {
+      "Nombre Completo": TextEditingController(),
+      "Teléfono": TextEditingController(),
+      "Correo": TextEditingController(),
+      "Contraseña": TextEditingController(),
+      "Repetir Contraseña": TextEditingController(),
+    };
 
     return Scaffold(
       body: Container(
@@ -70,7 +79,10 @@ class LoginUp extends StatelessWidget {
                     for (var item in lista)
                       Column(
                         children: [
-                          CustomTextFormField(labelText: item),
+                          CustomTextFormField(
+                            labelText: item,
+                            controller: controllers[item] ?? TextEditingController(),
+                          ),
                           const SizedBox(
                             height: 10,
                           ),
@@ -79,6 +91,10 @@ class LoginUp extends StatelessWidget {
                     CustomElevatedButton(
                       buttonText: "Continuar",
                       onPressed: () {
+                        // Utiliza los controllers para acceder a la información.
+                        for (var controller in controllers.entries) {
+                          print('${controller.key}: ${controller.value.text}');
+                        }
                         Get.toNamed("/homeCategory");
                       },
                     ),
@@ -114,3 +130,4 @@ class LoginUp extends StatelessWidget {
     );
   }
 }
+

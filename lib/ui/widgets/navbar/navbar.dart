@@ -55,6 +55,26 @@ class _NavBarCategoryState extends State<NavBarCategory> {
     );
   }
 
+  List<BottomNavigationBarItem> createNavItems() {
+    final List<IconData> icons = [
+      Icons.home,
+      Icons.pets,
+      Icons.palette_rounded,
+      Icons.nineteen_mp_rounded,
+      Icons.man,
+      Icons.account_circle_sharp,
+    ];
+
+    return List.generate(icons.length, (index) {
+      return buildNavItem(
+        icons[index],
+        route: navigationRoutes[index],
+        activeColor: "secondary",
+        inactiveColor: "third",
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -67,14 +87,7 @@ class _NavBarCategoryState extends State<NavBarCategory> {
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: const TextStyle(height: 0),
       unselectedLabelStyle: const TextStyle(height: 0),
-      items: [
-        buildNavItem(Icons.home, route: "/home", activeColor: "secondary", inactiveColor: "third"),
-        buildNavItem(Icons.pets, route: "/animals", activeColor: "secondary", inactiveColor: "third"),
-        buildNavItem(Icons.palette_rounded, route: "/colors", activeColor: "secondary", inactiveColor: "third"),
-        buildNavItem(Icons.nineteen_mp_rounded, route: "/numbers", activeColor: "secondary", inactiveColor: "third"),
-        buildNavItem(Icons.man, route: "/bodys", activeColor: "secondary", inactiveColor: "third"),
-        buildNavItem(Icons.account_circle_sharp, route: "/profile", activeColor: "secondary", inactiveColor: "third"),
-      ],
+      items: createNavItems(), // Utilizando la lista dinámica de íconos
     );
   }
 }

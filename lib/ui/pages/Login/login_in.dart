@@ -1,20 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
+import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:get/get.dart';
 
+
 class LoginIn extends StatelessWidget {
-  const LoginIn({super.key});
+  const LoginIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    final lista = ["Correo", "Contraseña"];
+
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
       backgroundColor: theme.color("primary"),
@@ -66,18 +69,30 @@ class LoginIn extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      for (var item in lista)
-                        Column(
-                          children: [
-                            CustomTextFormField(labelText: item),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          CustomTextFormField(
+                            labelText: "Correo",
+                            controller: emailController,
+                          ),
+                          const SizedBox(height: 15),
+                          CustomTextFormField(
+                            labelText: "Contraseña",
+                            controller: passwordController,
+                          ),
+                          const SizedBox(height: 15),
+                        ],
+                      ),
                       CustomElevatedButton(
                         buttonText: "Continuar",
                         onPressed: () {
+                          final email = emailController.text;
+                          final password = passwordController.text;
+
+                          // Realizar acciones con la información ingresada
+                          print("Correo: $email");
+                          print("Contraseña: $password");
+
                           Get.toNamed("/homeCategory");
                         },
                       ),

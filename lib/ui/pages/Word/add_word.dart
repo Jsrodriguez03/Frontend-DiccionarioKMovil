@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
+import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
 
 class AddWord extends StatelessWidget {
-  const AddWord({super.key});
+  const AddWord({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,18 @@ class AddWord extends StatelessWidget {
       "Imagen": ["Imagen de la palabra"]
     };
 
+    // Mapa que contendrá los controladores, inicializados con controladores por defecto.
+    final controllers = {
+      "Categoria": TextEditingController(),
+      "Palabra en Español": TextEditingController(),
+      "Palabra en Kankuamo": TextEditingController(),
+      "Palabra en Ingles": TextEditingController(),
+      "Audio en Español": TextEditingController(),
+      "Audio en Kankuamo": TextEditingController(),
+      "Audio en Ingles": TextEditingController(),
+      "Imagen de la palabra": TextEditingController(),
+    };
+
     return Scaffold(
       body: Container(
         color: theme.color("primary"),
@@ -38,7 +50,6 @@ class AddWord extends StatelessWidget {
                 margin: const EdgeInsets.only(bottom: 0),
                 width: screenWidth * 0.9,
                 decoration: BoxDecoration(
-                  //color: theme.color("fourth"),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: ListView(
@@ -46,10 +57,11 @@ class AddWord extends StatelessWidget {
                     SizedBox(
                       width: screenWidth * 0.8,
                       child: Texto(
-                          title: "Agregar Palabra",
-                          colorText: theme.color("secondary"),
-                          size: 30,
-                          fontWeight: FontWeight.w700),
+                        title: "Agregar Palabra",
+                        colorText: theme.color("secondary"),
+                        size: 30,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     const Text(
@@ -65,8 +77,6 @@ class AddWord extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     for (var entry in datos.entries)
-                      //var categoria = entry.key;
-                      //var elementos = entry.value;
                       Column(
                         children: [
                           Text(
@@ -96,19 +106,29 @@ class AddWord extends StatelessWidget {
                           for (var elemento in entry.value)
                             Column(
                               children: [
-                                CustomTextFormField(labelText: elemento),
-                                const SizedBox(
-                                  height: 10,
+                                // Utiliza ?? para asignar un controlador por defecto si es null.
+                                CustomTextFormField(
+                                  labelText: elemento,
+                                  controller: controllers[elemento] ?? TextEditingController(),
                                 ),
+                                const SizedBox(height: 10),
                               ],
-                            )
+                            ),
                         ],
                       ),
-                    CustomElevatedButton(buttonText: "Guardar Cambios", onPressed: (){},),
+                    CustomElevatedButton(
+                      buttonText: "Guardar Cambios",
+                      onPressed: () {
+                        // Utiliza los controllers para acceder a la información.
+                        for (var controller in controllers.entries) {
+                          print('${controller.key}: ${controller.value.text}');
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
