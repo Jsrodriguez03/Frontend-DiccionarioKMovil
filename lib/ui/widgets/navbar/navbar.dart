@@ -36,9 +36,7 @@ class _NavBarCategoryState extends State<NavBarCategory> {
     setState(() {
       selectedIndex = index;
       final String route = navigationRoutes[index];
-      (route == "/home")
-          ? Get.offAllNamed(route)
-          : Get.toNamed(route);
+      (route == "/home") ? Get.offAllNamed(route) : Get.toNamed(route);
     });
   }
 
@@ -49,8 +47,8 @@ class _NavBarCategoryState extends State<NavBarCategory> {
     required String inactiveColor,
   }) {
     return BottomNavigationBarItem(
-      icon: Icon(icon, color: theme.color(inactiveColor)),
-      activeIcon: Icon(icon, color: theme.color(activeColor)),
+      icon: Icon(icon, color: theme.color(inactiveColor), size: 33),
+      activeIcon: Icon(icon, color: theme.color(activeColor), size: 40),
       label: "",
     );
   }

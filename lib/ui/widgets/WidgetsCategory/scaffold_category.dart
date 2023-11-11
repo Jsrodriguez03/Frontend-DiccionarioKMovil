@@ -23,8 +23,10 @@ class ScaffoldCategory extends StatelessWidget {
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(heigth: 70),
+          const SizedBox(height: 30),
+          const Logo(heigth: 100),
           Buscador(titleCategory: tittleCategoryScaffold),
           ListCard(titleElement: tittleElementScaffold),
         ],

@@ -13,12 +13,12 @@ class ButtonCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 7),
       child: SizedBox(
-        width: Get.width * 0.37,
+        width: Get.width * 0.39,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: appTheme.color("primary"),
             foregroundColor: Colors.white,
-            textStyle: const TextStyle(fontSize: 14),
+            textStyle: const TextStyle(fontSize: 16),
           ),
           onPressed: () {
             final player = AudioPlayer();

@@ -46,20 +46,18 @@ class CardCategory extends StatelessWidget {
                 child: Texto(
                   title: titleCard,
                   colorText: appTheme.color("secondary"),
-                  size: 23,
+                  size: 25,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              // Verificar si se deben mostrar los botones
-              if (showButtons)
-                const Column(
-                  children: [
-                    ButtonCard(titulo: "Kankuamo"),
-                    ButtonCard(titulo: "Inglés"),
-                    SizedBox(height: 5)
-                  ],
-                ),
+              const Column(
+                children: [
+                  ButtonCard(titulo: "Kankuamo"),
+                  ButtonCard(titulo: "Inglés"),
+                  SizedBox(height: 5)
+                ],
+              ),
             ],
           ),
         ),

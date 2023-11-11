@@ -15,9 +15,11 @@ class ListCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //Cards Por Fila
             crossAxisCount: 2,
-            childAspectRatio: 0.6,
+            //Tamaño de la Card
+            childAspectRatio: MediaQuery.of(context).size.width * 0.0017,
           ),
           itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
