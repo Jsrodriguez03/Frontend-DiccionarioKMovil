@@ -54,7 +54,7 @@ class HomeCategoryState extends State<HomeCategory> {
               bottom: MediaQuery.of(context).size.height * 0.01,
               left: 0,
               right: 0,
-              child: const Logo(heigth: 85),
+              child: Logo(heigth: MediaQuery.of(context).size.height * 0.12),
             ),
           ],
         ),

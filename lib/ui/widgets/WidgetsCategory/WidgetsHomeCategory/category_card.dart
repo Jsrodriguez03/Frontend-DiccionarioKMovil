@@ -32,7 +32,7 @@ class CategoryCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 320,
+                height: MediaQuery.of(context).size.height * 0.45,
                 margin: const EdgeInsets.only(top: 20),
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(

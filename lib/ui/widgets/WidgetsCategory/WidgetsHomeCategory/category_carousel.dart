@@ -21,7 +21,7 @@ class CategoryCarousel extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: CarouselSlider(
         options: CarouselOptions(
-          height: 410,
+          height: MediaQuery.of(context).size.height * 0.55,
           aspectRatio: 16 / 9,
           viewportFraction: 0.70,
           enlargeCenterPage: true,
