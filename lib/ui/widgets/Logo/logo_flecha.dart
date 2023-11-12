@@ -3,9 +3,7 @@ import 'package:get/get.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 
 class LogoFlecha extends StatelessWidget {
-  const LogoFlecha({
-    super.key
-  });
+  const LogoFlecha({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class LogoFlecha extends StatelessWidget {
             ),
           ),
         ),
-        const Center(child: Logo()),
+        const Center(child: Logo(heigth: 100)),
       ],
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/icon_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/DataTable/data_table.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/logo_flecha.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
+import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
 class ManageWord extends StatelessWidget {
@@ -9,11 +10,10 @@ class ManageWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
-    const columnas = ["Id", "Palabra", "Categoria", ""];
+    const columnas = ["Id", "Palabra", "Categoria", "Acciones"];
     const filas = [
       ["1", "Perro", "Animal"],
       ["2", "Brazo", "Cuerpo"],
@@ -24,25 +24,29 @@ class ManageWord extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: theme.color("primary"),
-      body: Column(
+      body: Stack(
         children: [
-          const LogoFlecha(),
-          const SizedBox(height: 20),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              width: screenWidth * 0.9,
-              margin: const EdgeInsets.only(bottom: 20),
-              decoration: BoxDecoration(
-                //color: theme.color("fourth"),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: ListView(
-                children: const [
-                  Wrap(
-                    alignment: WrapAlignment.spaceBetween,
-                    children: [
-                      Text(
+          const Positioned(
+            top: 0,
+            left: 0,
+            child: Flecha(navigation: "/profile"),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Logo(heigth: screenWidth * 0.35),
+              const SizedBox(height: 5),
+              Container(
+                padding: const EdgeInsets.all(10),
+                width: screenWidth * 0.9,
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                constraints: const BoxConstraints(maxHeight: 500),
+                child: const Expanded(
+                    child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
                           'Palabras',
                           style: TextStyle(
                             color: Color(0xFFE6C068),
@@ -51,18 +55,21 @@ class ManageWord extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                      CustomIconButtom(),
-                    ],
-                  ),
-
-                  
-                  SizedBox(
-                    height: 10,
-                  ),
-                  CustomDataTable(columnas: columnas, filas: filas, tipo: 1,)
-                ],
-              ),
-          ))
+                        Spacer(),
+                        CustomIconButtom(),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    CustomDataTable(
+                      columnas: columnas,
+                      filas: filas,
+                      tipo: 1,
+                    )
+                  ],
+                )),
+              )
+            ],
+          ),
         ],
       ),
     );
