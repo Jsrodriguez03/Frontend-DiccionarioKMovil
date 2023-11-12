@@ -10,18 +10,14 @@ class EditIconProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
-    return Positioned(
-      left: 220,
-      top: 0,
-      child: IconButton(
-        onPressed: () {
-          Get.toNamed("/edit-profile");
-        },
-        icon: Icon(
-          Icons.edit_note_outlined,
-          color: appTheme.color("third"),
-          size: 20,
-        ),
+    return IconButton(
+      onPressed: () {
+        Get.toNamed("/edit-profile");
+      },
+      icon: Icon(
+        Icons.edit_note_outlined,
+        color: appTheme.color("third"),
+        size: 30,
       ),
     );
   }

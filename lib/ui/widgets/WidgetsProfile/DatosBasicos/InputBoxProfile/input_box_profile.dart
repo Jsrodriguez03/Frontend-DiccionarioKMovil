@@ -25,7 +25,7 @@ class InputBoxProfile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 4),
           child: SizedBox(
-            width: 297,
+            width: 600,
             height: 43,
             child: Stack(
               children: [
@@ -36,15 +36,15 @@ class InputBoxProfile extends StatelessWidget {
                   text: title,
                   top: 5,
                   color: appTheme.color("third"),
-                  size: 10,
+                  size: 15,
                 ),
 
                 //Texto del Valor
                 InputText(
                   text: value,
-                  top: 16,
+                  top: 25,
                   color: Colors.white,
-                  size: 15,
+                  size: 20,
                 ),
 
                 const Separator(),

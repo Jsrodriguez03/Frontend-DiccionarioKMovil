@@ -7,8 +7,9 @@ class Separator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: 280,
+      width: 500,
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(

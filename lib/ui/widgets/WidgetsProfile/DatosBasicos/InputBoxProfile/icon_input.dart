@@ -18,7 +18,7 @@ class IconInput extends StatelessWidget {
       child: Icon(
         icon,
         color: appTheme.color("third"),
-        size: 35,
+        size: 45,
       ),
     );
   }

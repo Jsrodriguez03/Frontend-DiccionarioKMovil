@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String buttonText;
   final VoidCallback? onPressed;
   final double borderRadius, width, heigth;
+  final Color colorButtom, colorText;
 
   const CustomElevatedButton({
     super.key,
@@ -13,19 +13,20 @@ class CustomElevatedButton extends StatelessWidget {
     this.borderRadius = 10,
     this.width = 0.9,
     this.heigth = 57,
+    this.colorButtom = const Color(0xFFE6C068),
+    this.colorText = const Color(0xFF1F2029),
   });
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: theme.color("secondary"),
+        backgroundColor: colorButtom,
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: theme.color("secondary")),
+          side: BorderSide(width: 1, color: colorButtom),
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         minimumSize: Size(screenWidth * width, heigth),
@@ -33,7 +34,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: Text(
         buttonText,
         style: TextStyle(
-          color: theme.color("primary"),
+          color: colorText,
           fontSize: 20,
           fontFamily: 'Roboto',
           fontWeight: FontWeight.w700,

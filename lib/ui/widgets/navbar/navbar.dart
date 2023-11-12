@@ -47,7 +47,7 @@ class _NavBarCategoryState extends State<NavBarCategory> {
     required String inactiveColor,
   }) {
     return BottomNavigationBarItem(
-      icon: Icon(icon, color: theme.color(inactiveColor), size: 33),
+      icon: Icon(icon, color: theme.color(inactiveColor), size: 30),
       activeIcon: Icon(icon, color: theme.color(activeColor), size: 40),
       label: "",
     );
