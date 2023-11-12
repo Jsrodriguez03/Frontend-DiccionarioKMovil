@@ -19,19 +19,18 @@ class Descripcion extends StatelessWidget {
               Texto(
                 title: "DESCRIPCIÓN",
                 colorText: appTheme.color("secondary"),
-                size: 25,
+                size: 20,
                 fontWeight: FontWeight.w900,
               ),
               const Spacer(),
               const EditIconProfile()
             ],
           ),
-          const SizedBox(height: 5),
           const Texto(
             title:
                 'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
             colorText: Colors.white,
-            size: 18,
+            size: 15,
             fontWeight: FontWeight.normal,
             textAlingTitle: TextAlign.justify,
           )

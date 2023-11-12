@@ -28,7 +28,7 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 15),
             const ImagenPerfil(),
             const DatosBasicos(),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             const Descripcion(),
             const SizedBox(height: 28),
             CustomElevatedButton(

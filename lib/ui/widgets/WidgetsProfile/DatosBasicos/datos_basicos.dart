@@ -19,12 +19,12 @@ class DatosBasicos extends StatelessWidget {
           Texto(
             title: "DATOS BÁSICOS",
             colorText: appTheme.color("secondary"),
-            size: 25,
+            size: 20,
             fontWeight: FontWeight.w900,
           ),
           const CustomProfileInput(
             title: "Nombre",
-            value: "Junior Rodriguez ",
+            value: "Santiago Rodriguez ",
             icon: Icons.person_rounded,
           ),
           const CustomProfileInput(

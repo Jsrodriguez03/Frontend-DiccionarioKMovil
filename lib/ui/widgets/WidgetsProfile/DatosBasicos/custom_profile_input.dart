@@ -29,7 +29,7 @@ class CustomProfileInput extends StatelessWidget {
               Icon(
                 icon,
                 color: appTheme.color("third"),
-                size: 50,
+                size: 40,
               ),
               const SizedBox(width: 10),
               // Textos a la izquierda
@@ -39,13 +39,13 @@ class CustomProfileInput extends StatelessWidget {
                   Texto(
                     title: title,
                     colorText: appTheme.color("third"),
-                    size: 15,
+                    size: 12,
                     fontWeight: FontWeight.normal,
                   ),
                   Texto(
                     title: value,
                     colorText: Colors.white,
-                    size: 20,
+                    size: 17,
                     fontWeight: FontWeight.normal,
                   ),
                 ],

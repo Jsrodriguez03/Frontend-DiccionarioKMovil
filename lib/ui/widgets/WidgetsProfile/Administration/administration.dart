@@ -20,7 +20,7 @@ class Administration extends StatelessWidget {
         Text(
           "ADMINISTRACIÓN",
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             color: appTheme.color("secondary"),
             fontWeight: FontWeight.w900,
           ),
@@ -31,6 +31,7 @@ class Administration extends StatelessWidget {
           colorButtom: appTheme.color("fourth"),
           colorText: Colors.white,
           borderRadius: 20,
+          size: 17,
           buttonText: "Gestionar Usuarios",
           onPressed: () {
             Get.toNamed("/manage-user");
@@ -39,6 +40,7 @@ class Administration extends StatelessWidget {
         const SizedBox(height: 10),
         CustomElevatedButton(
           borderRadius: 20,
+          size: 17,
           buttonText: "Gestionar Palabras",
           onPressed: () {
             Get.toNamed("/manage-word");
@@ -52,7 +54,7 @@ class Administration extends StatelessWidget {
             text: TextSpan(
               text: 'Cerrar Sesión',
               style: const TextStyle(
-                fontSize: 18,
+                fontSize: 15,
                 color: Colors.white,
                 decoration: TextDecoration.underline,
               ),
