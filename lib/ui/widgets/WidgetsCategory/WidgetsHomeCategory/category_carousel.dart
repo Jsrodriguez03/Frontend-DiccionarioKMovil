@@ -5,11 +5,13 @@ import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/WidgetsHomeCateg
 class CategoryCarousel extends StatelessWidget {
   final List<dynamic> categories;
   final int currentIndex;
+  final Function(int) updateIndex;
 
   const CategoryCarousel({
     super.key,
     required this.categories,
     required this.currentIndex,
+    required this.updateIndex,
   });
 
   @override
@@ -27,6 +29,7 @@ class CategoryCarousel extends StatelessWidget {
           enlargeCenterPage: true,
           onPageChanged: (index, reason) {
             carouselController.animateToPage(index);
+            updateIndex(index);
           },
         ),
         carouselController: carouselController,

@@ -12,7 +12,7 @@ class HomeCategory extends StatefulWidget {
 }
 
 class HomeCategoryState extends State<HomeCategory> {
-  final int _current = 0;
+  int _current = 0;
 
   final List<dynamic> _categorys = [
     {
@@ -37,6 +37,12 @@ class HomeCategoryState extends State<HomeCategory> {
     },
   ];
 
+  void updateCurrentIndex(int newIndex) {
+    setState(() {
+      _current = newIndex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +55,7 @@ class HomeCategoryState extends State<HomeCategory> {
             CategoryCarousel(
               categories: _categorys,
               currentIndex: _current,
+              updateIndex: updateCurrentIndex,
             ),
             Positioned(
               bottom: MediaQuery.of(context).size.height * 0.01,
