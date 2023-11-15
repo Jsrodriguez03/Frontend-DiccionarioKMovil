@@ -32,7 +32,7 @@ class Welcome extends StatelessWidget {
             title: "Explora nuestro diccionario \n kankuamo",
             colorText: appTheme.color("third"),
           ),
-          const SizedBox(height: 40),
+          SizedBox(height: screenHeigth * 0.05),
           const CardWelcome(),
           SizedBox(height: screenHeigth * 0.05),
           CustomElevatedButton(
