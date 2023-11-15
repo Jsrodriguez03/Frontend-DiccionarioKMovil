@@ -14,6 +14,7 @@ class LoginUp extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     final lista = [
       "Nombre Completo",
       "Correo Electronico",
@@ -29,85 +30,92 @@ class LoginUp extends StatelessWidget {
       "Repetir Contraseña": TextEditingController(),
     };
 
-    return Scaffold(
-      body: Container(
-        color: theme.color("primary"),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: theme.color("primary"),
+        body: ListView(
           children: [
-            Logo(heigth: screenWidth * 0.35),
-            //Registrarse
-            Container(
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.symmetric(horizontal: 15),
-              width: 420,
-              constraints: const BoxConstraints(maxHeight: 600),
-              child: Expanded(
-                child: Column(
-                  children: [
-                    Texto(
-                      title: 'Registrarse',
-                      colorText: theme.color("secondary"),
-                      size: 35,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    const SizedBox(height: 10),
-                    const Texto(
-                      title: 'Por favor llene todos\nlos campos requeridos',
-                      colorText: Colors.white,
-                      size: 15,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    const SizedBox(height: 20),
-                    for (var item in lista)
-                      Column(
-                        children: [
-                          CustomTextFormField(
-                            labelText: item,
-                            controller:
-                                controllers[item] ?? TextEditingController(),
-                          ),
-                          const SizedBox(height: 15),
-                        ],
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: screenWidth * 0.1),
+                Logo(heigth: screenWidth * 0.3),
+                //Registrarse
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
+                  width: screenWidth,
+                  constraints: const BoxConstraints(maxHeight: 600),
+                  child: Column(
+                    children: [
+                      Texto(
+                        title: 'Registrarse',
+                        colorText: theme.color("secondary"),
+                        size: screenHeight * 0.055,
+                        fontWeight: FontWeight.w700,
                       ),
-                    const SizedBox(height: 10),
-                    CustomElevatedButton(
-                      buttonText: "Continuar",
-                      onPressed: () {
-                        // Utiliza los controllers para acceder a la información.
-                        for (var controller in controllers.entries) {
-                          print('${controller.key}: ${controller.value.text}');
-                        }
-                        Get.toNamed("/homeCategory");
-                      },
-                    ),
-                    //Mensaje de Iniciar Sesión
-                    const SizedBox(height: 10),
-                    Center(
-                      child: RichText(
-                        text: TextSpan(
-                          text: '¿Ya estás registrado? ',
-                          style: const TextStyle(
-                              color: Color(0xFF908E8E), fontSize: 15.5),
+                      const SizedBox(height: 10),
+                      Texto(
+                        title: 'Por favor llene todos\nlos campos requeridos',
+                        colorText: Colors.white,
+                        size: screenHeight * 0.02,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      const SizedBox(height: 20),
+                      for (var item in lista)
+                        Column(
                           children: [
-                            TextSpan(
-                              text: 'Iniciar Sesión',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                decoration: TextDecoration.underline,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Get.toNamed("/login-in");
-                                },
+                            CustomTextFormField(
+                              labelText: item,
+                              controller:
+                                  controllers[item] ?? TextEditingController(),
                             ),
+                            const SizedBox(height: 10),
                           ],
                         ),
+                      const SizedBox(height: 10),
+                      CustomElevatedButton(
+                        buttonText: "Continuar",
+                        onPressed: () {
+                          // Utiliza los controllers para acceder a la información.
+                          for (var controller in controllers.entries) {
+                            print(
+                                '${controller.key}: ${controller.value.text}');
+                          }
+                          Get.toNamed("/homeCategory");
+                        },
                       ),
-                    ),
-                  ],
+                      //Mensaje de Iniciar Sesión
+                      const SizedBox(height: 7),
+                      Center(
+                        child: RichText(
+                          text: TextSpan(
+                            text: '¿Ya estás registrado? ',
+                            style: TextStyle(
+                              color: const Color(0xFF908E8E),
+                              fontSize: screenHeight * 0.017,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'Iniciar Sesión',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  decoration: TextDecoration.underline,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Get.toNamed("/login-in");
+                                  },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
