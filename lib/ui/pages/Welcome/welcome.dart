@@ -19,27 +19,26 @@ class Welcome extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Logo(heigth: screenHeigth * 0.15),
-          SizedBox(height: screenHeigth * 0.05),
+          Logo(heigth: screenHeigth * 0.14),
+          SizedBox(height: screenHeigth * 0.03),
           TextWelcome(
-            size: 25,
-            title: "¿Quieres aprender la lengua kankuama?",
+            size: screenHeigth * 0.035,
+            title: "¿Quieres aprender la \n lengua kankuama?",
             colorText: appTheme.color("secondary"),
           ),
           const SizedBox(height: 5),
           TextWelcome(
-            size: 17,
+            size: screenHeigth * 0.02,
             title: "Explora nuestro diccionario \n kankuamo",
             colorText: appTheme.color("third"),
           ),
-          const SizedBox(height: 40),
+          SizedBox(height: screenHeigth * 0.05),
           const CardWelcome(),
-          SizedBox(height: screenHeigth * 0.07),
+          SizedBox(height: screenHeigth * 0.05),
           CustomElevatedButton(
             buttonText: "Iniciar Sesión",
             borderRadius: 50,
             width: 0.6,
-            heigth: 50,
             onPressed: () {
               Get.toNamed("/login-in");
             },

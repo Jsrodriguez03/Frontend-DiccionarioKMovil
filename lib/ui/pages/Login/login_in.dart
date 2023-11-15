@@ -63,7 +63,13 @@ class _LoginInState extends State<LoginIn> {
                         size: 35,
                         fontWeight: FontWeight.w700,
                       ),
-                      
+                      const SizedBox(height: 10),
+                      Texto(
+                        title: message,
+                        colorText: Colors.white,
+                        size: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
                       const SizedBox(height: 20),
                       Column(
                         children: [
@@ -86,42 +92,31 @@ class _LoginInState extends State<LoginIn> {
                           final email = emailController.text;
                           final password = passwordController.text;
 
+                          // Realizar acciones con la información ingresada
                           LoginRequestModel loginModel = LoginRequestModel(
                             email: email,
                             password: password,
                           );
 
-                          setState(() {
-                            isLoading = true; // Iniciar indicador de progreso
-                            showOverlay = true; // Mostrar overlay al iniciar la solicitud
-                          });
-
                           APIService.login(loginModel).then((response) => {
-                            if (response.status == "FOUND")
-                              Get.toNamed("/homeCategory")
-                            else
-                              setState(() {
-                                message = response.error;
-                                //_showAlert(message ?? ""); // Muestra el mensaje como una alerta
-                                CustomAlert(message: message ?? "").show(context);
-                              })
-                          }).whenComplete(() {
-                            setState(() {
-                              isLoading = false;
-                            });
-                          });
+                                if (response.status == "FOUND")
+                                  Get.toNamed("/homeCategory")
+                                else
+                                  setState(() {
+                                    message = response.error;
+                                  })
+                              });
                         },
                       ),
 
+                      //Mensaje de Registrarse
                       const SizedBox(height: 10),
                       Center(
                         child: RichText(
                           text: TextSpan(
                             text: '¿No tienes cuenta? ',
                             style: const TextStyle(
-                              color: Color(0xFF908E8E),
-                              fontSize: 15.5,
-                            ),
+                                color: Color(0xFF908E8E), fontSize: 15.5),
                             children: [
                               TextSpan(
                                 text: 'Registrate',

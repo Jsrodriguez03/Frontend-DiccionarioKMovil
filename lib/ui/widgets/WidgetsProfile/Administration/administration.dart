@@ -31,7 +31,7 @@ class Administration extends StatelessWidget {
           colorButtom: appTheme.color("fourth"),
           colorText: Colors.white,
           borderRadius: 20,
-          size: 17,
+          // size: 17,
           buttonText: "Gestionar Usuarios",
           onPressed: () {
             Get.toNamed("/manage-user");
@@ -40,7 +40,7 @@ class Administration extends StatelessWidget {
         const SizedBox(height: 10),
         CustomElevatedButton(
           borderRadius: 20,
-          size: 17,
+          // size: 17,
           buttonText: "Gestionar Palabras",
           onPressed: () {
             Get.toNamed("/manage-word");
