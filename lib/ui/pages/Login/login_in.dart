@@ -63,13 +63,7 @@ class _LoginInState extends State<LoginIn> {
                         size: 35,
                         fontWeight: FontWeight.w700,
                       ),
-                      const SizedBox(height: 10),
-                      Texto(
-                        title: message,
-                        colorText: Colors.white,
-                        size: 15,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      
                       const SizedBox(height: 20),
                       Column(
                         children: [
