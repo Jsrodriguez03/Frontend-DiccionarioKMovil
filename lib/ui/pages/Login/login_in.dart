@@ -22,6 +22,7 @@ class _LoginInState extends State<LoginIn> {
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     String? message = "";
 
     final TextEditingController emailController = TextEditingController();
@@ -94,10 +95,10 @@ class _LoginInState extends State<LoginIn> {
                           APIService.login(loginModel).then((response) => {
                                 if (response.status == "FOUND")
                                   Get.toNamed("/homeCategory")
-                                else
-                                  setState(() {
-                                    message = response.error;
-                                  })
+                                // else
+                                //   setState(() {
+                                //     message = response.error;
+                                //   })
                               });
                         },
                       ),
