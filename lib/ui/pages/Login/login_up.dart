@@ -1,3 +1,6 @@
+import 'package:http/http.dart' as htpp;
+import 'dart:convert';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
@@ -29,6 +32,7 @@ class LoginUp extends StatelessWidget {
       "Repetir Contraseña": TextEditingController(),
     };
 
+    
     return Scaffold(
       body: Container(
         color: theme.color("primary"),
