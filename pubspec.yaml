@@ -39,6 +39,7 @@ dependencies:
   animation_search_bar: ^0.0.10
   carousel_slider: ^4.2.1
   audioplayers: ^5.2.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:

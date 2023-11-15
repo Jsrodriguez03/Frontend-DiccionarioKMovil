@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/models/login_request_model.dart';
+import 'package:frontend_diccionario/services/api_service.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
@@ -8,13 +10,19 @@ import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.da
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
 
-class LoginIn extends StatelessWidget {
+class LoginIn extends StatefulWidget {
   const LoginIn({Key? key}) : super(key: key);
 
+  @override
+  State<LoginIn> createState() => _LoginInState();
+}
+
+class _LoginInState extends State<LoginIn> {
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
+    String? message = "";
 
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
@@ -49,8 +57,8 @@ class LoginIn extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                       const SizedBox(height: 10),
-                      const Texto(
-                        title: 'Por favor llene todos\nlos campos requeridos',
+                      Texto(
+                        title: message,
                         colorText: Colors.white,
                         size: 15,
                         fontWeight: FontWeight.w700,
@@ -78,10 +86,19 @@ class LoginIn extends StatelessWidget {
                           final password = passwordController.text;
 
                           // Realizar acciones con la información ingresada
-                          print("Correo: $email");
-                          print("Contraseña: $password");
+                          LoginRequestModel loginModel = LoginRequestModel(
+                            email: email,
+                            password: password,
+                          );
 
-                          Get.toNamed("/homeCategory");
+                          APIService.login(loginModel).then((response) => {
+                                if (response.status == "FOUND")
+                                  Get.toNamed("/homeCategory")
+                                else
+                                  setState(() {
+                                    message = response.error;
+                                  })
+                              });
                         },
                       ),
 

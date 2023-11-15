@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/Widgets/TextFormField/CustomTextField.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
+import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 
 class EditWord extends StatelessWidget {
   const EditWord({super.key});
