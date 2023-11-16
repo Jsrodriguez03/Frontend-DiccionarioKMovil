@@ -9,8 +9,9 @@ class Descripcion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
+    double screenHeight = MediaQuery.of(context).size.width;
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,18 +20,18 @@ class Descripcion extends StatelessWidget {
               Texto(
                 title: "DESCRIPCIÓN",
                 colorText: appTheme.color("secondary"),
-                size: 20,
+                size: screenHeight * 0.05,
                 fontWeight: FontWeight.w900,
               ),
               const Spacer(),
               const EditIconProfile()
             ],
           ),
-          const Texto(
+          Texto(
             title:
                 'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
             colorText: Colors.white,
-            size: 15,
+            size: screenHeight * 0.04,
             fontWeight: FontWeight.normal,
             textAlingTitle: TextAlign.justify,
           )

@@ -14,13 +14,14 @@ class Administration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "ADMINISTRACIÓN",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: screenHeight * 0.025,
             color: appTheme.color("secondary"),
             fontWeight: FontWeight.w900,
           ),
@@ -53,8 +54,8 @@ class Administration extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               text: 'Cerrar Sesión',
-              style: const TextStyle(
-                fontSize: 15,
+              style: TextStyle(
+                fontSize: screenHeight * 0.02,
                 color: Colors.white,
                 decoration: TextDecoration.underline,
               ),

@@ -11,6 +11,7 @@ class DatosBasicos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
+    double screenHeight = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.all(10),
       child: Column(
@@ -19,7 +20,7 @@ class DatosBasicos extends StatelessWidget {
           Texto(
             title: "DATOS BÁSICOS",
             colorText: appTheme.color("secondary"),
-            size: 20,
+            size: screenHeight * 0.05,
             fontWeight: FontWeight.w900,
           ),
           const CustomProfileInput(

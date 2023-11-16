@@ -24,13 +24,13 @@ class Profile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Logo(heigth: screenWidth * 0.28),
+            Logo(heigth: screenWidth * 0.25),
             const SizedBox(height: 15),
             const ImagenPerfil(),
             const DatosBasicos(),
-            const SizedBox(height: 10),
+            const SizedBox(height: 2),
             const Descripcion(),
-            const SizedBox(height: 28),
+            const SizedBox(height: 20),
             CustomElevatedButton(
               buttonText: "CERRAR SESIÓN",
               onPressed: () {
