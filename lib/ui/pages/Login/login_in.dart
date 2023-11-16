@@ -5,12 +5,12 @@ import 'package:frontend_diccionario/services/api_service.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Alert/custom_alert.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
-import 'package:frontend_diccionario/ui/widgets/Loading/custom_loading.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginIn extends StatefulWidget {
   const LoginIn({Key? key}) : super(key: key);
@@ -20,136 +20,139 @@ class LoginIn extends StatefulWidget {
 }
 
 class _LoginInState extends State<LoginIn> {
+  AppTheme theme = AppTheme();
+  bool isLoading = false;
+  String? message;
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
-    String? message = "";
-    bool isLoading = false;
-    bool showOverlay = false;
-
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
       backgroundColor: theme.color("primary"),
-      body: Stack(
-        children: [
-          //Flecha
-          const Positioned(
-            top: 0,
-            left: 0,
-            child: Flecha(navigation: "/welcome"),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Logo(heigth: screenWidth * 0.35),
-              //Inicio de Sesión
-              Container(
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.symmetric(horizontal: 15),
-                width: 420,
-                constraints: const BoxConstraints(maxHeight: 410),
-                child: Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Texto(
-                          title: 'Iniciar sesión',
-                          colorText: theme.color("secondary"),
-                          size: 35,
-                          fontWeight: FontWeight.w700,
-                        ),
-                        const SizedBox(height: 10),
-                        const SizedBox(height: 20),
-                        Column(
-                          children: [
-                            CustomTextFormField(
-                              labelText: "Correo",
-                              controller: emailController,
-                            ),
-                            const SizedBox(height: 15),
-                            CustomTextFormField(
-                              labelText: "Contraseña",
-                              controller: passwordController,
-                            ),
-                            const SizedBox(height: 15),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        CustomElevatedButton(
-                          buttonText: "Continuar",
-                          onPressed: () {
-                            final email = emailController.text;
-                            final password = passwordController.text;
+      body: ModalProgressHUD(
+        inAsyncCall: isLoading,
+        opacity: 0.5,
+        color: Colors.black,
+        progressIndicator: const CircularProgressIndicator(),
+        child: Stack(
+          children: [
+            // Flecha
+            const Positioned(
+              top: 0,
+              left: 0,
+              child: Flecha(navigation: "/welcome"),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Logo(heigth: screenWidth * 0.35),
+                // Inicio de Sesión
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
+                  width: 420,
+                  constraints: const BoxConstraints(maxHeight: 410),
+                  child: Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Texto(
+                            title: 'Iniciar sesión',
+                            colorText: theme.color("secondary"),
+                            size: 35,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          const SizedBox(height: 10),
+                          const SizedBox(height: 20),
+                          Column(
+                            children: [
+                              CustomTextFormField(
+                                labelText: "Correo",
+                                controller: emailController,
+                              ),
+                              const SizedBox(height: 15),
+                              CustomTextFormField(
+                                labelText: "Contraseña",
+                                controller: passwordController,
+                              ),
+                              const SizedBox(height: 15),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          CustomElevatedButton(
+                            buttonText: "Continuar",
+                            onPressed: () {
+                              final email = emailController.text;
+                              final password = passwordController.text;
 
-                            // Realizar acciones con la información ingresada
-                            LoginRequestModel loginModel = LoginRequestModel(
-                              email: email,
-                              password: password,
-                            );
+                              // Realizar acciones con la información ingresada
+                              LoginRequestModel loginModel =
+                                  LoginRequestModel(
+                                email: email,
+                                password: password,
+                              );
 
-                            setState(() {
-                              isLoading = true; // Iniciar indicador de progreso
-                              showOverlay = true; // Mostrar overlay al iniciar la solicitud
-                            });
+                              setState(() {
+                                isLoading = true; // Iniciar indicador de progreso
+                              });
 
-                            // Muestra CustomLoading mientras se realiza la solicitud
-                            if (isLoading) {
-                              CustomLoading();
-                            }
-
-                            APIService.login(loginModel).then((response) => {
+                              APIService.login(loginModel).then(
+                                (response) => {
                                   if (response.status == "FOUND")
                                     Get.toNamed("/homeCategory")
                                   else
                                     setState(() {
                                       message = response.error;
-                                      CustomAlert(message: message).show(context);
+                                      CustomAlert(message: message)
+                                          .show(context);
                                     })
-                                }).whenComplete(() {
-                                  setState(() {
-                                    isLoading = false;
-                                  });
+                                },
+                              ).whenComplete(() {
+                                setState(() {
+                                  isLoading = false;
                                 });
-                          },
-                        ),
-
-                        //Mensaje de Registrarse
-                        const SizedBox(height: 10),
-                        Center(
-                          child: RichText(
-                            text: TextSpan(
-                              text: '¿No tienes cuenta? ',
-                              style: const TextStyle(
-                                  color: Color(0xFF908E8E), fontSize: 15.5),
-                              children: [
-                                TextSpan(
-                                  text: 'Registrate',
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      Get.toNamed("/login-up");
-                                    },
+                              });
+                            },
+                          ),
+                          // Mensaje de Registrarse
+                          const SizedBox(height: 10),
+                          Center(
+                            child: RichText(
+                              text: TextSpan(
+                                text: '¿No tienes cuenta? ',
+                                style: const TextStyle(
+                                  color: Color(0xFF908E8E),
+                                  fontSize: 15.5,
                                 ),
-                              ],
+                                children: [
+                                  TextSpan(
+                                    text: 'Registrate',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        Get.toNamed("/login-up");
+                                      },
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          if (showOverlay) // Mostrar CustomLoading si showOverlay es true
-            CustomLoading(),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
