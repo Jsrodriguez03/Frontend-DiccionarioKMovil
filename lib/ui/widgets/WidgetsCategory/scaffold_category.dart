@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/models/word_model.dart';
+import 'package:frontend_diccionario/services/api_service.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/buscador_category.dart';
@@ -9,17 +11,17 @@ class ScaffoldCategory extends StatelessWidget {
   const ScaffoldCategory({
     super.key,
     required this.tittleCategoryScaffold,
-    required this.tittleElementScaffold,
     required this.index,
   });
 
+  static List<WordModel> words = [];
   final String tittleCategoryScaffold;
-  final String tittleElementScaffold;
   final int index;
 
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
+
     return Scaffold(
       backgroundColor: appTheme.color("primary"),
       body: Column(
@@ -28,7 +30,9 @@ class ScaffoldCategory extends StatelessWidget {
           const SizedBox(height: 30),
           const Logo(heigth: 100),
           Buscador(titleCategory: tittleCategoryScaffold),
-          ListCard(titleElement: tittleElementScaffold),
+          ListCard(
+            words: words,
+          ),
         ],
       ),
       bottomNavigationBar: NavBarCategory(selectedIndex: index),

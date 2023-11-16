@@ -6,9 +6,8 @@ class NumberCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScaffoldCategory(
+    return ScaffoldCategory(
       tittleCategoryScaffold: "NÚMEROS",
-      tittleElementScaffold: "Número",
       index: 3,
     );
   }

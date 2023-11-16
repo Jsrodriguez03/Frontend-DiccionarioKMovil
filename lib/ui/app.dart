@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Kankuamo Dictionary',
       theme: ThemeData(
         useMaterial3: true,
       ),

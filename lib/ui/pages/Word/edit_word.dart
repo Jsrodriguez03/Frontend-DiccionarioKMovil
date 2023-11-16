@@ -87,7 +87,7 @@ class EditWord extends StatelessWidget {
                             const SizedBox(height: 10),
                           ],
                         ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       CustomElevatedButton(
                         buttonText: "Guardar Cambios",
                         onPressed: () {

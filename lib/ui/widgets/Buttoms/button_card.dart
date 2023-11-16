@@ -1,9 +1,6 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:get/get.dart';
-import 'package:soundpool/soundpool.dart';
 
 class ButtonCard extends StatelessWidget {
   const ButtonCard({super.key, required this.titulo});
@@ -23,23 +20,11 @@ class ButtonCard extends StatelessWidget {
             textStyle: const TextStyle(fontSize: 16),
           ),
           onPressed: () {
-            // final player = AudioPlayer();
-            // player.play(UrlSource('assets/Yellow.wav'));
-            _soundButtom();
+					 print("ahorita sueno");
           },
           child: Text(titulo),
         ),
       ),
     );
-  }
-
-  Future<void> _soundButtom() async {
-    Soundpool pool = Soundpool(streamType: StreamType.notification);
-
-    int soundId =
-        await rootBundle.load("assets/Yellow.wav").then((ByteData soundData) {
-      return pool.load(soundData);
-    });
-    int streamId = await pool.play(soundId);
   }
 }

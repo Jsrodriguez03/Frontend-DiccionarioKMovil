@@ -2,10 +2,10 @@ import 'dart:convert';
 
 class LoginResponseModel {
   late final String status;
-  late final String? token;
+  static String token = "";
   late final String? error;
 
-  LoginResponseModel({required this.status, required this.token});
+  LoginResponseModel({required this.status});
   LoginResponseModel.fromJson(Map<String, dynamic> json) {
     status = json["status"];
     token = json["token"];

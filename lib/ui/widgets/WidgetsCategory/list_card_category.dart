@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/models/word_model.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/card_category.dart';
 
 class ListCard extends StatelessWidget {
   const ListCard({
     Key? key,
-    required this.titleElement,
+    required this.words,
   }) : super(key: key);
-
-  final String titleElement;
+  final List<WordModel> words;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,16 @@ class ListCard extends StatelessWidget {
             //Tamaño de la Card
             childAspectRatio: MediaQuery.of(context).size.width * 0.0017,
           ),
-          itemCount: 8,
+          itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
-              child: CardCategory(titleCard: titleElement),
-            );
+                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+                child: CardCategory(
+                  spanish: words[index].spanish!,
+                  english: words[index].english!,
+                  kankuamo: words[index].kankuamo!,
+                  dataWord: words[index].dataWord,
+                ));
           },
         ),
       ),

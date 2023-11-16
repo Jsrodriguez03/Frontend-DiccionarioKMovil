@@ -97,7 +97,7 @@ class _LoginInState extends State<LoginIn> {
 
                             // Muestra CustomLoading mientras se realiza la solicitud
                             if (isLoading) {
-                              CustomLoading();
+                              const CustomLoading();
                             }
 
                             APIService.login(loginModel).then((response) => {
@@ -148,7 +148,7 @@ class _LoginInState extends State<LoginIn> {
             ],
           ),
           if (showOverlay) // Mostrar CustomLoading si showOverlay es true
-            CustomLoading(),
+            const CustomLoading(),
         ],
       ),
     );

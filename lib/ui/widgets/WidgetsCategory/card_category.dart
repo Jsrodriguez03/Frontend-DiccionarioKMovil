@@ -7,20 +7,21 @@ import 'package:get/get.dart';
 class CardCategory extends StatelessWidget {
   const CardCategory({
     super.key,
-    required this.titleCard,
-    this.showButtons = true,
-    this.onTap,
+    this.spanish = "Spanish",
+    this.kankuamo = "Kankuamo",
+    this.english = "English",
+    this.dataWord,
   });
 
-  final String titleCard;
-  final bool showButtons;
-  final VoidCallback? onTap;
+  final String spanish;
+  final String kankuamo;
+  final String english;
+  final Map<String, dynamic>? dataWord;
 
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
     return GestureDetector(
-      onTap: onTap,
       child: SizedBox(
         width: Get.width * 0.45,
         child: Card(
@@ -36,7 +37,9 @@ class CardCategory extends StatelessWidget {
                 child: SizedBox(
                   height: 100,
                   width: 1000,
-                  child: Image.asset("assets/imagen.png", fit: BoxFit.fill),
+                  child: dataWord?["image"] != null
+                      ? Image.network(dataWord?["image"], fit: BoxFit.fill)
+                      : Image.asset("assets/imagen.png", fit: BoxFit.fill),
                 ),
               ),
 
@@ -44,18 +47,18 @@ class CardCategory extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Texto(
-                  title: titleCard,
+                  title: spanish,
                   colorText: appTheme.color("secondary"),
                   size: 25,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const Column(
+              Column(
                 children: [
-                  ButtonCard(titulo: "Kankuamo"),
-                  ButtonCard(titulo: "Inglés"),
-                  SizedBox(height: 5)
+                  ButtonCard(titulo: kankuamo),
+                  ButtonCard(titulo: english),
+                  const SizedBox(height: 5)
                 ],
               ),
             ],
