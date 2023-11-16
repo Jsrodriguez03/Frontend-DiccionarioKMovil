@@ -23,7 +23,7 @@ class Welcome extends StatelessWidget {
           SizedBox(height: screenHeigth * 0.03),
           TextWelcome(
             size: screenHeigth * 0.035,
-            title: "¿Quieres aprender la \n lengua kankuama?",
+            title: "¿Quieres aprender la \n lengua ola?",
             colorText: appTheme.color("secondary"),
           ),
           const SizedBox(height: 5),
