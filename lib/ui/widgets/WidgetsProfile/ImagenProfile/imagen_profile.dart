@@ -11,26 +11,28 @@ class ImagenPerfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: 180,
-      height: 190,
+      width: screenWidth * 0.45,
+      height: screenHeight * 0.5,
       child: Stack(
         children: [
           IconCircleProfile(
-            directionIconCircle: 0,
-            dimensionIconCircle: 170,
+            directionIconCircle: screenWidth * 0.001,
+            dimensionIconCircle: screenHeight * 0.45,
             colorIconCircle: appTheme.color("fourth"),
             colorIcon: appTheme.color("third"),
             iconCircle: Icons.person_rounded,
-            sizeIconCircle: 110,
+            sizeIconCircle: screenHeight * 0.35,
           ),
           IconCircleProfile(
-            directionIconCircle: 115,
-            dimensionIconCircle: 50,
+            directionIconCircle: screenWidth * 0.31,
+            dimensionIconCircle: screenHeight * 0.13,
             colorIconCircle: appTheme.color("secondary"),
             colorIcon: Colors.black,
             iconCircle: Icons.camera_alt,
-            sizeIconCircle: 33,
+            sizeIconCircle: screenHeight * 0.08,
             onPressed: () {
               Get.toNamed("/profile-adm");
             },
