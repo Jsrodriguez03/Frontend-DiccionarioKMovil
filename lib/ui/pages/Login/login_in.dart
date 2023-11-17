@@ -9,6 +9,7 @@ import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
@@ -101,12 +102,13 @@ class _LoginInState extends State<LoginIn> {
                               isLoading = true; // Iniciar indicador de progreso
                             });
 
-                            
-
                             try {
                               var response = await APIService.login(loginModel);
-
                               if (response.status == "FOUND") {
+                                if (ListCard.words.isEmpty) {
+                                  APIService.getWords().then((wordsAPI) =>
+                                      {ListCard.words = wordsAPI});
+                                }
                                 Get.toNamed("/homeCategory");
                               } else {
                                 setState(() {
@@ -118,7 +120,10 @@ class _LoginInState extends State<LoginIn> {
                               // Manejar errores específicos aquí
                               print("Error en la llamada a la API: $error");
                               // ignore: use_build_context_synchronously
-                              const CustomAlert(message: "Correo o contraseña incorrectos!!").show(context);
+                              const CustomAlert(
+                                      message:
+                                          "Correo o contraseña incorrectos!!")
+                                  .show(context);
                             } finally {
                               setState(() {
                                 isLoading = false;

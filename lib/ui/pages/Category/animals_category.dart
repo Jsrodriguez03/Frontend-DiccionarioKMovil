@@ -6,7 +6,7 @@ class AnimalsCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldCategory(
+    return const ScaffoldCategory(
       tittleCategoryScaffold: "ANIMALES",
       index: 1,
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/services/api_service.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/scaffold_category.dart';
 import 'package:get/get.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
@@ -21,13 +22,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if(ScaffoldCategory.words.isEmpty){
-          APIService.getWords().then((wordsAPI) =>
-          {ScaffoldCategory.words = wordsAPI});
-        }else {
-          Get.toNamed(navigation);
-        }
-
+        Get.toNamed(navigation);
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

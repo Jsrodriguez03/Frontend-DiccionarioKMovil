@@ -6,7 +6,7 @@ class BodyCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldCategory(
+    return const ScaffoldCategory(
       tittleCategoryScaffold: "CUERPO",
       index: 4,
     );

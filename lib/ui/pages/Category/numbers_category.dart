@@ -6,7 +6,7 @@ class NumberCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldCategory(
+    return const ScaffoldCategory(
       tittleCategoryScaffold: "NÚMEROS",
       index: 3,
     );

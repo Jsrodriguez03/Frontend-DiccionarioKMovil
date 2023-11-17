@@ -56,8 +56,10 @@ class CardCategory extends StatelessWidget {
 
               Column(
                 children: [
-                  ButtonCard(titulo: kankuamo),
-                  ButtonCard(titulo: english),
+                  ButtonCard(titulo: kankuamo, sound:
+                  dataWord?["kankuamo_sound"]),
+                  ButtonCard(titulo: english, sound:
+                  dataWord?["english_sound"]),
                   const SizedBox(height: 5)
                 ],
               ),

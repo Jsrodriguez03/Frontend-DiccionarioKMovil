@@ -1,10 +1,17 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:get/get.dart';
 
 class ButtonCard extends StatelessWidget {
-  const ButtonCard({super.key, required this.titulo});
+  const ButtonCard({
+    super.key,
+    required this.titulo,
+    required this.sound,
+  });
+
   final String titulo;
+  final String? sound;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +27,18 @@ class ButtonCard extends StatelessWidget {
             textStyle: const TextStyle(fontSize: 16),
           ),
           onPressed: () {
-					 print("ahorita sueno");
+            playSound();
           },
           child: Text(titulo),
         ),
       ),
     );
+  }
+
+  void playSound() async {
+    AudioPlayer audioPlayer = AudioPlayer();
+    sound == null
+        ? print("No sound")
+        : await audioPlayer.play(UrlSource(sound!));
   }
 }

@@ -14,7 +14,6 @@ class ScaffoldCategory extends StatelessWidget {
     required this.index,
   });
 
-  static List<WordModel> words = [];
   final String tittleCategoryScaffold;
   final int index;
 
@@ -31,7 +30,7 @@ class ScaffoldCategory extends StatelessWidget {
           const Logo(heigth: 100),
           Buscador(titleCategory: tittleCategoryScaffold),
           ListCard(
-            words: words,
+            category: tittleCategoryScaffold,
           ),
         ],
       ),

@@ -5,9 +5,11 @@ import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/card_category.da
 class ListCard extends StatelessWidget {
   const ListCard({
     Key? key,
-    required this.words,
+    required this.category,
   }) : super(key: key);
-  final List<WordModel> words;
+
+  static List<WordModel> words = [];
+  final String category;
 
   @override
   Widget build(BuildContext context) {
