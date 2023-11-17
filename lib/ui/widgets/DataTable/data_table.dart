@@ -16,7 +16,7 @@ class CustomDataTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme theme = AppTheme();
-    return DataTable(columnSpacing: 40, columns: [
+    return DataTable(columnSpacing: 15, columns: [
       for (var column in columnas)
         DataColumn(
             label:

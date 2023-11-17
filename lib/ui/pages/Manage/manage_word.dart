@@ -13,7 +13,7 @@ class ManageWord extends StatelessWidget {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
-    const columnas = ["Id", "Palabra", "Categoria", "Acciones"];
+    const columnas = ["Id", "Palabra", "Categoria", ""];
     const filas = [
       ["1", "Perro", "Animal"],
       ["2", "Brazo", "Cuerpo"],
