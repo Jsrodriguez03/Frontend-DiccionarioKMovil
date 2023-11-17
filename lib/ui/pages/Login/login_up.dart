@@ -31,8 +31,8 @@ class LoginUp extends StatelessWidget {
     };
 
     return Scaffold(
-      body: Container(
-        color: theme.color("primary"),
+      backgroundColor: theme.color("primary"),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,6 +40,7 @@ class LoginUp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(height: screenHeight * 0.1),
                 Logo(heigth: screenWidth * 0.27),
                 //Registrarse
                 Container(
