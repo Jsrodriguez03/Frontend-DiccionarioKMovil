@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/models/word_model.dart';
-import 'package:frontend_diccionario/services/api_service.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/buscador_category.dart';

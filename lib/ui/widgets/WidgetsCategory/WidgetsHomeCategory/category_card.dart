@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/services/api_service.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/scaffold_category.dart';
 import 'package:get/get.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';

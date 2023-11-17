@@ -32,7 +32,7 @@ class Profile extends StatelessWidget {
             const Descripcion(),
             const SizedBox(height: 20),
             CustomElevatedButton(
-              buttonText: "CERRAR SESIÓN",
+              buttonText: "Cerrar Sesión",
               onPressed: () {
                 Get.toNamed("/welcome");
               },

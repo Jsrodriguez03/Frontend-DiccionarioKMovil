@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
@@ -41,14 +40,13 @@ class LoginUp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: screenWidth * 0.1),
-                Logo(heigth: screenWidth * 0.3),
+                Logo(heigth: screenWidth * 0.27),
                 //Registrarse
                 Container(
                   padding: const EdgeInsets.all(10),
                   margin: const EdgeInsets.symmetric(horizontal: 15),
                   width: screenWidth,
-                  constraints: const BoxConstraints(maxHeight: 600),
+                  constraints: BoxConstraints(maxHeight: screenHeight * 0.75),
                   child: Column(
                     children: [
                       Texto(
