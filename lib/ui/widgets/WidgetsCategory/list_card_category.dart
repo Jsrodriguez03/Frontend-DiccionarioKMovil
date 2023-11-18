@@ -21,7 +21,7 @@ class ListCard extends StatelessWidget {
             //Cards Por Fila
             crossAxisCount: 2,
             //Tamaño de la Card
-            childAspectRatio: MediaQuery.of(context).size.width * 0.0017,
+            childAspectRatio: MediaQuery.of(context).size.width * 0.00122,
           ),
           itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
