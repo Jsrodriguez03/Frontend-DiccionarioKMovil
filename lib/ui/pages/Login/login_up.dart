@@ -1,11 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/models/register_request_model.dart';
+import 'package:frontend_diccionario/services/api_service.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class LoginUp extends StatelessWidget {
   const LoginUp({super.key});
@@ -15,8 +19,10 @@ class LoginUp extends StatelessWidget {
     AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    final loginProvider = context.watch<LoginProvider>();
     final lista = [
       "Nombre Completo",
+      "Apodo",
       "Correo Electronico",
       "Contraseña",
       "Repetir Contraseña"
@@ -24,10 +30,11 @@ class LoginUp extends StatelessWidget {
 
     // Mapa que contendrá los controladores, inicializados con controladores por defecto.
     final controllers = {
-      "Nombre Completo": TextEditingController(),
-      "Correo": TextEditingController(),
-      "Contraseña": TextEditingController(),
-      "Repetir Contraseña": TextEditingController(),
+      lista[0]: TextEditingController(),
+      lista[1]: TextEditingController(),
+      lista[2]: TextEditingController(),
+      lista[3]: TextEditingController(),
+      lista[4]: TextEditingController(),
     };
 
     return Scaffold(
@@ -69,8 +76,7 @@ class LoginUp extends StatelessWidget {
                           children: [
                             CustomTextFormField(
                               labelText: item,
-                              controller:
-                                  controllers[item] ?? TextEditingController(),
+                              controller: controllers[item]!,
                             ),
                             const SizedBox(height: 10),
                           ],
@@ -78,13 +84,32 @@ class LoginUp extends StatelessWidget {
                       const SizedBox(height: 10),
                       CustomElevatedButton(
                         buttonText: "Continuar",
-                        onPressed: () {
-                          // Utiliza los controllers para acceder a la información.
-                          for (var controller in controllers.entries) {
-                            print(
-                                '${controller.key}: ${controller.value.text}');
+                        onPressed: () async {
+                          final fullName = controllers[lista[0]]!.value.text;
+                          final userName = controllers[lista[1]]!.value.text;
+                          final email = controllers[lista[2]]!.value.text;
+                          final password = controllers[lista[3]]!.value.text;
+
+                          final registerModel = RegisterRequestModel(
+                            email: email,
+                            fullName: fullName,
+                            password: password,
+                            userName: userName,
+                          );
+
+                          try {
+                            final response =
+                                await APIService.signup(registerModel);
+
+                            if (response.status == "CREATED") {
+                              loginProvider.token = response.token!;
+                              Get.toNamed("/homeCategory");
+                            } else {
+                              print(response.error);
+                            }
+                          } catch (error) {
+                            print(error);
                           }
-                          Get.toNamed("/homeCategory");
                         },
                       ),
                       //Mensaje de Iniciar Sesión

@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/models/login_request_model.dart';
 import 'package:frontend_diccionario/services/api_service.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Alert/custom_alert.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:provider/provider.dart';
 
 class LoginIn extends StatefulWidget {
   const LoginIn({Key? key}) : super(key: key);
@@ -25,12 +26,12 @@ class _LoginInState extends State<LoginIn> {
   bool isLoading = false;
   String? message;
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+    final loginProvider = context.watch<LoginProvider>();
 
     return Scaffold(
       backgroundColor: theme.color("primary"),
@@ -86,8 +87,8 @@ class _LoginInState extends State<LoginIn> {
                         CustomElevatedButton(
                           buttonText: "Continuar",
                           onPressed: () async {
-                            final email = emailController.text;
-                            final password = passwordController.text;
+                            final email = emailController.value.text;
+                            final password = passwordController.value.text;
 
                             // Cerrar teclado suave
                             FocusScope.of(context).unfocus();
@@ -105,10 +106,7 @@ class _LoginInState extends State<LoginIn> {
                             try {
                               var response = await APIService.login(loginModel);
                               if (response.status == "FOUND") {
-                                if (ListCard.words.isEmpty) {
-                                  APIService.getWords().then((wordsAPI) =>
-                                      {ListCard.words = wordsAPI});
-                                }
+                                loginProvider.token = response.token!;
                                 Get.toNamed("/homeCategory");
                               } else {
                                 setState(() {

@@ -1,35 +1,38 @@
+import 'dart:convert';
+import 'package:frontend_diccionario/domain/entities/word.dart';
+
+WordModel wordModelFromJson(String str) => WordModel.fromJson(json.decode(str));
+
 class WordModel {
-  late final String? id;
-  late final String? spanish;
-  late final String? kankuamo;
-  late final String? english;
-  late final String? category;
-  late final Map<String, dynamic>? dataWord;
+  final String status;
+  final List<Word> data;
 
   WordModel({
-    required this.id,
-    required this.spanish,
-    required this.kankuamo,
-    required this.english,
-    required this.category,
-    required this.dataWord,
+    required this.status,
+    required this.data,
   });
-  WordModel.fromJson(Map<String, dynamic> json) {
-    id = json["id"];
-    spanish = json["spanish"];
-    kankuamo = json["kankuamo"];
-    english = json["english"];
-    category = json["category"];
-    dataWord = json["data_word"];
-  }
-  Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data["id"] = id;
-    data["spanish"] = spanish;
-    data["kankuamo"] = kankuamo;
-    data["english"] = english;
-    data["category"] = category;
-    data["data_word"] = dataWord;
-    return data;
-  }
+
+  factory WordModel.fromJson(Map<String, dynamic> json) => WordModel(
+        status: json["status"],
+        data: List<Word>.from(json["data"].map((x) => _createWord(x))),
+      );
+}
+
+Word _createWord(Map<String, dynamic> rawWord) {
+  return Word(
+    id: rawWord["id"],
+    spanish: rawWord["spanish"],
+    kankuamo: rawWord["kankuamo"],
+    english: rawWord["english"],
+    category: rawWord["category"],
+    dataWord: _createData(rawWord["data_word"]),
+  );
+}
+
+DataWord _createData(Map<String, dynamic> rawData) {
+  return DataWord(
+    kankuamoSound: rawData["kankaumo_sound"],
+    englishSound: rawData["english_sound"],
+    image: rawData["image"],
+  );
 }

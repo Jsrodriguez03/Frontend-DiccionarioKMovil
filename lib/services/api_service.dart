@@ -1,13 +1,15 @@
 import 'dart:convert';
 
 import 'package:frontend_diccionario/config/config.dart';
+import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/models/login_request_model.dart';
-import 'package:frontend_diccionario/models/login_response_model.dart';
-import '../models/word_model.dart';
+import 'package:frontend_diccionario/models/auth_response_model.dart';
+import 'package:frontend_diccionario/models/register_request_model.dart';
+import 'package:frontend_diccionario/models/word_model.dart';
 import 'package:http/http.dart' as http;
 
 class APIService {
-  static Future<LoginResponseModel> login(LoginRequestModel loginModel) async {
+  static Future<AuthResponseModel> login(LoginRequestModel loginModel) async {
     Map<String, String> requestHeaders = {
       "Content-Type": "application/x-www-form-urlencoded",
     };
@@ -19,25 +21,36 @@ class APIService {
       body: loginModel.toJson(),
     );
 
-    return loginResponseModel(response.body);
+    return authResponseModel(response.body);
   }
 
-  static Future<List<WordModel>> getWords() async {
+  static Future<AuthResponseModel> signup(
+      RegisterRequestModel registerModel) async {
     Map<String, String> requestHeaders = {
-      "x-access-token": LoginResponseModel.token
+      "Content-Type": "application/x-www-form-urlencoded",
     };
 
-    final words = <WordModel>[];
+    var url = Uri.https(Config.apiURL, Config.signup);
+    var response = await http.post(
+      url,
+      headers: requestHeaders,
+      body: registerModel.toJson(),
+    );
+    return authResponseModel(response.body);
+  }
+
+  static Future<List<Word>> getWords(String token) async {
+    Map<String, String> requestHeaders = {
+      "x-access-token": token,
+    };
+
+    List<Word> words = [];
     var url = Uri.https(Config.apiURL, Config.words);
     var response = await http.get(url, headers: requestHeaders);
 
     if (response.statusCode == 200) {
-      var body = json.decode(response.body);
-      var data = body["data"];
-      data.forEach((item) {
-        final word = WordModel.fromJson(item);
-        words.add(word);
-      });
+      var body = utf8.decode(response.bodyBytes);
+      words = wordModelFromJson(body).data;
     }
     return words;
   }

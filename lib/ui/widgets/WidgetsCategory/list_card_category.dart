@@ -25,14 +25,10 @@ class ListCard extends StatelessWidget {
           ),
           itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
-            return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
-                child: CardCategory(
-                  spanish: words[index].spanish!,
-                  english: words[index].english!,
-                  kankuamo: words[index].kankuamo!,
-                  dataWord: words[index].dataWord,
-                ));
+            return const Padding(
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+              child: CardCategory(),
+            );
           },
         ),
       ),
