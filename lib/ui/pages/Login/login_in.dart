@@ -34,7 +34,7 @@ class _LoginInState extends State<LoginIn> {
     final loginProvider = context.watch<LoginProvider>();
 
     return Scaffold(
-      backgroundColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: ModalProgressHUD(
         inAsyncCall: isLoading,
         opacity: 0.5,
@@ -61,9 +61,9 @@ class _LoginInState extends State<LoginIn> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        Texto(
+                        const Texto(
                           title: 'Iniciar sesión',
-                          colorText: theme.color("secondary"),
+                          colorText: AppTheme.secondary,
                           size: 35,
                           fontWeight: FontWeight.w700,
                         ),

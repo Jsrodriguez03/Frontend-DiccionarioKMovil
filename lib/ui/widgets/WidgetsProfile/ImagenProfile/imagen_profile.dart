@@ -11,7 +11,6 @@ class ImagenPerfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.width;
     final loginProvider = context.watch<LoginProvider>();
@@ -25,11 +24,11 @@ class ImagenPerfil extends StatelessWidget {
             width: screenWidth,
             height: screenHeight * 0.45,
             child: CircleAvatar(
-              backgroundColor: appTheme.color("fourth"),
+              backgroundColor: AppTheme.fourth,
               child: loginProvider.getLogo == null
                   ? Icon(
                       Icons.person_rounded,
-                      color: appTheme.color("third"),
+                      color: AppTheme.third,
                       size: screenHeight * 0.35,
                     )
                   : Image.network(loginProvider.getLogo!),
@@ -38,7 +37,7 @@ class ImagenPerfil extends StatelessWidget {
           IconCircleProfile(
             directionIconCircle: screenWidth * 0.31,
             dimensionIconCircle: screenHeight * 0.13,
-            colorIconCircle: appTheme.color("secondary"),
+            colorIconCircle: AppTheme.secondary,
             colorIcon: Colors.black,
             iconCircle: Icons.camera_alt,
             sizeIconCircle: screenHeight * 0.08,

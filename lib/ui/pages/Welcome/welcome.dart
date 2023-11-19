@@ -11,11 +11,10 @@ class Welcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenHeigth = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: appTheme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -24,13 +23,13 @@ class Welcome extends StatelessWidget {
           TextWelcome(
             size: screenHeigth * 0.035,
             title: "¿Quieres aprender la \n lengua kankuama?",
-            colorText: appTheme.color("secondary"),
+            colorText: AppTheme.secondary,
           ),
           const SizedBox(height: 5),
           TextWelcome(
             size: screenHeigth * 0.02,
             title: "Explora nuestro diccionario \n kankuamo",
-            colorText: appTheme.color("third"),
+            colorText: AppTheme.third,
           ),
           SizedBox(height: screenHeigth * 0.05),
           const CardWelcome(),

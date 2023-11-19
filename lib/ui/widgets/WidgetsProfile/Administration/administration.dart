@@ -22,14 +22,14 @@ class Administration extends StatelessWidget {
           "ADMINISTRACIÓN",
           style: TextStyle(
             fontSize: screenHeight * 0.025,
-            color: appTheme.color("secondary"),
+            color: AppTheme.secondary,
             fontWeight: FontWeight.w900,
           ),
           textAlign: TextAlign.left,
         ),
         const SizedBox(height: 10),
         CustomElevatedButton(
-          colorButtom: appTheme.color("fourth"),
+          colorButtom: AppTheme.fourth,
           colorText: Colors.white,
           borderRadius: 20,
           // size: 17,

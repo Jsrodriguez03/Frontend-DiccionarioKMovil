@@ -9,7 +9,6 @@ class ManageUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
     const columnas = ["Id", "Nombre", "Apellido", ""];
@@ -22,7 +21,7 @@ class ManageUser extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Stack(
         children: [
           const Positioned(

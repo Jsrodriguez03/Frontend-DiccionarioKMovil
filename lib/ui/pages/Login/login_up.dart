@@ -16,7 +16,6 @@ class LoginUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     final loginProvider = context.watch<LoginProvider>();
@@ -38,7 +37,7 @@ class LoginUp extends StatelessWidget {
     };
 
     return Scaffold(
-      backgroundColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +58,7 @@ class LoginUp extends StatelessWidget {
                     children: [
                       Texto(
                         title: 'Registrarse',
-                        colorText: theme.color("secondary"),
+                        colorText: AppTheme.secondary,
                         size: screenHeight * 0.055,
                         fontWeight: FontWeight.w700,
                       ),

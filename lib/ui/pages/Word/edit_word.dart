@@ -10,7 +10,6 @@ class EditWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
     final lista = [
@@ -29,7 +28,7 @@ class EditWord extends StatelessWidget {
     };
 
     return Scaffold(
-      backgroundColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Stack(
         children: [
           const Positioned(

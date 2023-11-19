@@ -15,12 +15,14 @@ class CustomDataTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     return DataTable(columnSpacing: 15, columns: [
       for (var column in columnas)
         DataColumn(
-            label:
-                Text(column, style: TextStyle(color: theme.color("secondary"))))
+          label: Text(
+            column,
+            style: const TextStyle(color: AppTheme.secondary),
+          ),
+        )
     ], rows: [
       for (var dato in filas)
         DataRow(cells: [

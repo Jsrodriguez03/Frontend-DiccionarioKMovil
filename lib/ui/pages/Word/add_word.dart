@@ -11,7 +11,6 @@ class AddWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
 
     final Map<String, List<String>> datos = {
@@ -38,7 +37,7 @@ class AddWord extends StatelessWidget {
     };
 
     return Scaffold(
-      backgroundColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: ListView(
         children: [
           Stack(
@@ -62,9 +61,9 @@ class AddWord extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: screenWidth * 0.8,
-                            child: Texto(
+                            child: const Texto(
                               title: "Agregar Palabra",
-                              colorText: theme.color("secondary"),
+                              colorText: AppTheme.secondary,
                               size: 30,
                               fontWeight: FontWeight.w700,
                             ),
@@ -87,8 +86,8 @@ class AddWord extends StatelessWidget {
                               children: [
                                 Text(
                                   entry.key,
-                                  style: TextStyle(
-                                    color: theme.color("secondary"),
+                                  style: const TextStyle(
+                                    color: AppTheme.secondary,
                                     fontSize: 15,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w700,

@@ -15,14 +15,13 @@ class ButtonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     return Padding(
       padding: const EdgeInsets.only(bottom: 7),
       child: SizedBox(
         width: Get.width * 0.39,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: appTheme.color("primary"),
+            backgroundColor: AppTheme.primary,
             foregroundColor: Colors.white,
             textStyle: const TextStyle(fontSize: 16),
           ),

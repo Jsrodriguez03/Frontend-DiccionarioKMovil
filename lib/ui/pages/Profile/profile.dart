@@ -5,7 +5,6 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/Descripcion/descripcion.dart';
 import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +14,11 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     final loginProvider = context.watch<LoginProvider>();
 
     return Scaffold(
-      backgroundColor: appTheme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         margin: const EdgeInsets.symmetric(horizontal: 15),

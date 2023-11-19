@@ -11,13 +11,12 @@ class IconInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     return Positioned(
       left: 0,
       top: 5,
       child: Icon(
         icon,
-        color: appTheme.color("third"),
+        color: AppTheme.third,
         size: 45,
       ),
     );

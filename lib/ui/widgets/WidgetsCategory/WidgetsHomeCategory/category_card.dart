@@ -25,7 +25,7 @@ class CategoryCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.symmetric(horizontal: 5.0),
         decoration: BoxDecoration(
-          color: AppTheme().color("fourth"),
+          color: AppTheme.fourth,
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: SingleChildScrollView(

@@ -43,14 +43,11 @@ class _NavBarCategoryState extends State<NavBarCategory> {
   BottomNavigationBarItem buildNavItem(
     IconData icon, {
     required String route,
-    required String activeColor,
-    required String inactiveColor,
   }) {
     return BottomNavigationBarItem(
-      icon: Icon(icon,
-          color: theme.color(inactiveColor), size: Get.height * 0.04),
+      icon: Icon(icon, color: AppTheme.third, size: Get.height * 0.04),
       activeIcon:
-          Icon(icon, color: theme.color(activeColor), size: Get.height * 0.045),
+          Icon(icon, color: AppTheme.secondary, size: Get.height * 0.045),
       label: "",
     );
   }
@@ -69,8 +66,6 @@ class _NavBarCategoryState extends State<NavBarCategory> {
       return buildNavItem(
         icons[index],
         route: navigationRoutes[index],
-        activeColor: "secondary",
-        inactiveColor: "third",
       );
     });
   }
@@ -81,9 +76,9 @@ class _NavBarCategoryState extends State<NavBarCategory> {
       elevation: 0,
       currentIndex: selectedIndex,
       onTap: onNavigationTapped,
-      backgroundColor: theme.color("primary"),
-      selectedItemColor: theme.color("secondary"),
-      unselectedItemColor: theme.color("primary"),
+      backgroundColor: AppTheme.primary,
+      selectedItemColor: AppTheme.secondary,
+      unselectedItemColor: AppTheme.primary,
       type: BottomNavigationBarType.fixed,
       selectedLabelStyle: const TextStyle(height: 0),
       unselectedLabelStyle: const TextStyle(height: 0),

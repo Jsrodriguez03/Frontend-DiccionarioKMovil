@@ -20,12 +20,11 @@ class CardCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     return GestureDetector(
       child: SizedBox(
         width: Get.width * 0.45,
         child: Card(
-          color: appTheme.color("fourth"),
+          color: AppTheme.fourth,
           shadowColor: Colors.black,
           elevation: 8,
           child: Column(
@@ -37,7 +36,7 @@ class CardCategory extends StatelessWidget {
                 child: Container(
                   color: dataWord?["image"] != null
                       ? Colors.white
-                      : appTheme.color("primary"),
+                      : AppTheme.primary,
                   child: SizedBox(
                     height: 200,
                     width: 1000,
@@ -56,7 +55,7 @@ class CardCategory extends StatelessWidget {
                     const SizedBox(height: 8),
                     Texto(
                       title: spanish,
-                      colorText: appTheme.color("secondary"),
+                      colorText: AppTheme.secondary,
                       size: 25,
                       fontWeight: FontWeight.w500,
                     ),

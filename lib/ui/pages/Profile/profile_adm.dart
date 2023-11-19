@@ -15,7 +15,7 @@ class ProfileAdm extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: appTheme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         margin: const EdgeInsets.symmetric(horizontal: 15),

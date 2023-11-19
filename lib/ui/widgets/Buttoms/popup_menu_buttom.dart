@@ -9,34 +9,35 @@ class CustomPopupMenuButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     return PopupMenuButton<String>(
-        icon: Icon(Icons.more_vert_outlined,color: theme.color("third"),),
-        onSelected: (String choice) {
-          // Manejar la opción seleccionada
-          if(tipo == 0){
-            if(choice == 'opcion1'){
-              Get.toNamed("/edit-profile");
-            }
-          }else if(tipo == 1){
-            if(choice == 'opcion1'){
-              Get.toNamed("/edit-word");
-            }
+      icon: const Icon(
+        Icons.more_vert_outlined,
+        color: AppTheme.third,
+      ),
+      onSelected: (String choice) {
+        // Manejar la opción seleccionada
+        if (tipo == 0) {
+          if (choice == 'opcion1') {
+            Get.toNamed("/edit-profile");
           }
-        },
-        itemBuilder: (BuildContext context) {
-          return <PopupMenuEntry<String>>[
-            const PopupMenuItem<String>(
-              value: 'opcion1',
-              child: Text('Editar'),
-            ),
-            const PopupMenuItem<String>(
-              value: 'opcion2',
-              child: Text('Eliminar'),
-            )
-          ];
-        },
-      );
+        } else if (tipo == 1) {
+          if (choice == 'opcion1') {
+            Get.toNamed("/edit-word");
+          }
+        }
+      },
+      itemBuilder: (BuildContext context) {
+        return <PopupMenuEntry<String>>[
+          const PopupMenuItem<String>(
+            value: 'opcion1',
+            child: Text('Editar'),
+          ),
+          const PopupMenuItem<String>(
+            value: 'opcion2',
+            child: Text('Eliminar'),
+          )
+        ];
+      },
+    );
   }
 }
-

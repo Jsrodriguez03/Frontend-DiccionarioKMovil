@@ -9,7 +9,6 @@ class EditIconProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenHeight = MediaQuery.of(context).size.width;
     return IconButton(
       onPressed: () {
@@ -17,7 +16,7 @@ class EditIconProfile extends StatelessWidget {
       },
       icon: Icon(
         Icons.edit_note_outlined,
-        color: appTheme.color("third"),
+        color: AppTheme.third,
         size: screenHeight * 0.06,
       ),
     );

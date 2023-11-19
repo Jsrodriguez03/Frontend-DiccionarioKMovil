@@ -17,10 +17,8 @@ class ScaffoldCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
-
     return Scaffold(
-      backgroundColor: appTheme.color("primary"),
+      backgroundColor: AppTheme.primary,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

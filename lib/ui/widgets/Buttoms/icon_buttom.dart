@@ -7,10 +7,12 @@ class CustomIconButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     return IconButton(
       iconSize: 30,
-      icon: Icon(Icons.add_circle_rounded, color: theme.color("secondary"),),
+      icon: const Icon(
+        Icons.add_circle_rounded,
+        color: AppTheme.secondary,
+      ),
       onPressed: () {
         Get.toNamed("/add-word");
       },

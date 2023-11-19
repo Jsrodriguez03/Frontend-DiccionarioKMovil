@@ -12,7 +12,6 @@ class DatosBasicos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenHeight = MediaQuery.of(context).size.width;
     final loginProvider = context.watch<LoginProvider>();
 
@@ -23,7 +22,7 @@ class DatosBasicos extends StatelessWidget {
         children: [
           Texto(
             title: "DATOS BÁSICOS",
-            colorText: appTheme.color("secondary"),
+            colorText: AppTheme.secondary,
             size: screenHeight * 0.05,
             fontWeight: FontWeight.w900,
           ),

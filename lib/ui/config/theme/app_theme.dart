@@ -13,31 +13,21 @@ const List<Color> _colorThemes = [
   Colors.green
 ];
 
-const Map<String,Color> _colors = {
-  "primary": Color(0xFF1F2029),
-  "secondary": Color(0xFFE6C068),
-  "third": Color(0xFF908E8E),
-  "fourth": Color(0xFF30313A)
-};
-
 class AppTheme {
   final int selectedColor;
+  static const primary = Color(0xFF1F2029);
+  static const secondary = Color(0xFFE6C068);
+  static const third = Color(0xFF908E8E);
+  static const fourth = Color(0xFF30313A);
 
-  AppTheme({this.selectedColor = 0
-  }) : assert(selectedColor >= 0 && selectedColor < _colorThemes.length - 1,
-  'No seleccionaste un color en el rango valido!');
+  AppTheme({this.selectedColor = 0})
+      : assert(selectedColor >= 0 && selectedColor < _colorThemes.length - 1,
+            'No seleccionaste un color en el rango valido!');
 
-  ThemeData theme(){
-    return ThemeData(useMaterial3: true, colorSchemeSeed: _colorThemes[selectedColor]);
+  ThemeData theme() {
+    return ThemeData(
+      useMaterial3: true,
+      colorSchemeSeed: _colorThemes[selectedColor],
+    );
   }
-
-  Color color(String color) {
-    if (_colors.containsKey(color)) {
-      return _colors[color]!;
-    } else {
-      // Si la clave no existe en el mapa, puedes devolver un valor predeterminado
-      return Colors.black; // O el color que desees como valor predeterminado
-    }
-  }
-
 }

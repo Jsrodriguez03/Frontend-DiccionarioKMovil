@@ -17,7 +17,6 @@ class CustomProfileInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenHeight = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5),
@@ -29,7 +28,7 @@ class CustomProfileInput extends StatelessWidget {
               // Icono a la izquierda
               Icon(
                 icon,
-                color: appTheme.color("third"),
+                color: AppTheme.third,
                 size: screenHeight * 0.1,
               ),
               const SizedBox(width: 10),
@@ -39,7 +38,7 @@ class CustomProfileInput extends StatelessWidget {
                 children: [
                   Texto(
                     title: title,
-                    colorText: appTheme.color("third"),
+                    colorText: AppTheme.third,
                     size: screenHeight * 0.03,
                     fontWeight: FontWeight.normal,
                   ),

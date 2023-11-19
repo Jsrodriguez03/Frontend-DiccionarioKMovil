@@ -8,7 +8,6 @@ class Descripcion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     double screenHeight = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -19,7 +18,7 @@ class Descripcion extends StatelessWidget {
             children: [
               Texto(
                 title: "DESCRIPCIÓN",
-                colorText: appTheme.color("secondary"),
+                colorText: AppTheme.secondary,
                 size: screenHeight * 0.05,
                 fontWeight: FontWeight.w900,
               ),

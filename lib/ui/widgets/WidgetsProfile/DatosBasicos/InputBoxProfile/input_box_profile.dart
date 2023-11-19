@@ -19,7 +19,6 @@ class InputBoxProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     return Column(
       children: [
         Padding(
@@ -35,7 +34,7 @@ class InputBoxProfile extends StatelessWidget {
                 InputText(
                   text: title,
                   top: 5,
-                  color: appTheme.color("third"),
+                  color: AppTheme.third,
                   size: 15,
                 ),
 

@@ -10,7 +10,6 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
@@ -25,7 +24,7 @@ class EditProfile extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: theme.color("primary"),
+        backgroundColor: AppTheme.primary,
         body: ListView(
           children: [
             Stack(

@@ -15,25 +15,23 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme theme = AppTheme();
-
     return TextFormField(
       controller: controller,
       maxLines: lineas,
       textInputAction: TextInputAction.newline,
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle: TextStyle(color: theme.color("third")),
+        labelStyle: const TextStyle(color: AppTheme.third),
         filled: true,
-        fillColor: theme.color("fourth"),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("fourth")),
+        fillColor: AppTheme.fourth,
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppTheme.fourth),
         ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("fourth")),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppTheme.fourth),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: theme.color("fourth")),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppTheme.fourth),
         ),
       ),
       style: const TextStyle(

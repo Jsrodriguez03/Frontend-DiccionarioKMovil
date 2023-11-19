@@ -12,7 +12,6 @@ class Buscador extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppTheme appTheme = AppTheme();
     TextEditingController controller = TextEditingController();
     return Theme(
       data: ThemeData(
@@ -27,12 +26,12 @@ class Buscador extends StatelessWidget {
           isBackButtonVisible: false,
           backIconColor: Colors.white,
           searchIconColor: Colors.white,
-          closeIconColor: appTheme.color("secondary"),
+          closeIconColor: AppTheme.secondary,
           centerTitle: titleCategory,
           onChanged: (text) => debugPrint(text),
           searchTextEditingController: controller,
-          centerTitleStyle: TextStyle(
-            color: appTheme.color("secondary"),
+          centerTitleStyle: const TextStyle(
+            color: AppTheme.secondary,
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
