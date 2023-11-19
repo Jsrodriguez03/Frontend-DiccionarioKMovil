@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/icon_circle_profile.dart';
-import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class ImagenPerfil extends StatelessWidget {
   const ImagenPerfil({
@@ -13,18 +14,26 @@ class ImagenPerfil extends StatelessWidget {
     AppTheme appTheme = AppTheme();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.width;
+    final loginProvider = context.watch<LoginProvider>();
+
     return SizedBox(
       width: screenWidth * 0.45,
       height: screenHeight * 0.5,
       child: Stack(
         children: [
-          IconCircleProfile(
-            directionIconCircle: screenWidth * 0.001,
-            dimensionIconCircle: screenHeight * 0.45,
-            colorIconCircle: appTheme.color("fourth"),
-            colorIcon: appTheme.color("third"),
-            iconCircle: Icons.person_rounded,
-            sizeIconCircle: screenHeight * 0.35,
+          SizedBox(
+            width: screenWidth,
+            height: screenHeight * 0.45,
+            child: CircleAvatar(
+              backgroundColor: appTheme.color("fourth"),
+              child: loginProvider.getLogo == null
+                  ? Icon(
+                      Icons.person_rounded,
+                      color: appTheme.color("third"),
+                      size: screenHeight * 0.35,
+                    )
+                  : Image.network(loginProvider.getLogo!),
+            ),
           ),
           IconCircleProfile(
             directionIconCircle: screenWidth * 0.31,
@@ -33,9 +42,7 @@ class ImagenPerfil extends StatelessWidget {
             colorIcon: Colors.black,
             iconCircle: Icons.camera_alt,
             sizeIconCircle: screenHeight * 0.08,
-            onPressed: () {
-              Get.toNamed("/profile-adm");
-            },
+            onPressed: () {},
           )
         ],
       ),

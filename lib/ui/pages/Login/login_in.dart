@@ -107,7 +107,13 @@ class _LoginInState extends State<LoginIn> {
                               var response = await APIService.login(loginModel);
                               if (response.status == "FOUND") {
                                 loginProvider.token = response.token!;
-                                Get.toNamed("/homeCategory");
+                                loginProvider.user = response.user!;
+
+                                if (loginProvider.user.rol == "admin") {
+                                  Get.toNamed("/profile-adm");
+                                } else {
+                                  Get.toNamed("/homeCategory");
+                                }
                               } else {
                                 setState(() {
                                   message = response.error;
@@ -116,11 +122,8 @@ class _LoginInState extends State<LoginIn> {
                               }
                             } catch (error) {
                               // Manejar errores específicos aquí
-                              print("Error en la llamada a la API: $error");
                               // ignore: use_build_context_synchronously
-                              const CustomAlert(
-                                      message:
-                                          "Correo o contraseña incorrectos!!")
+                              CustomAlert(message: error.toString())
                                   .show(context);
                             } finally {
                               setState(() {

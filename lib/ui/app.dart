@@ -15,6 +15,7 @@ import 'package:frontend_diccionario/ui/pages/Category/home_category.dart';
 import 'package:frontend_diccionario/ui/pages/Profile/profile.dart';
 import 'package:frontend_diccionario/ui/pages/Profile/profile_adm.dart';
 import 'package:frontend_diccionario/ui/providers/login_provider.dart';
+import 'package:frontend_diccionario/ui/providers/words_provider.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
+        ChangeNotifierProvider(create: (_) => WordsProvider()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

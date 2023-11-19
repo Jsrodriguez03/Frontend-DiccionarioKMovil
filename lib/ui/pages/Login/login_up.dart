@@ -103,6 +103,7 @@ class LoginUp extends StatelessWidget {
 
                             if (response.status == "CREATED") {
                               loginProvider.token = response.token!;
+                              loginProvider.user = response.user!;
                               Get.toNamed("/homeCategory");
                             } else {
                               print(response.error);

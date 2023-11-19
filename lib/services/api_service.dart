@@ -21,7 +21,7 @@ class APIService {
       body: loginModel.toJson(),
     );
 
-    return authResponseModel(response.body);
+    return authModelFromJson(response.body);
   }
 
   static Future<AuthResponseModel> signup(
@@ -36,7 +36,7 @@ class APIService {
       headers: requestHeaders,
       body: registerModel.toJson(),
     );
-    return authResponseModel(response.body);
+    return authModelFromJson(response.body);
   }
 
   static Future<List<Word>> getWords(String token) async {

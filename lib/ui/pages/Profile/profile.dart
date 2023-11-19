@@ -31,13 +31,11 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 15),
             const ImagenPerfil(),
             const DatosBasicos(),
-            const SizedBox(height: 2),
-            const Descripcion(),
             const SizedBox(height: 20),
             CustomElevatedButton(
               buttonText: "Cerrar Sesión",
               onPressed: () {
-                loginProvider.token = "";
+                loginProvider.closeSession();
                 Get.toNamed("/welcome");
               },
             )

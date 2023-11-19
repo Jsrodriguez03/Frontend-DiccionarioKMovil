@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/custom_profile_input.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:provider/provider.dart';
 
 class DatosBasicos extends StatelessWidget {
   const DatosBasicos({
@@ -12,6 +14,8 @@ class DatosBasicos extends StatelessWidget {
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
     double screenHeight = MediaQuery.of(context).size.width;
+    final loginProvider = context.watch<LoginProvider>();
+
     return Container(
       margin: const EdgeInsets.all(10),
       child: Column(
@@ -23,14 +27,14 @@ class DatosBasicos extends StatelessWidget {
             size: screenHeight * 0.05,
             fontWeight: FontWeight.w900,
           ),
-          const CustomProfileInput(
+          CustomProfileInput(
             title: "Nombre",
-            value: "Santiago Rodriguez ",
+            value: loginProvider.user.fullName,
             icon: Icons.person_rounded,
           ),
-          const CustomProfileInput(
+          CustomProfileInput(
             title: "Email",
-            value: "santiago@gmail.com",
+            value: loginProvider.user.email,
             icon: Icons.alternate_email,
           ),
         ],
