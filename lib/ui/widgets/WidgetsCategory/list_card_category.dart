@@ -6,10 +6,7 @@ import 'package:provider/provider.dart';
 class ListCard extends StatelessWidget {
   const ListCard({
     Key? key,
-    required this.category,
   }) : super(key: key);
-
-  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +23,11 @@ class ListCard extends StatelessWidget {
           ),
           itemCount: wordsProvider.words.length,
           itemBuilder: (BuildContext context, int index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 3),
-              child: CardCategory(),
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+              child: CardCategory(
+                word: wordsProvider.words[index],
+              ),
             );
           },
         ),

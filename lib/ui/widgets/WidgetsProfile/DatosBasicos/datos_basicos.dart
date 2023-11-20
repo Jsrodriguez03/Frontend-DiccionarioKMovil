@@ -36,6 +36,11 @@ class DatosBasicos extends StatelessWidget {
             value: loginProvider.user.email,
             icon: Icons.alternate_email,
           ),
+          CustomProfileInput(
+            title: "Nombre de usuario",
+            value: loginProvider.user.userName,
+            icon: Icons.person,
+          ),
         ],
       ),
     );

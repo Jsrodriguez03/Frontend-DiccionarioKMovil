@@ -13,13 +13,13 @@ class EditProfile extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    final lista = ["Nuevo Nombre", "Nuevo Email", "Descripcion"];
+    final lista = ["Nuevo Nombre", "Nuevo Email", "Nuevo nombre de usuario"];
 
     // Mapa de controladores para gestionar la información de los campos.
     final controllers = {
       "Nuevo Nombre": TextEditingController(),
       "Nuevo Email": TextEditingController(),
-      "Descripcion": TextEditingController(),
+      "Nuevo nombre de usuario": TextEditingController(),
     };
 
     return SafeArea(

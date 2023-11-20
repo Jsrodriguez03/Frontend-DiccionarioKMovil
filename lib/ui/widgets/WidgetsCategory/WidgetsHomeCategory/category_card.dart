@@ -1,51 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/services/api_service.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
+import 'package:frontend_diccionario/ui/providers/words_provider.dart';
 import 'package:get/get.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:provider/provider.dart';
 
 class CategoryCard extends StatelessWidget {
   final String title;
   final String image;
-  final String navigation;
 
   const CategoryCard({
     super.key,
     required this.title,
     required this.image,
-    required this.navigation,
   });
 
   @override
   Widget build(BuildContext context) {
+    final loginProvider = context.watch<LoginProvider>();
+    final wordsProvider = context.watch<WordsProvider>();
+
     return InkWell(
-      onTap: () {
-        Get.toNamed(navigation);
+      onTap: () async {
+        Get.toNamed("/home-category");
+        try {
+          if (wordsProvider.words.isEmpty) {
+            final listWords = await APIService.getWords(loginProvider.token);
+            wordsProvider.getWords(listWords);
+          }
+        } catch (e) {
+          print(e);
+        }
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
         margin: const EdgeInsets.symmetric(horizontal: 5.0),
         decoration: BoxDecoration(
           color: AppTheme.fourth,
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.45,
-                margin: const EdgeInsets.only(top: 20),
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+              ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
                 ),
                 child: Image.asset(image, fit: BoxFit.cover),
               ),
               const SizedBox(height: 10),
-              Texto(
-                title: title,
-                colorText: Colors.white,
-                size: 30,
-                fontWeight: FontWeight.bold,
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

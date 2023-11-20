@@ -1,36 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/buscador_category.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
-import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
+import 'package:provider/provider.dart';
 
-class ScaffoldCategory extends StatelessWidget {
-  const ScaffoldCategory({
-    super.key,
-    required this.tittleCategoryScaffold,
-    required this.index,
-  });
-
-  final String tittleCategoryScaffold;
-  final int index;
+class PageCategory extends StatelessWidget {
+  const PageCategory({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppTheme.primary,
-      body: Column(
+    final navProvider = context.watch<NavProvider>();
+    return Container(
+      color: AppTheme.primary,
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 30),
           const Logo(heigth: 100),
-          Buscador(titleCategory: tittleCategoryScaffold),
-          ListCard(
-            category: tittleCategoryScaffold,
+          Buscador(
+            titleCategory: navProvider.categories[navProvider.page]["title"],
           ),
+          const ListCard(),
         ],
       ),
-      bottomNavigationBar: NavBarCategory(selectedIndex: index),
     );
   }
 }

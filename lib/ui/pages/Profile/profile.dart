@@ -5,7 +5,6 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
-import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +26,7 @@ class Profile extends StatelessWidget {
           children: [
             Logo(heigth: screenWidth * 0.25),
             const SizedBox(height: 15),
-            const ImagenPerfil(),
+            const ImagenPerfil(radius: 80),
             const DatosBasicos(),
             const SizedBox(height: 20),
             CustomElevatedButton(
@@ -40,7 +39,6 @@ class Profile extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(selectedIndex: 5),
     );
   }
 }

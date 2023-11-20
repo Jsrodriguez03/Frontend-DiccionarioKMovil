@@ -1,88 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:get/get.dart';
 
-class NavBarCategory extends StatefulWidget {
+class NavBar extends StatelessWidget {
+  final ValueChanged<int> onTap;
   final int selectedIndex;
 
-  const NavBarCategory({
-    Key? key,
+  const NavBar({
+    super.key,
     required this.selectedIndex,
-  }) : super(key: key);
-
-  @override
-  State<NavBarCategory> createState() => _NavBarCategoryState();
-}
-
-class _NavBarCategoryState extends State<NavBarCategory> {
-  late int selectedIndex;
-  final AppTheme theme = AppTheme();
-  final List<String> navigationRoutes = [
-    "/homeCategory",
-    "/animals",
-    "/colors",
-    "/numbers",
-    "/bodys",
-    "/profile",
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-    selectedIndex = widget.selectedIndex;
-  }
-
-  void onNavigationTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-      final String route = navigationRoutes[index];
-      (route == "/home") ? Get.offAllNamed(route) : Get.toNamed(route);
-    });
-  }
-
-  BottomNavigationBarItem buildNavItem(
-    IconData icon, {
-    required String route,
-  }) {
-    return BottomNavigationBarItem(
-      icon: Icon(icon, color: AppTheme.third, size: Get.height * 0.04),
-      activeIcon:
-          Icon(icon, color: AppTheme.secondary, size: Get.height * 0.045),
-      label: "",
-    );
-  }
-
-  List<BottomNavigationBarItem> createNavItems() {
-    final List<IconData> icons = [
-      Icons.home,
-      Icons.pets,
-      Icons.palette_rounded,
-      Icons.nineteen_mp_rounded,
-      Icons.man,
-      Icons.account_circle_sharp,
-    ];
-
-    return List.generate(icons.length, (index) {
-      return buildNavItem(
-        icons[index],
-        route: navigationRoutes[index],
-      );
-    });
-  }
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      elevation: 0,
+      onTap: (index) => onTap(index),
       currentIndex: selectedIndex,
-      onTap: onNavigationTapped,
-      backgroundColor: AppTheme.primary,
-      selectedItemColor: AppTheme.secondary,
-      unselectedItemColor: AppTheme.primary,
       type: BottomNavigationBarType.fixed,
-      selectedLabelStyle: const TextStyle(height: 0),
-      unselectedLabelStyle: const TextStyle(height: 0),
-      items: createNavItems(), // Utilizando la lista dinámica de íconos
+      backgroundColor: AppTheme.primary,
+      items: createItems(),
+    );
+  }
+
+  List<BottomNavigationBarItem> createItems() {
+    final List<IconData> icons = [
+      Icons.pets,
+      Icons.palette_rounded,
+      Icons.nineteen_mp_rounded,
+      Icons.man,
+    ];
+
+    return List.generate(
+      icons.length,
+      (index) {
+        return BottomNavigationBarItem(
+          icon: Icon(
+            icons[index],
+            color: AppTheme.third,
+            size: 30,
+          ),
+          activeIcon: Icon(
+            icons[index],
+            color: AppTheme.secondary,
+            size: 30,
+          ),
+          label: "",
+        );
+      },
     );
   }
 }

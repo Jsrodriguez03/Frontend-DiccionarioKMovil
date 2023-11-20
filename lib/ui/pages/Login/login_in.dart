@@ -112,7 +112,7 @@ class _LoginInState extends State<LoginIn> {
                                 if (loginProvider.user.rol == "admin") {
                                   Get.toNamed("/profile-adm");
                                 } else {
-                                  Get.toNamed("/homeCategory");
+                                  Get.toNamed("/home-screen");
                                 }
                               } else {
                                 setState(() {

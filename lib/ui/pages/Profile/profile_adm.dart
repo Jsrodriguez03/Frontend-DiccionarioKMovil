@@ -4,7 +4,6 @@ import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/Administration/administration.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
-import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
@@ -31,7 +30,6 @@ class ProfileAdm extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const NavBarCategory(selectedIndex: 5),
     );
   }
 }
