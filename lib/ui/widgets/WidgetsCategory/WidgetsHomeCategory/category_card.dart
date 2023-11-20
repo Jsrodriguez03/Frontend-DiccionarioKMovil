@@ -44,10 +44,7 @@ class CategoryCard extends StatelessWidget {
           child: Column(
             children: [
               ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(image, fit: BoxFit.cover),
               ),
               const SizedBox(height: 10),
