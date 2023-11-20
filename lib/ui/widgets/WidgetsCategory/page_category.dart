@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
@@ -7,7 +8,12 @@ import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_catego
 import 'package:provider/provider.dart';
 
 class PageCategory extends StatelessWidget {
-  const PageCategory({super.key});
+  const PageCategory({
+    super.key,
+    required this.words,
+  });
+
+  final List<Word> words;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +28,7 @@ class PageCategory extends StatelessWidget {
           Buscador(
             titleCategory: navProvider.categories[navProvider.page]["title"],
           ),
-          const ListCard(),
+          ListCard(words: words),
         ],
       ),
     );

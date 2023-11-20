@@ -31,7 +31,7 @@ Word _createWord(Map<String, dynamic> rawWord) {
 
 DataWord _createData(Map<String, dynamic> rawData) {
   return DataWord(
-    kankuamoSound: rawData["kankaumo_sound"],
+    kankuamoSound: rawData["kankuamo_sound"],
     englishSound: rawData["english_sound"],
     image: rawData["image"],
   );
