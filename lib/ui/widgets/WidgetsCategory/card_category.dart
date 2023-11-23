@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/button_card.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:get/get.dart';
 
 class CardCategory extends StatelessWidget {
@@ -51,7 +51,7 @@ class CardCategory extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 8),
-                    Texto(
+                    CustomText(
                       title: word.spanish,
                       colorText: AppTheme.secondary,
                       size: 25,

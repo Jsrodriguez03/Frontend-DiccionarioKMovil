@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/buscador_category.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:provider/provider.dart';
@@ -23,8 +22,6 @@ class PageCategory extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 30),
-          const Logo(heigth: 100),
           Buscador(
             titleCategory: navProvider.categories[navProvider.page]["title"],
           ),

@@ -37,7 +37,7 @@ class ButtonCard extends StatelessWidget {
   void playSound() async {
     AudioPlayer audioPlayer = AudioPlayer();
     sound == null
-        ? print("No sound")
+        ? debugPrint("No sound")
         : await audioPlayer.play(UrlSource(sound!));
   }
 }

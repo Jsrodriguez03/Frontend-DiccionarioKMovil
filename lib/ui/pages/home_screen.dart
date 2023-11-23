@@ -4,7 +4,7 @@ import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/WidgetsHomeCategory/category_carousel.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/WidgetsHomeCategory/fondo_degradrado_home_category.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/custom_circle_avatar.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -34,19 +34,30 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 70),
-        child: Column(
-          children: [
-            GestureDetector(
-              child: const ImagenPerfil(),
-              onTap: () {
-                Get.toNamed("/profile");
-              },
-            ),
-          ],
-        ),
-      ),
+      floatingActionButton: _floatingAvatar(),
     );
   }
+}
+
+Widget _floatingAvatar() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 70),
+    child: Column(
+      children: [
+        GestureDetector(
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(100)),
+            ),
+            padding: const EdgeInsets.all(4),
+            child: const CustomCircleAvatar(iconSize: 30, iconCamera: false),
+          ),
+          onTap: () {
+            Get.toNamed("/profile");
+          },
+        ),
+      ],
+    ),
+  );
 }

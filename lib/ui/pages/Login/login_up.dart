@@ -7,7 +7,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -56,14 +56,14 @@ class LoginUp extends StatelessWidget {
                   constraints: BoxConstraints(maxHeight: screenHeight * 0.75),
                   child: Column(
                     children: [
-                      Texto(
+                      CustomText(
                         title: 'Registrarse',
                         colorText: AppTheme.secondary,
                         size: screenHeight * 0.055,
                         fontWeight: FontWeight.w700,
                       ),
                       const SizedBox(height: 10),
-                      Texto(
+                      CustomText(
                         title: 'Por favor llene todos\nlos campos requeridos',
                         colorText: Colors.white,
                         size: screenHeight * 0.02,

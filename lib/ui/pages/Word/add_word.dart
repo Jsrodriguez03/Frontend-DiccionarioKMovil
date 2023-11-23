@@ -4,7 +4,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 
 class AddWord extends StatelessWidget {
   const AddWord({super.key});
@@ -61,7 +61,7 @@ class AddWord extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: screenWidth * 0.8,
-                            child: const Texto(
+                            child: const CustomText(
                               title: "Agregar Palabra",
                               colorText: AppTheme.secondary,
                               size: 30,

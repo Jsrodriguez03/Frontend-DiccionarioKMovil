@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 
 class CardWelcome extends StatelessWidget {
   const CardWelcome({
@@ -28,7 +28,7 @@ class CardWelcome extends StatelessWidget {
               top: screenHeigth * 0.28,
               child: SizedBox(
                 width: screenWidth * 0.66,
-                child: Texto(
+                child: CustomText(
                   title: 'Tenemos todas las \npalabras que deseas\n aprender',
                   colorText: Colors.white,
                   size: screenHeigth * 0.028,

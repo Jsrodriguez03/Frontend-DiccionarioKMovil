@@ -3,7 +3,7 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/Administration/administration.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/custom_circle_avatar.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
@@ -23,7 +23,7 @@ class ProfileAdm extends StatelessWidget {
           children: [
             Logo(heigth: screenWidth * 0.25),
             const SizedBox(height: 15),
-            const ImagenPerfil(),
+            const CustomCircleAvatar(radius: 80),
             const DatosBasicos(),
             const SizedBox(height: 15),
             Administration(appTheme: appTheme)

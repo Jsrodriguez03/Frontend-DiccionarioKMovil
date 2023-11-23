@@ -9,7 +9,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
@@ -61,7 +61,7 @@ class _LoginInState extends State<LoginIn> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        const Texto(
+                        const CustomText(
                           title: 'Iniciar sesión',
                           colorText: AppTheme.secondary,
                           size: 35,

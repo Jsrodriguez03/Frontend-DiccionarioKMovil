@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/edit_icon_profile.dart';
 
 class Descripcion extends StatelessWidget {
@@ -16,7 +16,7 @@ class Descripcion extends StatelessWidget {
         children: [
           Row(
             children: [
-              Texto(
+              CustomText(
                 title: "DESCRIPCIÓN",
                 colorText: AppTheme.secondary,
                 size: screenHeight * 0.05,
@@ -26,7 +26,7 @@ class Descripcion extends StatelessWidget {
               const EditIconProfile()
             ],
           ),
-          Texto(
+          CustomText(
             title:
                 'Estudiante de la Universidad Popular del Cesar (UPC) Interesado en aprender la lengua kankuama para apoyar los procesos de fortalecimiento cultural.',
             colorText: Colors.white,

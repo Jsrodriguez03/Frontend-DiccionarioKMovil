@@ -15,6 +15,7 @@ class Welcome extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppTheme.primary,
+      resizeToAvoidBottomInset: false,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

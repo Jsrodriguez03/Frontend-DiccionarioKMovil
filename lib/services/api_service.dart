@@ -54,4 +54,8 @@ class APIService {
     }
     return words;
   }
+
+  static Future<AuthResponseModel> updateUser(String token) async {
+    return authModelFromJson("Ya vamos a ver");
+  }
 }

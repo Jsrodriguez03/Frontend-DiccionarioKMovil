@@ -10,13 +10,9 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: SizedBox(
-        height: heigth,
-        width: heigth! * 2,
-        child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
-      ),
+    return SizedBox(
+      height: heigth,
+      child: Image.asset("assets/Logo.jpeg", fit: BoxFit.contain),
     );
   }
 }

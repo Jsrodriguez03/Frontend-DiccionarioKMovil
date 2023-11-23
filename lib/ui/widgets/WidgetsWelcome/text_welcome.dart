@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 
 class TextWelcome extends StatelessWidget {
   const TextWelcome({
@@ -17,7 +17,7 @@ class TextWelcome extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Center(
-        child: Texto(
+        child: CustomText(
           title: title,
           colorText: colorText,
           size: size,

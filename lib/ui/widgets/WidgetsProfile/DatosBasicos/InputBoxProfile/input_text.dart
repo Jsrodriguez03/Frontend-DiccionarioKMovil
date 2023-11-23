@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_diccionario/ui/widgets/Textos/textos.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 
 class InputText extends StatelessWidget {
   const InputText({
@@ -20,7 +20,7 @@ class InputText extends StatelessWidget {
     return Positioned(
       top: top,
       left: 40,
-      child: Texto(
+      child: CustomText(
         title: text,
         colorText: color,
         size: size,

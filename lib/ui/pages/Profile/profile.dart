@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
+import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/imagen_profile.dart';
+import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/custom_circle_avatar.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -13,22 +13,29 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     final loginProvider = context.watch<LoginProvider>();
 
     return Scaffold(
       backgroundColor: AppTheme.primary,
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const Text("Perfil"),
+        backgroundColor: AppTheme.primary,
+        foregroundColor: Colors.white,
+      ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        margin: const EdgeInsets.symmetric(horizontal: 15),
+        margin: const EdgeInsets.symmetric(vertical: 40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Logo(heigth: screenWidth * 0.25),
-            const SizedBox(height: 15),
-            const ImagenPerfil(radius: 80),
-            const DatosBasicos(),
-            const SizedBox(height: 20),
+            const CustomCircleAvatar(radius: 80),
+            const SizedBox(height: 30),
+            const CustomText(
+              title: "Datos Básicos",
+              colorText: AppTheme.secondary,
+              size: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            const Expanded(child: DatosBasicos()),
             CustomElevatedButton(
               buttonText: "Cerrar Sesión",
               onPressed: () {

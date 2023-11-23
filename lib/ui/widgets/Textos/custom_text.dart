@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Texto extends StatelessWidget {
-  const Texto({
+class CustomText extends StatelessWidget {
+  const CustomText({
     super.key,
     required this.title,
     required this.colorText,

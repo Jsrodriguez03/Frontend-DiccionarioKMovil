@@ -30,7 +30,7 @@ class CategoryCard extends StatelessWidget {
             wordsProvider.getWords(listWords);
           }
         } catch (e) {
-          print(e);
+          debugPrint(e.toString());
         }
       },
       child: Container(
