@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-ChangeResponseModel authModelFromJson(String str) =>
+ChangeResponseModel changeModelFromJson(String str) =>
     ChangeResponseModel.fromJson(json.decode(str));
 
 class ChangeResponseModel {

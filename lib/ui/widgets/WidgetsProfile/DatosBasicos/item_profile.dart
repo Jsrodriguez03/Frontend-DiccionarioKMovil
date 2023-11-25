@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/pages/Profile/form_update.dart';
+import 'package:frontend_diccionario/ui/pages/Profile/modal_window.dart';
 
 class ItemProfile extends StatelessWidget {
   final String title;
@@ -36,14 +36,13 @@ void _createModal(BuildContext context, title) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
+    backgroundColor: AppTheme.primary,
     builder: (BuildContext bc) {
       return Padding(
         padding: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        child: SingleChildScrollView(
-          child: FormUpdate(title: title),
-        ),
+        child: SingleChildScrollView(child: ModalWindow(title: title)),
       );
     },
   );

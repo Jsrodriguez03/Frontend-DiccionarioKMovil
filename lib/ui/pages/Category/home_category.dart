@@ -6,6 +6,7 @@ import 'package:frontend_diccionario/ui/pages/Category/colors_category.dart';
 import 'package:frontend_diccionario/ui/pages/Category/numbers_category.dart';
 import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
+import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
 import 'package:frontend_diccionario/ui/widgets/navbar/navbar.dart';
 import 'package:provider/provider.dart';
 
@@ -22,13 +23,7 @@ class HomeCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     int selectedPage = context.watch<NavProvider>().page;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Logo(),
-        backgroundColor: AppTheme.primary,
-        foregroundColor: Colors.white,
-        scrolledUnderElevation: 0,
-      ),
+      appBar: CustomAppBar(title: const Logo()),
       backgroundColor: AppTheme.primary,
       body: pages[selectedPage],
       bottomNavigationBar: NavBar(

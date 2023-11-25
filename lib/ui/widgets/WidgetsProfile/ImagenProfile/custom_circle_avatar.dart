@@ -11,7 +11,7 @@ class CustomCircleAvatar extends StatelessWidget {
 
   const CustomCircleAvatar({
     super.key,
-    this.radius = 25,
+    this.radius = 20,
     this.iconSize = 120,
     this.iconCamera = true,
   });

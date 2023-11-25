@@ -4,6 +4,7 @@ import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/Administration/administration.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/custom_circle_avatar.dart';
+import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
 
 class ProfileAdm extends StatelessWidget {
   const ProfileAdm({super.key});
@@ -11,21 +12,21 @@ class ProfileAdm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppTheme appTheme = AppTheme();
-    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: CustomAppBar(
+        title: const Logo(),
+        optionsLeading: false,
+      ),
       backgroundColor: AppTheme.primary,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        margin: const EdgeInsets.symmetric(horizontal: 15),
+        margin: const EdgeInsets.symmetric(vertical: 50),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Logo(heigth: screenWidth * 0.25),
-            const SizedBox(height: 15),
             const CustomCircleAvatar(radius: 80),
-            const DatosBasicos(),
-            const SizedBox(height: 15),
+            const SizedBox(height: 50),
+            const Expanded(child: DatosBasicos()),
             Administration(appTheme: appTheme)
           ],
         ),

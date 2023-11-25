@@ -1,9 +1,9 @@
 class User {
   final String id;
-  final String email;
-  final String userName;
-  final String fullName;
-  final String rol;
+  String email;
+  String userName;
+  String fullName;
+  String rol;
   final DataUser? dataUser;
 
   User({
@@ -17,6 +17,6 @@ class User {
 }
 
 class DataUser {
-  final String? logo;
+  String? logo;
   DataUser({this.logo});
 }

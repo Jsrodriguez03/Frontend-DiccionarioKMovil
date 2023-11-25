@@ -5,6 +5,7 @@ import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.
 import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/DatosBasicos/datos_basicos.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsProfile/ImagenProfile/custom_circle_avatar.dart';
+import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -18,10 +19,9 @@ class Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.primary,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
+      appBar: CustomAppBar(
         title: const Text("Perfil"),
-        backgroundColor: AppTheme.primary,
-        foregroundColor: Colors.white,
+        center: false,
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(vertical: 40),

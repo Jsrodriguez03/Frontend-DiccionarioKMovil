@@ -10,7 +10,6 @@ import 'package:frontend_diccionario/ui/pages/Category/animals_category.dart';
 import 'package:frontend_diccionario/ui/pages/Category/body_category.dart';
 import 'package:frontend_diccionario/ui/pages/Category/colors_category.dart';
 import 'package:frontend_diccionario/ui/pages/Category/numbers_category.dart';
-import 'package:frontend_diccionario/ui/pages/Profile/form_update.dart';
 import 'package:frontend_diccionario/ui/pages/Word/edit_word.dart';
 import 'package:frontend_diccionario/ui/pages/Login/login_in.dart';
 import 'package:frontend_diccionario/ui/pages/home_screen.dart';

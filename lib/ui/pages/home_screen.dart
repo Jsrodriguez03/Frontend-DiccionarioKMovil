@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/providers/nav_provider.dart';
@@ -14,6 +16,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final navProvider = context.watch<NavProvider>();
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+        actions: [_avatar()],
+      ),
       backgroundColor: AppTheme.primary,
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -22,6 +31,12 @@ class HomeScreen extends StatelessWidget {
             Image.asset(
               navProvider.categories[navProvider.page]['image'],
               fit: BoxFit.cover,
+            ),
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+              child: Container(
+                color: AppTheme.primary.withOpacity(0.3),
+              ),
             ),
             const FondoDegradado(),
             CategoryCarousel(categories: navProvider.categories),
@@ -34,30 +49,23 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: _floatingAvatar(),
     );
   }
 }
 
-Widget _floatingAvatar() {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 70),
-    child: Column(
-      children: [
-        GestureDetector(
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-            ),
-            padding: const EdgeInsets.all(4),
-            child: const CustomCircleAvatar(iconSize: 30, iconCamera: false),
-          ),
-          onTap: () {
-            Get.toNamed("/profile");
-          },
-        ),
-      ],
+Widget _avatar() {
+  return Container(
+    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+    padding: const EdgeInsets.all(2),
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.all(Radius.circular(100)),
+    ),
+    child: GestureDetector(
+      child: const CustomCircleAvatar(iconSize: 30, iconCamera: false),
+      onTap: () {
+        Get.toNamed("/profile");
+      },
     ),
   );
 }

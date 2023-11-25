@@ -1,8 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
+import 'package:frontend_diccionario/ui/providers/login_provider.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class Administration extends StatelessWidget {
   const Administration({
@@ -14,20 +16,11 @@ class Administration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loginProvider = context.read<LoginProvider>();
     double screenHeight = MediaQuery.of(context).size.height;
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          "ADMINISTRACIÓN",
-          style: TextStyle(
-            fontSize: screenHeight * 0.025,
-            color: AppTheme.secondary,
-            fontWeight: FontWeight.w900,
-          ),
-          textAlign: TextAlign.left,
-        ),
-        const SizedBox(height: 10),
         CustomElevatedButton(
           colorButtom: AppTheme.fourth,
           colorText: Colors.white,
@@ -61,6 +54,7 @@ class Administration extends StatelessWidget {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
+                  loginProvider.closeSession();
                   Get.toNamed("/welcome");
                 },
             ),

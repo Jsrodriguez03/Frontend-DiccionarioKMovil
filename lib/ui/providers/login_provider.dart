@@ -24,4 +24,11 @@ class LoginProvider extends ChangeNotifier {
     _user = User();
     notifyListeners();
   }
+
+  void updateUser(User newUser) {
+    user.email = newUser.email.isEmpty ? user.email : newUser.email;
+    user.fullName = newUser.fullName.isEmpty ? user.fullName : newUser.fullName;
+    user.userName = newUser.userName.isEmpty ? user.userName : newUser.userName;
+    notifyListeners();
+  }
 }

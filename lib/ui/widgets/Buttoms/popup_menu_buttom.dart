@@ -17,9 +17,7 @@ class CustomPopupMenuButtom extends StatelessWidget {
       onSelected: (String choice) {
         // Manejar la opción seleccionada
         if (tipo == 0) {
-          if (choice == 'opcion1') {
-            Get.toNamed("/edit-profile");
-          }
+          if (choice == 'opcion1') {}
         } else if (tipo == 1) {
           if (choice == 'opcion1') {
             Get.toNamed("/edit-word");

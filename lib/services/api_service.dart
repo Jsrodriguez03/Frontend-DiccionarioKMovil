@@ -1,7 +1,8 @@
 import 'dart:convert';
-
 import 'package:frontend_diccionario/config/config.dart';
 import 'package:frontend_diccionario/domain/entities/word.dart';
+import 'package:frontend_diccionario/models/change_request_model.dart';
+import 'package:frontend_diccionario/models/change_response_model.dart';
 import 'package:frontend_diccionario/models/login_request_model.dart';
 import 'package:frontend_diccionario/models/auth_response_model.dart';
 import 'package:frontend_diccionario/models/register_request_model.dart';
@@ -55,7 +56,21 @@ class APIService {
     return words;
   }
 
-  static Future<AuthResponseModel> updateUser(String token) async {
-    return authModelFromJson("Ya vamos a ver");
+  static Future<ChangeResponseModel> updateUser(
+    String token,
+    ChangeRequestModel changeModel,
+    String userId,
+  ) async {
+    var url = Uri.https(Config.apiURL, "${Config.users}/$userId");
+    var request = http.MultipartRequest("PATCH", url);
+
+    final dataSave = changeModel.toJson()
+      ..removeWhere((key, value) => value.isEmpty);
+    request.headers["x-access-token"] = token;
+    request.fields.addAll(dataSave);
+
+    final response = await request.send();
+    final parseRespose = await http.Response.fromStream(response);
+    return changeModelFromJson(parseRespose.body);
   }
 }
