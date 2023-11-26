@@ -35,6 +35,7 @@ class Buscador extends StatelessWidget {
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
+          
           onChanged: (text) => onTextChanged(text),
           searchTextEditingController: controller,
           horizontalPadding: 5,

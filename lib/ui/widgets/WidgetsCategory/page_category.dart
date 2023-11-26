@@ -27,6 +27,14 @@ class _PageCategoryState extends State<PageCategory> {
     super.initState();
     controller = TextEditingController();
     searchText = "";
+
+    controller.addListener(() {
+      if (controller.text.isEmpty) {
+        setState(() {
+          searchText = "";
+        });
+      }
+    });
   }
 
   @override
