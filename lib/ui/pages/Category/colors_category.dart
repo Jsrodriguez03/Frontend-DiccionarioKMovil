@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/ui/providers/words_provider.dart';
-import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/page_category.dart';
 import 'package:provider/provider.dart';
 

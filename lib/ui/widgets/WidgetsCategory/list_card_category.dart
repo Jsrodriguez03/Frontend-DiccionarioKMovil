@@ -24,6 +24,9 @@ class ListCard extends StatelessWidget {
             word.spanish.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
 
+    // Ordena la lista alfabéticamente según el nombre en español
+    filteredWords.sort((a, b) => a.spanish.compareTo(b.spanish));
+
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
