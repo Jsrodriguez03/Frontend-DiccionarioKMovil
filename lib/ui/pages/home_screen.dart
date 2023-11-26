@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
               bottom: MediaQuery.of(context).size.height * 0.05,
               left: 0,
               right: 0,
-              child: Logo(heigth: MediaQuery.of(context).size.height * 0.12),
+              child: Logo(heigth: MediaQuery.of(context).size.height * 0.13),
             ),
           ],
         ),

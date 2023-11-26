@@ -54,7 +54,9 @@ class _PageCategoryState extends State<PageCategory> {
             },
             controller: controller,
           ),
-          ListCard(words: widget.words, searchText: searchText),
+          ListCard(
+              words: widget.words,
+              searchText: searchText),
         ],
       ),
     );

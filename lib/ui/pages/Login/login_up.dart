@@ -46,7 +46,7 @@ class LoginUp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: screenHeight * 0.1),
+                SizedBox(height: screenHeight * 0.07),
                 Logo(heigth: screenWidth * 0.27),
                 //Registrarse
                 Container(

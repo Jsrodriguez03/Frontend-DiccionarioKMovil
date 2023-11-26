@@ -23,7 +23,7 @@ class HomeCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     int selectedPage = context.watch<NavProvider>().page;
     return Scaffold(
-      appBar: CustomAppBar(title: const Logo()),
+      appBar: CustomAppBar(title: const Logo(), optionsLeading: false),
       backgroundColor: AppTheme.primary,
       body: pages[selectedPage],
       bottomNavigationBar: NavBar(

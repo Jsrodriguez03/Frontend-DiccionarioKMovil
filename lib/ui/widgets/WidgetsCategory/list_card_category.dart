@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/domain/entities/word.dart';
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/card_category.dart';
 
+enum SortType {
+  alphabetical,
+  numerical,
+}
+
 class ListCard extends StatelessWidget {
-  const ListCard({Key? key, required this.words, required this.searchText})
-      : super(key: key);
+  const ListCard({
+    Key? key,
+    required this.words,
+    required this.searchText,
+  }) : super(key: key);
 
   final List<Word> words;
   final String searchText;

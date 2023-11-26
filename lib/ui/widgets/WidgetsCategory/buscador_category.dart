@@ -7,12 +7,12 @@ class Buscador extends StatelessWidget {
     Key? key,
     required this.titleCategory,
     required this.onTextChanged,
-    required this.controller, // Agrega el controlador como parámetro
+    required this.controller, 
   }) : super(key: key);
 
   final String titleCategory;
   final Function(String) onTextChanged;
-  final TextEditingController controller; // Declara el controlador
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,8 @@ class Buscador extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
         child: AnimationSearchBar(
-          isBackButtonVisible: false,
+          // isBackButtonVisible: false,
+          backIconColor: Colors.white,
           searchIconColor: Colors.white,
           closeIconColor: AppTheme.secondary,
           centerTitle: titleCategory,
@@ -35,7 +36,7 @@ class Buscador extends StatelessWidget {
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
-          
+
           onChanged: (text) => onTextChanged(text),
           searchTextEditingController: controller,
           horizontalPadding: 5,
