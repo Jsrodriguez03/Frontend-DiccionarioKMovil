@@ -24,8 +24,16 @@ class ListCard extends StatelessWidget {
             word.spanish.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
 
-    // Ordena la lista alfabéticamente según el nombre en español
-    filteredWords.sort((a, b) => a.spanish.compareTo(b.spanish));
+    // Ordena la lista según la categoría
+    filteredWords.sort((a, b) {
+      if (a.category == 'numbers' && b.category == 'numbers') {
+        // Si ambos son de la categoría 'numbers', ordénalos numéricamente
+        return _compareNumbers(a.spanish, b.spanish);
+      } else {
+        // En otros casos, ordénalos alfabéticamente por el nombre en español
+        return a.spanish.compareTo(b.spanish);
+      }
+    });
 
     return Expanded(
       child: Padding(
@@ -47,5 +55,31 @@ class ListCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  int _compareNumbers(String a, String b) {
+    // Función auxiliar para comparar cadenas numéricas
+    int intA = _parseNumber(a);
+    int intB = _parseNumber(b);
+    return intA.compareTo(intB);
+  }
+
+  int _parseNumber(String value) {
+    final specialNumbers = {
+      'cuatro': 4,
+    };
+
+    // Intenta buscar el número en los casos especiales
+    final specialNumber = specialNumbers[value.toLowerCase()];
+    if (specialNumber != null) {
+      return specialNumber;
+    }
+
+    // Intenta convertir la cadena numérica en un entero
+    try {
+      return int.parse(value);
+    } catch (e) {
+      return 0;
+    }
   }
 }
