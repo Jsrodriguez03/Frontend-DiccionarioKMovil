@@ -4,15 +4,18 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 
 class Buscador extends StatelessWidget {
   const Buscador({
-    super.key,
+    Key? key,
     required this.titleCategory,
-  });
+    required this.onTextChanged,
+    required this.controller, // Agrega el controlador como parámetro
+  }) : super(key: key);
 
   final String titleCategory;
+  final Function(String) onTextChanged;
+  final TextEditingController controller; // Declara el controlador
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
     return Theme(
       data: ThemeData(
         inputDecorationTheme: const InputDecorationTheme(
@@ -24,17 +27,17 @@ class Buscador extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
         child: AnimationSearchBar(
           isBackButtonVisible: false,
-          backIconColor: Colors.white,
           searchIconColor: Colors.white,
           closeIconColor: AppTheme.secondary,
           centerTitle: titleCategory,
-          onChanged: (text) => debugPrint(text),
-          searchTextEditingController: controller,
           centerTitleStyle: const TextStyle(
             color: AppTheme.secondary,
             fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
+          onChanged: (text) => onTextChanged(text),
+          searchTextEditingController: controller,
+          horizontalPadding: 5,
         ),
       ),
     );

@@ -6,13 +6,28 @@ import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/buscador_categor
 import 'package:frontend_diccionario/ui/widgets/WidgetsCategory/list_card_category.dart';
 import 'package:provider/provider.dart';
 
-class PageCategory extends StatelessWidget {
+class PageCategory extends StatefulWidget {
   const PageCategory({
     super.key,
     required this.words,
   });
 
   final List<Word> words;
+
+  @override
+  State<PageCategory> createState() => _PageCategoryState();
+}
+
+class _PageCategoryState extends State<PageCategory> {
+  late TextEditingController controller;
+  late String searchText;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+    searchText = "";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +39,14 @@ class PageCategory extends StatelessWidget {
         children: [
           Buscador(
             titleCategory: navProvider.categories[navProvider.page]["title"],
+            onTextChanged: (text) {
+              setState(() {
+                searchText = text;
+              });
+            },
+            controller: controller,
           ),
-          ListCard(words: words),
+          ListCard(words: widget.words, searchText: searchText),
         ],
       ),
     );
