@@ -10,11 +10,27 @@ class ManageWord extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<List<String>> palabras = [
-      ["1", "Perro", "Animal"],
-      ["2", "Brazo", "Cuerpo"],
-      ["3", "Rojo", "Color"],
-      ["4", "Dos", "Numero"],
-      ["5", "Pierna", "Cuerpo"],
+      [
+        "Perro",
+        "Animal",
+        "https://exitocol.vtexassets.com/arquivos/ids/15562770-1200-auto?v=638043813618170000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Brazo",
+        "Cuerpo",
+        "https://exitocol.vtexassets.com/arquivos/ids/8572028-1200-auto?v=637603392898600000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Rojo",
+        "Color",
+        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Dos",
+        "Numero",
+        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+      ],
+      ["Pierna", "Cuerpo", ""],
     ];
 
     return Scaffold(

@@ -38,19 +38,21 @@ class ListManage extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: ListTile(
-                    leading: const CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://exitocol.vtexassets.com/arquivos/ids/15562770-1200-auto?v=638043813618170000&width=1200&height=auto&aspect=true"),
+                    leading: CircleAvatar(
+                      backgroundImage: data[index][2].isNotEmpty
+                          ? NetworkImage(data[index][2])
+                          : const AssetImage("assets/user.jpg")
+                              as ImageProvider,
                     ),
                     title: Text(
-                      data[index][1],
+                      data[index][0],
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                     subtitle: Text(
-                      data[index][2],
+                      data[index][1],
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.grey,

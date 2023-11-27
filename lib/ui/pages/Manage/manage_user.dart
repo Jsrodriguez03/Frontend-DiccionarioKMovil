@@ -10,11 +10,27 @@ class ManageUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<List<String>> usuarios = [
-      ["1", "Luis Pinto", "luis@gmail.com"],
-      ["2", "Nayid Castellar", "nayid@gmail.com"],
-      ["3", "Junior Rodriguez", "junior@gmail.com"],
-      ["4", "Juliana Aaron", "juliana@gmail.com"],
-      ["5", "Steven Molina", "steven@gmail.com"],
+      [
+        "Luis Pinto",
+        "luis@gmail.com",
+        "https://exitocol.vtexassets.com/arquivos/ids/15562770-1200-auto?v=638043813618170000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Nayid Castellar",
+        "nayid@gmail.com",
+        "https://exitocol.vtexassets.com/arquivos/ids/8572028-1200-auto?v=637603392898600000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Junior Rodriguez",
+        "junior@gmail.com",
+        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+      ],
+      [
+        "Juliana Aaron",
+        "juliana@gmail.com",
+        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+      ],
+      ["Steven Molina", "steven@gmail.com", ""],
     ];
 
     return Scaffold(
