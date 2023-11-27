@@ -17,24 +17,46 @@ class CustomPopupMenuButtom extends StatelessWidget {
       onSelected: (String choice) {
         // Manejar la opción seleccionada
         if (tipo == 0) {
-          if (choice == 'opcion1') {}
+          if (choice == 'opcion1') {
+            // Opción;
+          } else if (choice == 'opcion2') {
+            // Opción
+          }
         } else if (tipo == 1) {
           if (choice == 'opcion1') {
             Get.toNamed("/edit-word");
+          } else if (choice == 'opcion2') {
+            // Opción
           }
         }
       },
       itemBuilder: (BuildContext context) {
-        return <PopupMenuEntry<String>>[
-          const PopupMenuItem<String>(
-            value: 'opcion1',
-            child: Text('Editar'),
-          ),
-          const PopupMenuItem<String>(
-            value: 'opcion2',
-            child: Text('Eliminar'),
-          )
-        ];
+        if (tipo == 0) {
+          // Usuario
+          return <PopupMenuEntry<String>>[
+            const PopupMenuItem<String>(
+              value: 'opcion1',
+              child: Text('Administrador'),
+            ),
+            const PopupMenuItem<String>(
+              value: 'opcion2',
+              child: Text('Eliminar'),
+            )
+          ];
+        } else if (tipo == 1) {
+          // Administrador
+          return <PopupMenuEntry<String>>[
+            const PopupMenuItem<String>(
+              value: 'opcion1',
+              child: Text('Editar'),
+            ),
+            const PopupMenuItem<String>(
+              value: 'opcion2',
+              child: Text('Eliminar'),
+            )
+          ];
+        }
+        return <PopupMenuEntry<String>>[];
       },
     );
   }

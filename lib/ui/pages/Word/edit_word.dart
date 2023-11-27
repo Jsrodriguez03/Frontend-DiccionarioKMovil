@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
+import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
 
 class EditWord extends StatelessWidget {
   const EditWord({super.key});
@@ -28,19 +28,13 @@ class EditWord extends StatelessWidget {
     };
 
     return Scaffold(
+      appBar: CustomAppBar(title: const Logo()),
       backgroundColor: AppTheme.primary,
       body: Stack(
         children: [
-          const Positioned(
-            top: 0,
-            left: 0,
-            child: Flecha(navigation: "/manage-word"),
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Logo(heigth: screenWidth * 0.35),
-              const SizedBox(height: 5),
               Container(
                 padding: const EdgeInsets.all(10),
                 width: screenWidth * 0.9,
