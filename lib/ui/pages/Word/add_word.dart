@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/Buttoms/custom_elevation_buttom.dart';
-import 'package:frontend_diccionario/ui/widgets/Logo/flecha.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/TextFormField/CustomTextfield.dart';
 import 'package:frontend_diccionario/ui/widgets/Textos/custom_text.dart';
+import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
 
 class AddWord extends StatelessWidget {
   const AddWord({super.key});
@@ -37,20 +37,15 @@ class AddWord extends StatelessWidget {
     };
 
     return Scaffold(
+      appBar: CustomAppBar(title: const Logo()),
       backgroundColor: AppTheme.primary,
       body: ListView(
         children: [
           Stack(
             children: [
-              const Positioned(
-                top: 0,
-                left: 0,
-                child: Flecha(navigation: "/manage-word"),
-              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Logo(heigth: screenWidth * 0.25),
                   Container(
                     padding: const EdgeInsets.all(10),
                     width: screenWidth * 0.9,

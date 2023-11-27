@@ -41,7 +41,7 @@ class ListManage extends StatelessWidget {
                     leading: CircleAvatar(
                       backgroundImage: data[index][2].isNotEmpty
                           ? NetworkImage(data[index][2])
-                          : const AssetImage("assets/user.jpg")
+                          : const AssetImage("assets/imagen.png")
                               as ImageProvider,
                     ),
                     title: Text(

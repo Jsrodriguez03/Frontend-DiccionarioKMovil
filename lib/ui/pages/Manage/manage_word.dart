@@ -3,6 +3,7 @@ import 'package:frontend_diccionario/ui/config/theme/app_theme.dart';
 import 'package:frontend_diccionario/ui/widgets/ListManager/list_manager.dart';
 import 'package:frontend_diccionario/ui/widgets/Logo/logo.dart';
 import 'package:frontend_diccionario/ui/widgets/appBar/custom_appbar.dart';
+import 'package:get/get.dart';
 
 class ManageWord extends StatelessWidget {
   const ManageWord({super.key});
@@ -28,13 +29,25 @@ class ManageWord extends StatelessWidget {
       [
         "Dos",
         "Numero",
-        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+        "https://exitocol.vtexassets.com/arquivos/ids/15562770-1200-auto?v=638043813618170000&width=1200&height=auto&aspect=true"
       ],
       ["Pierna", "Cuerpo", ""],
     ];
 
     return Scaffold(
       appBar: CustomAppBar(title: const Logo()),
+      floatingActionButton: FloatingActionButton(
+        heroTag: null,
+        onPressed: () {
+          Get.toNamed("/add-word");
+        },
+        backgroundColor: AppTheme.secondary,
+        child: const Icon(
+          Icons.add,
+          size: 40,
+          color: Colors.black,
+        ),
+      ),
       backgroundColor: AppTheme.primary,
       body: ListManage(
         title: "Palabras",

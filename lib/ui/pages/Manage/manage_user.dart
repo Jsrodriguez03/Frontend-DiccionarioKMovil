@@ -28,7 +28,7 @@ class ManageUser extends StatelessWidget {
       [
         "Juliana Aaron",
         "juliana@gmail.com",
-        "https://exitocol.vtexassets.com/arquivos/ids/19721776-1200-auto?v=638306835973970000&width=1200&height=auto&aspect=true"
+        "https://exitocol.vtexassets.com/arquivos/ids/15562770-1200-auto?v=638043813618170000&width=1200&height=auto&aspect=true"
       ],
       ["Steven Molina", "steven@gmail.com", ""],
     ];
