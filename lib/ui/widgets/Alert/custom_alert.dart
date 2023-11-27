@@ -6,14 +6,14 @@ class CustomAlert extends StatefulWidget {
   const CustomAlert({Key? key, required this.message}) : super(key: key);
 
   @override
-  _TopAlertState createState() => _TopAlertState();
+  TopAlertState createState() => TopAlertState();
 
   void show(BuildContext context) {
-    _TopAlertState._showAlert(context, message ?? "");
+    TopAlertState._showAlert(context, message ?? "");
   }
 }
 
-class _TopAlertState extends State<CustomAlert> {
+class TopAlertState extends State<CustomAlert> {
   OverlayEntry? overlayEntry;
   bool isAlertVisible = true;
 
@@ -22,7 +22,7 @@ class _TopAlertState extends State<CustomAlert> {
     return Container(); // No se renderiza nada aquí, ya que se controla a través de OverlayEntry
   }
 
-  static void _showAlert(BuildContext context, String message) async {
+  static Future<void> _showAlert(BuildContext context, String message) async {
     var overlay = Overlay.of(context);
     OverlayEntry overlayEntry;
 
