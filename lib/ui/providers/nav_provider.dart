@@ -23,9 +23,17 @@ class NavProvider extends ChangeNotifier {
       'navigation': '/bodys',
     },
   ];
+
   int page = 0;
+  int auxPage = 0;
+
   void updatePage(int index) {
     page = index;
+    notifyListeners();
+  }
+
+  void updateAuxPage(int index) {
+    auxPage = index;
     notifyListeners();
   }
 }

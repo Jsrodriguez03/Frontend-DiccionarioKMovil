@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              navProvider.categories[navProvider.page]['image'],
+              navProvider.categories[navProvider.auxPage]['image'],
               fit: BoxFit.cover,
             ),
             BackdropFilter(

@@ -28,6 +28,7 @@ class CategoryCarousel extends StatelessWidget {
           enlargeCenterPage: true,
           onPageChanged: (index, reason) {
             context.read<NavProvider>().updatePage(index);
+            context.read<NavProvider>().updateAuxPage(index);
           },
         ),
         carouselController: carouselController,
