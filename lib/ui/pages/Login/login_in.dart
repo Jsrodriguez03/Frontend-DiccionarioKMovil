@@ -79,6 +79,7 @@ class _LoginInState extends State<LoginIn> {
                             CustomTextFormField(
                               labelText: "Contraseña",
                               controller: passwordController,
+                              obscureText: true,
                             ),
                             const SizedBox(height: 15),
                           ],
